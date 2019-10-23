@@ -1,0 +1,44 @@
+
+{% block title %}Nouvel évènement{% endblock %}
+
+
+{% block content %}
+    <form>
+        <div class="form-group">
+            <label for="exampleInputName">Nom de l'artiste/du groupe/de l'évènement :</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>        </div>        <div class="form-group">
+        <label for="exampleInputDate">Date :</label>
+        <input type="date" name="date_event">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputdescription">Description</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPrice">Prix</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputImage">Image</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputImage">Vidéo</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+
+{% endblock %}
+
