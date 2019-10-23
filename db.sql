@@ -104,3 +104,8 @@ Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus ve
 'https://youtu.be/cA46ZNjrzeY',
 ''
 )
+
+INSERT INTO category (category)
+VALUES
+('Rock'),
+('Pop')
