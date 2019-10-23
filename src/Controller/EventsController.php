@@ -1,11 +1,8 @@
 <?php
 
-
 namespace App\Controller;
 
-
 class EventsController extends AbstractController
-
 {
     public function add(): string
     {
