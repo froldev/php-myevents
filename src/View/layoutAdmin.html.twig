@@ -14,12 +14,24 @@
 
 <body>
 <div class="container-fluid">
-    {% include 'Blocks/_adminHeader.html.twig.html.twig' %}
+    <!-- Header -->
+    {% include 'Blocks/_adminHeader.html.twig' %}
+    <!-- Header -->
     <div class="row">
-        {% include 'Blocks/_adminAside.html.twig.html.twig' %}
-        {% block content %}{% endblock %}
+        <div class="col-xs-12 col-md-3">
+            <!-- Aside -->
+            {% include 'Blocks/_adminAside.html.twig' %}
+            <!-- Aside -->
+        </div>
+        <div class="col-xs-12 col-md-9">
+            <!-- Content -->
+            {% block content %}{% endblock %}
+            <!-- Content -->
+        </div>
     </div>
-    {% include 'Blocks/_adminFooter.html.twig.html.twig' %}
+    <!-- Footer -->
+    {% include 'Blocks/_adminFooter.html.twig' %}
+    <!-- Footer -->
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
