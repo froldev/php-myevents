@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -14,10 +14,24 @@
 
 <body>
 <div class="container-fluid">
-    {% include 'Blocks/_header.html.twig' %}
-    {% include 'Blocks/_carousel.html.twig' %}
-    {% block content %}{% endblock %}
-    {% include 'Blocks/_footer.html.twig' %}
+    <!-- Header -->
+    {% include 'Blocks/_adminHeader.html.twig' %}
+    <!-- Header -->
+    <div class="row">
+        <div class="col-xs-12 col-md-3">
+            <!-- Aside -->
+            {% include 'Blocks/_adminAside.html.twig' %}
+            <!-- Aside -->
+        </div>
+        <div class="col-xs-12 col-md-9">
+            <!-- Content -->
+            {% block content %}{% endblock %}
+            <!-- Content -->
+        </div>
+    </div>
+    <!-- Footer -->
+    {% include 'Blocks/_adminFooter.html.twig' %}
+    <!-- Footer -->
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
