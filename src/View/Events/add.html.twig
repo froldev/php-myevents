@@ -5,8 +5,8 @@
 {% block content %}
     <form>
         <div class="form-group">
-            <label for="exampleInputName">Nom de l'artiste/du groupe/de l'évènement :</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="Name">Nom de l'artiste/du groupe/de l'évènement :</label>
+            <input type="text" class="form-control" id="Name" name="name" aria-describedby="emailHelp">
         </div>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -17,25 +17,26 @@
                 <a class="dropdown-item" href="#">Another action</a>
                 <a class="dropdown-item" href="#">Something else here</a>
             </div>
-        </div>        </div>        <div class="form-group">
-        <label for="exampleInputDate">Date :</label>
+        </div>
+        <div class="form-group">
+        <label for="Date">Date :</label>
         <input type="date" name="date_event">
         </div>
         <div class="form-group">
-            <label for="exampleInputdescription">Description</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" name="description" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
-            <label for="exampleInputPrice">Prix</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <label for="price">Prix</label>
+            <input type="text" class="form-control" name="price" id="price">
         </div>
         <div class="form-group">
-            <label for="exampleInputImage">Image</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <label for="image">Image</label>
+            <input type="text" class="form-control" name="image" id="image">
         </div>
         <div class="form-group">
-            <label for="exampleInputImage">Vidéo</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <label for="video">Vidéo</label>
+            <input type="text" class="form-control" name="video" id="video">
         </div>
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
