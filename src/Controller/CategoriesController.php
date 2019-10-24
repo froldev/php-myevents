@@ -44,4 +44,19 @@ class CategoriesController extends AbstractController
         $categoriesManager->deleteCategories($id);
         header("Location:/categories/list");
     }
+
+    public function edit(int $id): string
+    {
+        $categoriesManager = new CategoriesManager();
+        $category = $categoriesManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $category['category'] = $_POST['category'];
+            if ($categoriesManager->updateCategories($category)) {
+                header("Location:/categories/list");
+            }
+        }
+
+        return $this->twig->render('Categories/edit.html.twig', ['category' => $category]);
+    }
 }
