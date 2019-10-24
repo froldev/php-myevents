@@ -16,7 +16,7 @@ class CategoriesController extends AbstractController
             ]);
     }
 
-    public function add()
+    public function add(): string
     {
         $categoryError = null;
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -36,5 +36,12 @@ class CategoriesController extends AbstractController
         return $this->twig->render("Categories/add.html.twig", [
             "categoryError" => $categoryError,
         ]);
+    }
+
+    public function delete(int $id)
+    {
+        $categoriesManager = new CategoriesManager();
+        $categoriesManager->deleteCategories($id);
+        header("Location:/categories/list");
     }
 }
