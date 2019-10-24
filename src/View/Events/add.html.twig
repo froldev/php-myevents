@@ -1,12 +1,16 @@
+{# {% extends 'layout.html.twig' %} #}
 
 {% block title %}Nouvel évènement{% endblock %}
 
 
 {% block content %}
-    <form>
+    <form method="POST">
         <div class="form-group">
             <label for="Name">Nom de l'artiste/du groupe/de l'évènement :</label>
-            <input type="text" class="form-control" id="Name" name="name" aria-describedby="emailHelp">
+            <input type="text" class="form-control {% if nameError is not null %}is-invalid{% endif %}" id="Name" name="name" aria-describedby="emailHelp">
+            <div class="invalid-feedback">
+                {{ nameError }}
+            </div>
         </div>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -20,15 +24,27 @@
         </div>
         <div class="form-group">
         <label for="Date">Date :</label>
-        <input type="date" name="date_event">
+        <input type="date" name="date_event" class="form-control {% if dateError is not null %}is-invalid{% endif %}">
+            <div class="invalid-feedback">
+                {{ dateError }}
+            </div>
         </div>
-        <div class="form-group">
+        <div class="form-group {% if descriptionError is not null %}is-invalid{% endif %}">
             <label for="description">Description</label>
-            <input type="text" class="form-control" id="description" name="description" aria-describedby="emailHelp">
+            <textarea name="description"></textarea>
+            <script>
+                CKEDITOR.replace( 'description' );
+            </script>
+            <div class="invalid-feedback">
+                {{ descriptionError }}
+            </div>
         </div>
         <div class="form-group">
             <label for="price">Prix</label>
-            <input type="text" class="form-control" name="price" id="price">
+            <input type="text" class="form-control {% if priceError is not null %}is-invalid{% endif %}" name="price" id="price">
+            <div class="invalid-feedback">
+                {{ priceError }}
+            </div>
         </div>
         <div class="form-group">
             <label for="image">Image</label>
