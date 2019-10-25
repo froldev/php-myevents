@@ -63,6 +63,7 @@
 /* carousel */
 .carousel-inner
 {
+    margin-top: 90px;
     max-height: 450px;
 }
 
