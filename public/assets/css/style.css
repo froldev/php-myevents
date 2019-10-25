@@ -82,7 +82,7 @@
     min-height: 100%;
 }
 
-#adminNav, #content{
+#adminNav, #content, #adminAdd{
     align-self: stretch;
 }
 #content{
@@ -93,6 +93,6 @@
 }
 #adminFooter{
     width:100%;
-    position:absolute;
+    position:relative;
     bottom:0;
 }
