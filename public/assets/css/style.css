@@ -38,8 +38,12 @@
 /* navbar */
 .fixed-bottom
 {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+}
+
+.navbar-toggler
+{
+    background-color: rgba(150, 150, 150, 0.9);
 }
 
 /* -------------------------------------------- */
@@ -53,6 +57,13 @@
 .float
 {
     float: right;
+}
+
+/* -------------------------------------------- */
+/* carousel */
+.carousel-inner
+{
+    max-height: 450px;
 }
 
 /* -------------------------------------------- */
