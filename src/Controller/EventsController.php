@@ -34,7 +34,6 @@ class EventsController extends AbstractController
             }
 
             if ($isValid) {
-                var_dump("coucou");
                 $eventsManager = new EventsManager();
 
                 if ($eventsManager->insertEvent($_POST)) {
