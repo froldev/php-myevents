@@ -98,12 +98,15 @@
 #adminNav, #content, #adminAdd{
     align-self: stretch;
 }
+
 #content{
     padding:4%;
 }
+
 #adminNav{
     background-color:#6C757C !important;
 }
+
 #adminFooter{
     width:100%;
     position:relative;
