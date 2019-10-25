@@ -95,7 +95,7 @@
     min-height: 100%;
 }
 
-#adminNav, #content, #adminAdd{
+#adminNav, #content{
     align-self: stretch;
 }
 
