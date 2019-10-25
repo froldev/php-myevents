@@ -8,14 +8,7 @@
 
         <h1>Ajouter une catégorie :</h1>
         <div class="row">
-
-            <form class="form-inline">
-                <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" readonly class="form-control-plaintext" id="category" name="category" value="nouvelle catégorie">
-                </div>
-                <button type="submit" class="btn btn-primary mb-2">Confirmer</button>
-            </form>
-
+            <button type="submit" class="btn btn-primary mb-2"><a class="text-white" href="/categories/add">Ajouter une catégorie</a></button>
         </div>
 
     </section>
@@ -25,16 +18,16 @@
         <h1>Liste des catégories :</h1>
         <div class="row">
             <table class="table col-12">
-                <thead>
-                    <tr>
-                        <th scope="col">Style</th>
+                <thead class="table-striped">
+                    <tr class="bg-warning">
+                        <th scope="col">Style de musique</th>
                         <th scope="col">Modifier</th>
                         <th scope="col">Supprimer</th>
                     </tr>
                 </thead>
                 <tbody>
                 {% for category in categories %}
-                    {% include "Blocks/_adminTable.html.twig" with {
+                    {% include "Blocks/_adminTableCategories.html.twig" with {
                         "id" : category.id,
                         "cat" : category.category,
                     } %}
