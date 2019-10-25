@@ -8,15 +8,16 @@ class EventsController extends AbstractController
 {
     public function add()
     {
-        $nameError = $dateError = $descriptionError = $priceError = null;
+        $titleError = $dateTimeError = $descriptionError = $priceError = $imageError = null;
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $isValid = true;
-            if (empty($_POST["name"]) || !isset($_POST["name"])) {
-                $nameError = "Indiquez un nom d'évènement";
+            if (empty($_POST["title"]) || !isset($_POST["title"])) {
+                $titleError = "Indiquez un nom d'évènement";
                 $isValid = false;
             }
-            if (empty($_POST["date_event"]) || !isset($_POST["date_event"])) {
-                $dateError = "Indiquez une date";
+            if (empty($_POST["date_time"]) || !isset($_POST["date_time"])) {
+                $dateTimeError = "Indiquez une date";
                 $isValid = false;
             }
             if (empty($_POST["description"]) || !isset($_POST["description"])) {
@@ -27,16 +28,25 @@ class EventsController extends AbstractController
                 $priceError = "Indiquez un prix";
                 $isValid = false;
             }
+            if (empty($_POST["image"]) || !isset($_POST["image"])) {
+                $imageError = "Ajouter une image";
+                $isValid = false;
+            }
+
             if ($isValid) {
+                var_dump("coucou");
                 $eventsManager = new EventsManager();
-                $eventsManager->insertEvent($_POST);
+
+                if ($eventsManager->insertEvent($_POST)) {
+                    header("Location:/event/list");
+                }
             }
         }
         return $this->twig->render("Events/add.html.twig", [
-            "nameError" => $nameError,
-            "dateError" => $nameError,
-            "descriptionError" => $nameError,
-            "priceError" => $nameError,
+            "titleError" => $titleError,
+            "dateTimeError" => $dateTimeError,
+            "descriptionError" => $descriptionError,
+            "priceError" => $priceError,
         ]);
     }
 }

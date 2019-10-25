@@ -1,4 +1,4 @@
-{# {% extends 'layout.html.twig' %} #}
+{# {% extends 'adminLayout.html.twig' %} #}
 
 {% block title %}Nouvel évènement{% endblock %}
 
@@ -6,10 +6,10 @@
 {% block content %}
     <form method="POST">
         <div class="form-group">
-            <label for="Name">Nom de l'artiste/du groupe/de l'évènement :</label>
-            <input type="text" class="form-control {% if nameError is not null %}is-invalid{% endif %}" id="Name" name="name" aria-describedby="emailHelp">
+            <label for="Title">Nom de l'artiste/du groupe/de l'évènement :</label>
+            <input type="text" class="form-control {% if nameError is not null %}is-invalid{% endif %}" id="Title" name="title" aria-describedby="emailHelp">
             <div class="invalid-feedback">
-                {{ nameError }}
+                {{ titleError }}
             </div>
         </div>
         <div class="dropdown">
@@ -24,9 +24,9 @@
         </div>
         <div class="form-group">
         <label for="Date">Date :</label>
-        <input type="date" name="date_event" class="form-control {% if dateError is not null %}is-invalid{% endif %}">
+        <input type="date" name="date_time" class="form-control {% if dateTimeError is not null %}is-invalid{% endif %}">
             <div class="invalid-feedback">
-                {{ dateError }}
+                {{ dateTimeError }}
             </div>
         </div>
         <div class="form-group {% if descriptionError is not null %}is-invalid{% endif %}">
@@ -48,12 +48,20 @@
         </div>
         <div class="form-group">
             <label for="image">Image</label>
-            <input type="text" class="form-control" name="image" id="image">
+            <input type="text" class="form-control {% if priceError is not null %}is-invalid{% endif %}" name="image" id="image">
+            <div class="invalid-feedback">
+                {{ imageError }}
+            </div>
         </div>
         <div class="form-group">
             <label for="video">Vidéo</label>
             <input type="text" class="form-control" name="video" id="video">
         </div>
+        <div class="form-group">
+            <label for="link">Lien</label>
+            <input type="text" class="form-control" name="link" id="link">
+        </div>
+
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
 
