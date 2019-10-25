@@ -1,8 +1,26 @@
 
+:root {
+    --dark: #0F1626;
+    --white: #F5F5F5;
+    --orange: #F7882F;
+    --orangeDark : #FF533D;
+}
 /* général */
 * {
     padding:0;
     margin:0;
+}
+
+.container-fluid {
+    padding-right:0px;
+    padding-left:0px;
+    margin:0px;
+    margin:0px;
+}
+
+.row{
+    margin-left:0px !important;
+    margin-right:0px !important;
 }
 
 /* -------------------------------------------- */
@@ -38,8 +56,7 @@
 /* navbar */
 .fixed-bottom
 {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
 /* -------------------------------------------- */
@@ -57,3 +74,26 @@
 
 /* -------------------------------------------- */
 /* admin */
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    min-height: 100%;
+}
+
+#adminNav, #content{
+    align-self: stretch;
+}
+#content{
+    padding:4%;
+    padding-right:5%;
+}
+#adminNav{
+    background-color:#6C757C !important;
+}
+#adminFooter{
+    width:100%;
+    position:absolute;
+    bottom:0;
+}

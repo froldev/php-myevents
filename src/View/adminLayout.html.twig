@@ -18,13 +18,13 @@
     {% include 'Blocks/_adminHeader.html.twig' %}
     <!-- Header -->
 
-    <div class="row">
-        <div class="col-xs-12 col-md-3">
+    <div class="row wrapper">
+        <div id="adminNav" class="col-xs-12 col-md-3">
             <!-- Aside -->
             {% include 'Blocks/_adminAside.html.twig' %}
             <!-- Aside -->
         </div>
-        <div class="col-xs-12 col-md-9">
+        <div id="content" class="col-xs-12 col-md-9">
             <!-- Content -->
             {% block content %}{% endblock %}
             <!-- Content -->
