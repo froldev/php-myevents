@@ -59,6 +59,11 @@
     margin: auto;
 }
 
+.navbar-toggler
+{
+    background-color: rgba(150, 150, 150, 0.9);
+}
+
 /* -------------------------------------------- */
 /* card */
 .card-overflow
@@ -70,6 +75,14 @@
 .float
 {
     float: right;
+}
+
+/* -------------------------------------------- */
+/* carousel */
+.carousel-inner
+{
+    margin-top: 90px;
+    max-height: 450px;
 }
 
 /* -------------------------------------------- */

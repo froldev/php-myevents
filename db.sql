@@ -98,7 +98,7 @@ Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus ve
 ('Sting', '2019-11-29', 30,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://www.zenith-nantesmetropole.com/media/ic/resize/load.php?src=/images/stories/manifestations/sting.jpg&width=240&height=315&crop=1',
+'https://www.zenith-nantesmetropole.com/media/ic/resize/load.php?src=/images/stories/manifestations/Stars_80_and_friends.jpg&width=240&height=315&crop=1',
 'https://youtu.be/cA46ZNjrzeY',
 ''
 )
