@@ -23,7 +23,14 @@ class EventsManager extends AbstractManager
         $request->bindValue(":price", $event["price"], \PDO::PARAM_INT);
         $request->bindValue(":image", $event["image"], \PDO::PARAM_INT);
 
-
         return $request->execute();
     }
-}
+
+    public function deleteEvent(int $id): void
+    {
+        $request = $this->pdo->prepare("DELETE FROM ".self::TABLE." WHERE id=:id");
+        $request->bindValue(":id", $id, \PDO::PARAM_INT);
+        $request->execute();
+    }
+
+ }

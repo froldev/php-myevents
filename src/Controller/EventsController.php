@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\CategoriesManager;
 use App\Model\EventsManager;
 
 class EventsController extends AbstractController
@@ -41,11 +42,31 @@ class EventsController extends AbstractController
                 }
             }
         }
-        return $this->twig->render("Events/add.html.twig", [
+        return $this->twig->render("Events/_add.html.twig", [
             "titleError" => $titleError,
             "dateTimeError" => $dateTimeError,
             "descriptionError" => $descriptionError,
             "priceError" => $priceError,
         ]);
     }
+
+    public function list(): string
+    {
+        $eventsManager = new EventsManager();
+        $events = $eventsManager->selectAll();
+
+        return $this->twig->render("Events/_list.html.twig", [
+            "events" => $events,
+        ]);
+    }
+
+    public function delete(int $id): void
+    {
+        $eventsManager = new EventsManager();
+        $eventsManager->deleteEvent($id);
+        header("Location:/events/list");
+    }
+
+
+
 }
