@@ -8,9 +8,9 @@
 
 namespace App\Controller;
 
-use App\Model\ProgrammingManager;
+use App\Model\OlympicManager;
 
-class HomeController extends AbstractController
+class OlympicController extends AbstractController
 {
 
     /**
@@ -23,9 +23,15 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        $programmingManager = new ProgrammingManager();
+        $programmingManager = new OlympicManager();
         $events = $programmingManager->selectAll();
 
-        return $this->twig->render('Home/index.html.twig', ["events" => $events]);
+        return $this->twig->render('Olympic/index.html.twig', ["events" => $events]);
     }
+
+    public function info()
+    {
+        return $this->twig-> render('Olympic/info.html.twig');
+    }
+
 }

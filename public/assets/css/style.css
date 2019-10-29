@@ -109,3 +109,37 @@
     position:relative;
     bottom:0;
 }
+
+/* -------------------------------------------- */
+/* info */
+
+.card{
+    border-color: black;
+    border-radius: 25px;
+    border-width: 2px;
+    background-color: #FFC885;
+    padding: 20px;
+    line-height: 2.5;
+}
+
+.button{
+    color: #FF533D;
+    border-radius: 20px;
+    background: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.address{
+    display: flex;
+    flex-direction: row;
+}
+
+.map {
+    margin: 20px 70px;
+}
+
+.title {
+    margin: 50px;
+}
