@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+    {% include 'Blocks/_carousel.html.twig' %}
     {% for event in events %}
         <div class="card mb-3 col-4" style="max-width: 540px;">
             <div class="row no-gutters">
