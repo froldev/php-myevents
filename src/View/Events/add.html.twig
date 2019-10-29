@@ -1,0 +1,69 @@
+{% extends 'adminLayout.html.twig' %}
+
+{% block title %}Nouvel évènement{% endblock %}
+
+
+{% block content %}
+    <form method="POST">
+        <div class="form-group">
+            <label for="Title">Nom de l'artiste/du groupe/de l'évènement :</label>
+            <input type="text" class="form-control {% if nameError is not null %}is-invalid{% endif %}" id="Title" name="title" aria-describedby="emailHelp">
+            <div class="invalid-feedback">
+                {{ titleError }}
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        <div class="form-group">
+        <label for="Date">Date :</label>
+        <input type="date" name="date_time" class="form-control {% if dateTimeError is not null %}is-invalid{% endif %}">
+            <div class="invalid-feedback">
+                {{ dateTimeError }}
+            </div>
+        </div>
+        <div class="form-group {% if descriptionError is not null %}is-invalid{% endif %}">
+            <label for="description">Description</label>
+            <textarea name="description"></textarea>
+            <script>
+                CKEDITOR.replace( 'description' );
+            </script>
+            <div class="invalid-feedback">
+                {{ descriptionError }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="price">Prix</label>
+            <input type="text" class="form-control {% if priceError is not null %}is-invalid{% endif %}" name="price" id="price">
+            <div class="invalid-feedback">
+                {{ priceError }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="text" class="form-control {% if priceError is not null %}is-invalid{% endif %}" name="image" id="image">
+            <div class="invalid-feedback">
+                {{ imageError }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="video">Vidéo</label>
+            <input type="text" class="form-control" name="video" id="video">
+        </div>
+        <div class="form-group">
+            <label for="link">Lien</label>
+            <input type="text" class="form-control" name="link" id="link">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+
+{% endblock %}
+

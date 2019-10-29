@@ -1,0 +1,16 @@
+{% extends 'adminLayout.html.twig' %}
+
+{% block content %}
+
+    <h1>Catégorie à modifier :</h1>
+    <form method="POST">
+        <div class="form-row mb-4">
+            <div class="col-md-4 mb-3">
+                <input type="text" class="form-control" id="category" name="category" aria-describedby="inputMiseAJourDeLaCatégorie" value="{{ category.category }}">
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg mb-2">Modifier</button>
+        </div>
+    </form>
+    <button type="submit" class="btn btn-dark mb-2"><a class="text-white" href="/categories/list"> << Retour</a></button>
+
+{% endblock %}
