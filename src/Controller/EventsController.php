@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\CategoriesManager;
 use App\Model\EventsManager;
 
 class EventsController extends AbstractController
@@ -38,7 +37,7 @@ class EventsController extends AbstractController
                 $eventsManager = new EventsManager();
 
                 if ($eventsManager->insertEvent($_POST)) {
-                    header("Location:/event/list");
+                    header("Location:/events/list");
                 }
             }
         }
@@ -47,6 +46,7 @@ class EventsController extends AbstractController
             "dateTimeError" => $dateTimeError,
             "descriptionError" => $descriptionError,
             "priceError" => $priceError,
+            "imageError" => $imageError
         ]);
     }
 
@@ -66,7 +66,4 @@ class EventsController extends AbstractController
         $eventsManager->deleteEvent($id);
         header("Location:/events/list");
     }
-
-
-
 }

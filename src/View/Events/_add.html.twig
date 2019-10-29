@@ -1,4 +1,4 @@
-{% extends 'adminLayout.html.twig' %}
+{% extends "adminLayout.html.twig" %}
 
 {% block title %}Nouvel évènement{% endblock %}
 
@@ -13,20 +13,11 @@
                 {{ titleError }}
             </div>
         </div>
-        <div class="dropdown">
-            <label for="Title">Catégories :</label></br>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choisir
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-        </div></br>
+        {% include 'Blocks/_adminDropdownList.html.twig' %}
+        </br>
         <div class="form-group">
             <label for="start">Date:</label>
-            <input type="date" id="start" name="trip-start" class="form-control {% if descriptionError is not null %}is-invalid{% endif %}">
+            <input type="date" id="start" name="date_time" class="form-control {% if descriptionError is not null %}is-invalid{% endif %}">
             <div class="invalid-feedback">
             {{ dateError }}
             </div>

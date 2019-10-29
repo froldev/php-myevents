@@ -32,5 +32,4 @@ class EventsManager extends AbstractManager
         $request->bindValue(":id", $id, \PDO::PARAM_INT);
         $request->execute();
     }
-
- }
+}
