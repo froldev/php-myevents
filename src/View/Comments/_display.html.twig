@@ -1,0 +1,66 @@
+{% extends 'adminLayout.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <section>
+
+        <h1 class="text-center">Traitement de la demande n° {{ comments.id }} :</h1>
+        <!-- demande -->
+        <form class="bg-light border rounded m-3 p-3">
+            <div class="form-group row">
+                <!-- date -->
+                <label class="col-sm-4 col-form-label">Date : </label>
+                <div class="col-sm-8">
+                    <input type="text" readonly class="form-control-plaintext"
+                           aria-describedby="email" value="{{ comments.date_time }}" disabled>
+                </div>
+                <!-- nom et prénom -->
+                <label class="col-sm-4 col-form-label">Nom et prénom : </label>
+                <div class="col-sm-8">
+                    <input type="text" readonly class="form-control-plaintext"
+                           aria-describedby="email" value="{{ comments.lastname }} {{ comments.firstname }}" disabled>
+                </div>
+                <!-- email -->
+                <label class="col-sm-4 col-form-label">Email : </label>
+                <div class="col-sm-8">
+                    <input type="text" readonly class="form-control-plaintext"
+                           aria-describedby="email" value="{{ comments.email }}" disabled>
+                </div>
+                <!-- type -->
+                <label class="col-sm-4 col-form-label">Type : </label>
+                <div class="col-sm-8">
+                    <input type="text" readonly class="form-control-plaintext"
+                           aria-describedby="email" value="{{ comments.type }}" disabled>
+                </div>
+                <!-- objet -->
+                <label class="col-sm-4 col-form-label">Objet : </label>
+                <div class="col-sm-8">
+                    <input type="text" readonly class="form-control-plaintext"
+                           aria-describedby="email" value="{{ comments.object }}" disabled>
+                </div>
+                <!-- demande -->
+                <label class="col-sm-4 col-form-label">Demande : </label>
+                <div class="col-sm-8">
+                    <textarea readonly class="form-control" disabled>{{ comments.message }}</textarea>
+                </div>
+            </div>
+        </form>
+
+        <!-- réponse -->
+        <form class="bg-light border rounded m-3 p-3">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Réponse : </label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg m-4 mx-auto">
+                    <a class="text-white" href="/comments/answer/{{ comments.id }}">Répondre
+                    </a></button>
+            </div>
+        </form>
+
+    </section>
+
+{% endblock %}

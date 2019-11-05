@@ -19,6 +19,7 @@
     <!-- Header -->
 
     <div class="row wrapper">
+
         <div id="adminNav" class="col-xs-12 col-md-3">
             <!-- Aside -->
             {% include 'Blocks/_adminAside.html.twig' %}
@@ -28,12 +29,13 @@
             <!-- Content -->
             {% block content %}{% endblock %}
             <!-- Content -->
+            <!-- Footer -->
+            {% include 'Blocks/_adminFooter.html.twig' %}
+            <!-- Footer -->
         </div>
 
     </div>
-    <!-- Footer -->
-    {% include 'Blocks/_adminFooter.html.twig' %}
-    <!-- Footer -->
+
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>

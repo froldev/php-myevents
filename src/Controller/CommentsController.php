@@ -16,12 +16,12 @@ class CommentsController extends AbstractController
         ]);
     }
 
-    public function answer(int $id): string
+    public function display(int $id): string
     {
         $commentsManager = new CommentsManager();
         $comments = $commentsManager->selectOneById($id);
 
-        return $this->twig->render('Comments/_answer.html.twig', [
+        return $this->twig->render('Comments/_display.html.twig', [
             'comments' => $comments,
         ]);
     }
