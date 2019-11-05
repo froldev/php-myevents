@@ -12,8 +12,8 @@ class CategoriesController extends AbstractController
         $categories = $categoriesManager->selectAll();
 
         return $this->twig->render("Categories/_list.html.twig", [
-                "categories" => $categories,
-            ]);
+            "categories" => $categories,
+        ]);
     }
 
     public function add(): string
@@ -52,6 +52,7 @@ class CategoriesController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $category['category'] = $_POST['category'];
+            var_dump($_POST);
             if ($categoriesManager->updateCategories($category)) {
                 header("Location:/categories/list");
             }
