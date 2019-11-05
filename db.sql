@@ -58,12 +58,12 @@ CREATE TABLE event_category(
 
 CREATE TABLE answer(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    message TEXT NOT NULL,
-    date_time DATETIME NOT NULL,
-    email VARCHAR(255) NOT NULL
+    message TEXT NULL,
+    date_time DATETIME NULL,
+    email VARCHAR(255) NULL
 );
 
-CREATE TABLE message(
+CREATE TABLE comment(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE message(
     date_time DATETIME NOT NULL,
     object VARCHAR(255) NOT NULL,
     message TEXT NOT NULL,
-    answer_id INT NOT NULL,
+    answer_id INT NULL,
     FOREIGN KEY (answer_id)
         REFERENCES answer(id)
         ON DELETE CASCADE
@@ -102,3 +102,16 @@ Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus ve
 'https://youtu.be/cA46ZNjrzeY',
 ''
 )
+;
+
+INSERT INTO category (category)
+VALUES
+('Rock'),
+('Pop')
+;
+
+INSERT INTO comment (firstname, lastname, email, type, date_time, object,message)
+VALUES
+('Robert', 'Michu', 'robert.michu@gmail.com', 'Je ne sais pas', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
+('Macron', 'Emmanuel', 'president@repubmlique.fr', 'Je suis le président', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?')
+;
