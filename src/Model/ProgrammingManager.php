@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class OlympicManager extends AbstractManager
+class ProgrammingManager extends AbstractManager
 {
     const TABLE = "event";
 
