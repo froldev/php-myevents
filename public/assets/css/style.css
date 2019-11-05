@@ -4,7 +4,9 @@
     --white: #F5F5F5;
     --orange: #F7882F;
     --orangeDark : #FF533D;
+    --orangeLight : #FFC885;
 }
+
 /* général */
 * {
     padding:0;
@@ -14,7 +16,6 @@
 .container-fluid {
     padding-right:0px;
     padding-left:0px;
-    margin:0px;
     margin:0px;
 }
 
@@ -134,4 +135,50 @@
     width:100%;
     position:relative;
     bottom:0;
+}
+
+/* -------------------------------------------- */
+/* info */
+
+.card{
+    border-color: black;
+    border-radius: 25px;
+    border-width: 2px;
+    box-shadow: 2px 4px 10px grey;
+    background-color: #FFC885;
+    padding: 20px !important;
+    margin: 30px;
+    line-height: 2.5;
+}
+
+.button {
+    border-radius: 20px;
+    background: #2A231F;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 4px 10px grey;
+}
+
+.button a {
+    color: #FF533D;
+    text-decoration: none;
+}
+
+.address {
+    display: flex;
+    flex-direction: row;
+}
+
+.map {
+    margin: 20px 70px;
+}
+
+.map img {
+    box-shadow: 2px 4px 10px grey;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.title {
+    margin: 50px;
 }
