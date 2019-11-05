@@ -1,6 +1,15 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+    {% include 'Blocks/_carousel.html.twig' %}
+    <h1 class = 'programming-title'>Nos prochains Evènements</h1>
+
+    <form class="form-inline my-2 my-lg-0" method="post" action="/programming/search">
+        <input class="mr-sm-2" type="search" placeholder="search" aria-label="search" name="search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+    <div class="row">
     {% for event in events %}
         <div class="card mb-3 col-4" style="max-width: 540px;">
             <div class="row no-gutters">
@@ -19,4 +28,5 @@
             </div>
         </div>
     {% endfor %}
+    </div>
 {% endblock %}
