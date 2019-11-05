@@ -87,28 +87,23 @@
 
 /* -------------------------------------------- */
 /* admin */
+/* -------------------------------------------- */
 
-.wrapper{
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    min-height: 100%;
+
+/* -------------------------------------------------------- */
+/* media queries*/
+/* -------------------------------------------------------- */
+/* tablets */
+@media (min-width: 768px) {
+
 }
 
-#adminNav, #content{
-    align-self: stretch;
+/* desktops */
+@media (min-width: 992px) {
+
 }
 
-#content{
-    padding:4%;
-}
+/* large desktops */
+@media (min-width: 1200px) {
 
-#adminNav{
-    background-color:#6C757C !important;
-}
-
-#adminFooter{
-    width:100%;
-    position:relative;
-    bottom:0;
 }

@@ -25,10 +25,12 @@ class CategoriesController extends AbstractController
                 $categoryError = "Merci de saisir une nouvelle catégorie";
                 $isValid = false;
             }
+            // si tout est ok
             if ($isValid) {
                 $categoriesManager = new CategoriesManager();
+
                 if ($categoriesManager->insertCategories($_POST)) {
-                    header("Location:/categories/list");
+                        header("Location:/categories/list");
                 }
             }
         }
@@ -38,7 +40,7 @@ class CategoriesController extends AbstractController
         ]);
     }
 
-    public function delete(int $id)
+    public function delete(int $id): string
     {
         $categoriesManager = new CategoriesManager();
         $categoriesManager->deleteCategories($id);
