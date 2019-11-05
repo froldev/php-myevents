@@ -33,5 +33,4 @@ class OlympicController extends AbstractController
     {
         return $this->twig-> render('Olympic/info.html.twig');
     }
-
 }
