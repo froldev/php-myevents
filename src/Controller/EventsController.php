@@ -66,4 +66,18 @@ class EventsController extends AbstractController
         $eventsManager->deleteEvent($id);
         header("Location:/events/list");
     }
+
+    public function edit(int $id)
+    {
+        $eventsManager = new EventsManager();
+        $event = $eventsManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $event['title'] = $_POST['title'];
+            if ($eventsManager->updateEvents($event)) {
+                header("Location:/events/list");
+            }
+        }
+        return $this->twig->render('Events/_edit.html.twig', ['event' => $event]);
+    }
 }

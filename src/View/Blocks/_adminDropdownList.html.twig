@@ -3,10 +3,11 @@
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Choisir
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-    </div>
+    <ul class="dropdown">
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+{# ajout choix menu déroulant #}
+                <li><a class="dropdown-item" href="{{ category.category }}">{{ category.category }}</a></li>
+{# endblock #}
+        </div>
+    </ul>
 </div>
-
