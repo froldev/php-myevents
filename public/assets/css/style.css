@@ -13,8 +13,13 @@
     margin:0;
 }
 
+
+html, body {
+    height: 100%;
+
 .top-title {
     margin-top: 100px;
+
 }
 
 .container-fluid {
@@ -117,33 +122,9 @@
 }
 
 /* -------------------------------------------- */
-/* admin */
-/* -------------------------------------------- */
-
-
-/* -------------------------------------------------------- */
-/* media queries*/
-/* -------------------------------------------------------- */
-/* tablets */
-@media (min-width: 768px) {
-
-}
-
-/* desktops */
-@media (min-width: 992px) {
-
-}
-
-#adminFooter{
-    width:100%;
-    position:relative;
-    bottom:0;
-}
-
-/* -------------------------------------------- */
 /* info */
 
-.info-card{
+.card{
     border-color: black;
     border-radius: 25px;
     border-width: 2px;
@@ -184,4 +165,18 @@
 
 .title {
     margin: 50px;
+}
+
+
+/* -------------------------------------------------------- */
+/* media queries*/
+/* -------------------------------------------------------- */
+/* tablets */
+@media (min-width: 768px) {
+
+}
+
+/* desktops */
+@media (min-width: 992px) {
+
 }

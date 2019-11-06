@@ -9,7 +9,7 @@ class CategoriesController extends AbstractController
     public function list(): string
     {
         $categoriesManager = new CategoriesManager();
-        $categories = $categoriesManager->selectAll();
+        $categories = $categoriesManager->selectCategories();
 
         return $this->twig->render("Categories/_list.html.twig", [
             "categories" => $categories,
@@ -40,7 +40,7 @@ class CategoriesController extends AbstractController
         ]);
     }
 
-    public function delete(int $id): string
+    public function delete(int $id): void
     {
         $categoriesManager = new CategoriesManager();
         $categoriesManager->deleteCategories($id);

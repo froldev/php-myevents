@@ -1,0 +1,67 @@
+/* général */
+* {
+    padding:0;
+    margin:0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container-fluid {
+    padding-right:0px;
+    padding-left:0px;
+    margin:0px;
+}
+
+.row{
+    margin-left:0px !important;
+    margin-right:0px !important;
+}
+
+
+/* -------------------------------------------- */
+/* admin */
+/* -------------------------------------------- */
+#page-admin{
+    min-height: 100%;
+    position: relative;
+}
+
+#bloc-principal {
+    min-height:100vh-56px;
+    padding-bottom: 56px;
+}
+
+#adminFooter {
+    height: 56px;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#adminNav, #content{
+    padding-left:0px;
+    padding-right:0px;
+}
+
+#adminNav{
+    background-color: #6C757C;
+}
+
+#content section{
+    padding:3%;
+}
+
+/* -------------------------------------------------------- */
+/* media queries*/
+/* -------------------------------------------------------- */
+/* tablets */
+@media (min-width: 768px) {
+
+}
+
+/* desktops */
+@media (min-width: 992px) {
+
+}
