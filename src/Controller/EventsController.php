@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\CategoriesManager;
 use App\Model\EventsManager;
 
 class EventsController extends AbstractController
@@ -37,15 +38,61 @@ class EventsController extends AbstractController
                 $eventsManager = new EventsManager();
 
                 if ($eventsManager->insertEvent($_POST)) {
-                    header("Location:/event/list");
+                    header("Location:/events/list");
                 }
             }
         }
+
+        // pour sélectionner la liste déroulante des catégories
+
+        $categories = new CategoriesManager();
+        $listCategory = $categories->selectAll();
+
         return $this->twig->render("Events/add.html.twig", [
             "titleError" => $titleError,
             "dateTimeError" => $dateTimeError,
             "descriptionError" => $descriptionError,
             "priceError" => $priceError,
+            "imageError" => $imageError,
+            "categories"=> $listCategory
+        ]);
+    }
+
+    public function list(): string
+    {
+        $eventsManager = new EventsManager();
+        $events = $eventsManager->selectAll();
+
+        return $this->twig->render("Events/list.html.twig", [
+            "events" => $events,
+        ]);
+    }
+
+    public function delete(int $id): void
+    {
+        $eventsManager = new EventsManager();
+        $eventsManager->deleteEvent($id);
+        header("Location:/events/list");
+    }
+
+    public function edit(int $id)
+    {
+        $eventsManager = new EventsManager();
+        $event = $eventsManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $event['title'] = $_POST['title'];
+            if ($eventsManager->updateEvents($event)) {
+                header("Location:/events/list");
+            }
+        }
+        // pour sélectionner la liste déroulante des catégories
+        $categories = new CategoriesManager();
+        $listCategory = $categories->selectAll();
+
+        return $this->twig->render('Events/edit.html.twig', [
+            'event' => $event,
+            'categories' => $listCategory
         ]);
     }
 }
