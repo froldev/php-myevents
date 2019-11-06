@@ -13,6 +13,10 @@
     margin:0;
 }
 
+html, body {
+    height: 100%;
+}
+
 .container-fluid {
     padding-right:0px;
     padding-left:0px;
@@ -113,36 +117,6 @@
 }
 
 /* -------------------------------------------- */
-/* admin */
-/* -------------------------------------------- */
-#adminNav, #content{
-    padding-left:0px;
-    padding-right:0px;
-}
-
-#content section{
-    padding:3%;
-}
-/* -------------------------------------------------------- */
-/* media queries*/
-/* -------------------------------------------------------- */
-/* tablets */
-@media (min-width: 768px) {
-
-}
-
-/* desktops */
-@media (min-width: 992px) {
-
-}
-
-#adminFooter{
-    width:100%;
-    position:relative;
-    bottom:0;
-}
-
-/* -------------------------------------------- */
 /* info */
 
 .card{
@@ -186,4 +160,18 @@
 
 .title {
     margin: 50px;
+}
+
+
+/* -------------------------------------------------------- */
+/* media queries*/
+/* -------------------------------------------------------- */
+/* tablets */
+@media (min-width: 768px) {
+
+}
+
+/* desktops */
+@media (min-width: 992px) {
+
 }
