@@ -11,7 +11,7 @@ class CategoriesController extends AbstractController
         $categoriesManager = new CategoriesManager();
         $categories = $categoriesManager->selectAll();
 
-        return $this->twig->render("Categories/_list.html.twig", [
+        return $this->twig->render("Categories/list.html.twig", [
                 "categories" => $categories,
             ]);
     }
@@ -33,7 +33,7 @@ class CategoriesController extends AbstractController
             }
         }
 
-        return $this->twig->render("Categories/_add.html.twig", [
+        return $this->twig->render("Categories/add.html.twig", [
             "categoryError" => $categoryError,
         ]);
     }
@@ -57,6 +57,6 @@ class CategoriesController extends AbstractController
             }
         }
 
-        return $this->twig->render('Categories/_edit.html.twig', ['category' => $category]);
+        return $this->twig->render('Categories/edit.html.twig', ['category' => $category]);
     }
 }

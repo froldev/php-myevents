@@ -3,6 +3,8 @@
 {% block title %}Olympic Nantais || Liste des évènements{% endblock %}
 
 {% block content %}
+
+<section>
     {% for event in events %}
         <h1>Liste des évènements</h1>
         <div class="card mb-3 col-4" style="max-width: 540px;">
@@ -28,4 +30,6 @@
                     Supprimer</a></button>
         </div>
     {% endfor %}
+</section>
+
 {% endblock %}

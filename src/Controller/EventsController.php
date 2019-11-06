@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\CategoriesManager;
 use App\Model\EventsManager;
 
 class EventsController extends AbstractController
@@ -41,12 +42,19 @@ class EventsController extends AbstractController
                 }
             }
         }
-        return $this->twig->render("Events/_add.html.twig", [
+
+        // pour sélectionner la liste déroulante des catégories
+
+        $categories = new CategoriesManager();
+        $listCategory = $categories->selectAll();
+
+        return $this->twig->render("Events/add.html.twig", [
             "titleError" => $titleError,
             "dateTimeError" => $dateTimeError,
             "descriptionError" => $descriptionError,
             "priceError" => $priceError,
-            "imageError" => $imageError
+            "imageError" => $imageError,
+            "categories"=> $listCategory
         ]);
     }
 
@@ -55,7 +63,7 @@ class EventsController extends AbstractController
         $eventsManager = new EventsManager();
         $events = $eventsManager->selectAll();
 
-        return $this->twig->render("Events/_list.html.twig", [
+        return $this->twig->render("Events/list.html.twig", [
             "events" => $events,
         ]);
     }
@@ -78,6 +86,13 @@ class EventsController extends AbstractController
                 header("Location:/events/list");
             }
         }
-        return $this->twig->render('Events/_edit.html.twig', ['event' => $event]);
+        // pour sélectionner la liste déroulante des catégories
+        $categories = new CategoriesManager();
+        $listCategory = $categories->selectAll();
+
+        return $this->twig->render('Events/edit.html.twig', [
+            'event' => $event,
+            'categories' => $listCategory
+        ]);
     }
 }

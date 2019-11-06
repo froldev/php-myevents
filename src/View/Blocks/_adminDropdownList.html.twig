@@ -1,13 +1,10 @@
-<div class="dropdown">
-    <label for="Title">Catégories :</label></br>
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Choisir
-    </button>
-    <ul class="dropdown">
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-{# ajout choix menu déroulant #}
-                <li><a class="dropdown-item" href="{{ category.category }}">{{ category.category }}</a></li>
-{# endblock #}
-        </div>
-    </ul>
-</div>
+<section>
+    <div class="dropdown">
+        <label for="Title">Catégorie :</label></br>
+        <select name="categoryList" size="1">
+            {% for category in categories %}
+                <option>{{ category.category }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</section>

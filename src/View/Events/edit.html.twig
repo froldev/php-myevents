@@ -1,14 +1,14 @@
 {% extends "adminLayout.html.twig" %}
 
-{% block title %}Nouvel évènement{% endblock %}
-
+{% block title %}Modifier un évenement{% endblock %}
 
 {% block content %}
-    <h1>Ajouter un nouvel évènement</h1></br>
+<section>
+    <h1>Modifier un évènement</h1>
     <form method="POST">
         <div class="form-group">
             <label for="Title">Nom de l'artiste/du groupe/de l'évènement :</label>
-            <input type="text" class="form-control {% if titleError is not null %}is-invalid{% endif %}" id="Title" name="title" aria-describedby="emailHelp">
+            <input type="text" class="form-control {% if titleError is not null %}is-invalid{% endif %}" id="Title" name="title" aria-describedby="emailHelp" value="{{ event.title }}">
             <div class="invalid-feedback">
                 {{ titleError }}
             </div>
@@ -17,9 +17,9 @@
         </br>
         <div class="form-group">
             <label for="start">Date:</label>
-            <input type="date" id="start" name="date_time" class="form-control {% if descriptionError is not null %}is-invalid{% endif %}">
+            <input type="date" id="start" name="date_time" class="form-control {% if descriptionError is not null %}is-invalid{% endif %}" value="{{ event.date_name }}">
             <div class="invalid-feedback">
-            {{ dateError }}
+                {{ dateError }}
             </div>
         </div>
         <div class="form-group {% if descriptionError is not null %}is-invalid{% endif %}">
@@ -31,28 +31,28 @@
         </div>
         <div class="form-group">
             <label for="price">Prix :</label>
-            <input type="text" class="form-control {% if priceError is not null %}is-invalid{% endif %}" name="price" id="price">
+            <input type="text" class="form-control {% if priceError is not null %}is-invalid{% endif %}" name="price" id="price" value="{{ event.price }}">
             <div class="invalid-feedback">
                 {{ priceError }}
             </div>
         </div>
         <div class="form-group">
             <label for="image">Image :</label>
-            <input type="text" class="form-control {% if priceError is not null %}is-invalid{% endif %}" name="image" id="image">
+            <input type="text" class="form-control {% if priceError is not null %}is-invalid{% endif %}" name="image" id="image" value="{{ event.image }}">
             <div class="invalid-feedback">
                 {{ imageError }}
             </div>
         </div>
         <div class="form-group">
             <label for="video">Vidéo :</label>
-            <input type="text" class="form-control" name="video" id="video">
+            <input type="text" class="form-control" name="video" id="video" value="{{ event.video }}">
         </div>
         <div class="form-group">
             <label for="link">Lien :</label>
-            <input type="text" class="form-control" name="link" id="link">
+            <input type="text" class="form-control" name="link" id="link" value="{{ event.link }}">
         </div>
-        <button type="submit" class="btn btn-primary">Ajouter à la liste</button>
+        <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
     </form>
+</section>
 
 {% endblock %}
-

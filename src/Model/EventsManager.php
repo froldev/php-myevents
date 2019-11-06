@@ -52,5 +52,4 @@ class EventsManager extends AbstractManager
 
         return $request->execute();
     }
-
 }
