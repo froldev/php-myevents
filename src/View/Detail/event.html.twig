@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>{{ details.title }}</h1>
+        <p>{{ details.date_time }}</p>
+        <img src="{{ details.image }}" alt="">
+        <p>{{ details.description }}</p>
+        <p>{{ details.price }}</p>
+        <p>{{ details.link }}</p>
+        <p>{{ details.video }}</p>
+    </div>
+{% endblock %}

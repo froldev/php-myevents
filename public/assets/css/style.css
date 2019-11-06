@@ -4,17 +4,27 @@
     --white: #F5F5F5;
     --orange: #F7882F;
     --orangeDark : #FF533D;
+    --orangeLight : #FFC885;
 }
+
 /* général */
 * {
     padding:0;
     margin:0;
 }
 
+
+html, body {
+    height: 100%;
+
+.top-title {
+    margin-top: 100px;
+
+}
+
 .container-fluid {
     padding-right:0px;
     padding-left:0px;
-    margin:0px;
     margin:0px;
 }
 
@@ -65,7 +75,33 @@
 }
 
 /* -------------------------------------------- */
-/* card */
+/* programming title */
+.programming-title
+{
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* -------------------------------------------- */
+/* programming search input */
+.mr-sm-2
+{
+    width: 60%;
+    min-width: 100px;
+    text-align: center;
+    margin-left: 15%;
+    margin-bottom: 30px;
+}
+.btn-search
+{
+    margin-bottom: 30px;
+}
+
+/* -------------------------------------------- */
+/* programming card */
 .card-overflow
 {
     max-height: 150px;
@@ -78,7 +114,7 @@
 }
 
 /* -------------------------------------------- */
-/* carousel */
+/* programming carousel */
 .carousel-inner
 {
     margin-top: 90px;
@@ -86,26 +122,61 @@
 }
 
 /* -------------------------------------------- */
-/* admin */
+/* info */
 
-.wrapper{
+.card{
+    border-color: black;
+    border-radius: 25px;
+    border-width: 2px;
+    box-shadow: 2px 4px 10px grey;
+    background-color: #FFC885;
+    padding: 20px !important;
+    margin: 30px;
+    line-height: 2.5;
+}
+
+.button {
+    border-radius: 20px;
+    background: #2A231F;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 4px 10px grey;
+}
+
+.button a {
+    color: #FF533D;
+    text-decoration: none;
+}
+
+.address {
     display: flex;
     flex-direction: row;
-    height: 100%;
-    min-height: 100%;
 }
 
-#adminNav, #content{
-    align-self: stretch;
+.map {
+    margin: 20px 70px;
 }
-#content{
-    padding:4%;
+
+.map img {
+    box-shadow: 2px 4px 10px grey;
+    border-radius: 10px;
+    max-width: 100%;
 }
-#adminNav{
-    background-color:#6C757C !important;
+
+.title {
+    margin: 50px;
 }
-#adminFooter{
-    width:100%;
-    position:relative;
-    bottom:0;
+
+
+/* -------------------------------------------------------- */
+/* media queries*/
+/* -------------------------------------------------------- */
+/* tablets */
+@media (min-width: 768px) {
+
+}
+
+/* desktops */
+@media (min-width: 992px) {
+
 }

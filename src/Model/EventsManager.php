@@ -14,7 +14,7 @@ class EventsManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
-    public function insertEvent(array $event)
+    public function insertEvent(array $event): bool
     {
         $request = $this->pdo->prepare("INSERT INTO ".self::TABLE." (title, date_time, description, price, 
         image) VALUES 
