@@ -6,7 +6,7 @@
 
     <form class="form-inline my-2 my-lg-0" method="post" action="/programming/search">
         <input class="mr-sm-2" type="search" placeholder="search" aria-label="search" name="search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success btn-search" type="submit">Search</button>
     </form>
 
     <div class="row">
@@ -15,6 +15,7 @@
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="{{ event.image }}" class="card-img img-max-height" alt="...">
+                    <a href="../detail/event/{{ event.id }}"><button class="btn btn-secondary btn-lg mb-2">Détails</button></a>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
