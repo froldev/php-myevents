@@ -13,6 +13,10 @@
     margin:0;
 }
 
+.top-title {
+    margin-top: 100px;
+}
+
 .container-fluid {
     padding-right:0px;
     padding-left:0px;
@@ -140,7 +144,7 @@
 /* -------------------------------------------- */
 /* info */
 
-.card{
+.info-card{
     border-color: black;
     border-radius: 25px;
     border-width: 2px;
