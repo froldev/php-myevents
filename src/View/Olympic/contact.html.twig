@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Tu veux nous contacter ?{% endblock %}
+
+{% block content %}
+
+    <form class="container-input" id="contact">
+
+        <h2 class="title">FORMULAIRE DE CONTACT</h2>
+
+        <div>
+            <input type="text"  id="last_name" name="last_name" aria-label="Nom" placeholder="Nom" required>
+        </div>
+
+        <div>
+            <input type="text"  id="first_name" name="first_name" aria-label="Prénom" placeholder="Prénom" required>
+        </div>
+
+        <div>
+            <input type="text" id="mail" name="user_email" aria-label="Email" placeholder="Email" required>
+        </div>
+
+        <div>
+            <input type="text"  id="object" name="object" aria-label="Objet" placeholder="Objet" required>
+        </div>
+
+        <div>
+            <textarea id="msg" name="user_message" aria-label="Message" placeholder="Message" required></textarea>
+        </div>
+
+        <div>
+            <button type="submit" class="button mr-sm-2" onclick="alert('Message envoyé !');">Envoyer !</button>
+        </div>
+
+    </form>
+
+{% endblock %}
