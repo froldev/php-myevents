@@ -46,7 +46,7 @@ body {
 h1, h2 {
     color: #F5F5F5;
     font-family: 'Permanent Marker', cursive;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 h3 {
@@ -100,6 +100,7 @@ a {
 }
 
 /* navbar */
+
 .fixed-bottom
 {
     margin: auto;
@@ -224,7 +225,7 @@ a {
 .button {
     background: #FF533D;
     color: #F5F5F5;
-    width: 40%;
+    width: 20%;
 }
 
 input {
@@ -243,6 +244,11 @@ textarea {
     margin: 15px auto;
     padding: 10px;
     border-radius: 15px;
+}
+
+.form_input {
+    display: flex;
+    margin: 10px;
 }
 
 /* -------------------------------------------- */
