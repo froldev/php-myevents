@@ -26,8 +26,6 @@ class ProgrammingManager extends AbstractManager
         $query->bindValue(':title', $searchs, \PDO::PARAM_STR);
         $query->bindValue(':category', $searchs, \PDO::PARAM_STR);
         $query->execute();
-        var_dump($query);
-
 
         return $query->fetchAll();
     }
