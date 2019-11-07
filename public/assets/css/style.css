@@ -40,7 +40,7 @@ body {
 h1, h2 {
     color: #F5F5F5;
     font-family: 'Permanent Marker', cursive;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 h3 {
@@ -94,6 +94,7 @@ a {
 }
 
 /* navbar */
+
 .fixed-bottom
 {
     margin: auto;
@@ -238,12 +239,13 @@ a {
 .button {
     background: #FF533D;
     color: #F5F5F5;
+    width: 20%;
 }
 
 input {
     background-color: #FEE4C5;
     height: 40px;
-    width: 90%;
+    width: 70%;
     margin: 15px auto;
     padding: 10px;
     border-radius: 15px;
@@ -252,8 +254,13 @@ input {
 textarea {
     background-color: #FEE4C5;
     height: 200px;
-    width: 90%;
+    width: 70%;
     margin: 15px auto;
     padding: 10px;
     border-radius: 15px;
+}
+
+.form_input {
+    display: flex;
+    margin: 10px;
 }
