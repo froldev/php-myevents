@@ -26,8 +26,12 @@
                             <td>{{ comment.firstname }} {{ comment.lastname }}</td>
                             <td>{{ comment.date_time }}</td>
                             <td>{{ comment.object }}</td>
-                            <td><button type="button" class="btn btn-success"><a class="text-white" href="/comments/answer/{{ comment.id }}">Répondre</a></button></td>
-                            <td><button type="button" class="btn btn-dark"><a class="text-white" href="/comments/archive/{{ comment.id }}">Archiver</a></button></td>
+                            <td><button type="button" class="btn btn-success">
+                                    <a class="text-white" href="/comments/display/{{ comment.id }}">Répondre</a>
+                                </button></td>
+                            <td><button type="button" class="btn btn-dark">
+                                    <a class="text-white" href="/comments/archive/{{ comment.id }}">Archiver</a>
+                                </button></td>
                         </tr>
                     {% endfor %}
 

@@ -1,22 +1,16 @@
-{% extends 'layout.html.twig' %}
+{% extends "adminLayout.html.twig" %}
+
+{% block title %}Olympic Nantais || Liste des évènements{% endblock %}
 
 {% block content %}
-    {% include 'Blocks/_carousel.html.twig' %}
 
-    <h1 class = 'programming-title'>Nos prochains Evènements</h1>
-
-    <form class="form-inline my-2 my-lg-0" method="post" action="/programming/search">
-        <input class="mr-sm-2" type="search" placeholder="search" aria-label="search" name="search">
-        <button class="btn btn-outline-success btn-search" type="submit">Search</button>
-    </form>
-
-    <div class="row">
+<section>
     {% for event in events %}
+        <h1>Liste des évènements</h1>
         <div class="card mb-3 col-4" style="max-width: 540px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="{{ event.image }}" class="card-img img-max-height" alt="...">
-                    <a href="../detail/event/{{ event.id }}"><button class="btn btn-secondary btn-lg mb-2">Détails</button></a>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -28,7 +22,14 @@
                     </div>
                 </div>
             </div>
+            <button type="submit" class="btn btn-success"><a class="text-white" href="/events/edit/{{ event.id }}">
+                    Mettre à jour</a></button>
+            <button type="submit" class="btn btn-warning"><a class="text-white" href="/events/archive/{{ event.id }}">
+                    Archiver</a></button>
+            <button type="submit" class="btn btn-danger"><a class="text-white" href="/events/delete/{{ event.id }}">
+                    Supprimer</a></button>
         </div>
     {% endfor %}
-    </div>
+</section>
+
 {% endblock %}

@@ -33,4 +33,9 @@ class CategoriesManager extends AbstractManager
 
         return $request->execute();
     }
+
+    public function selectCategories(): array
+    {
+        return $this->pdo->query('SELECT * FROM ' . $this->table)->fetchAll();
+    }
 }
