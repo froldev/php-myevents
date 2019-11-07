@@ -16,6 +16,7 @@
 
 html, body {
     height: 100%;
+}
 
 .top-title {
     margin-top: 100px;
@@ -159,7 +160,7 @@ a {
 /* -------------------------------------------- */
 /* info */
 
-.card{
+.info-card{
     border-color: black;
     border-radius: 25px;
     border-width: 2px;
@@ -237,4 +238,55 @@ textarea {
     margin: 15px auto;
     padding: 10px;
     border-radius: 15px;
+}
+
+/* -------------------------------------------- */
+/* Event  */
+
+.event-card{
+    width: 80%;
+    display: flex;
+    border-color: black;
+    border-radius: 25px;
+    border-width: 2px;
+    box-shadow: 2px 4px 10px grey;
+    background-color: #FEE4C5;
+    padding: 20px !important;
+    margin: 30px;
+}
+
+.event-card p{
+    width:70%;
+    text-align: justify;
+    margin-left: 30px;
+}
+
+.event-card img{
+    max-height: 500px;
+    width: auto;
+}
+
+.programming-card{
+    min-width: 300px;
+    flex-direction: column;
+}
+
+.programming-section{
+    justify-content: space-around;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+            /* Mobile Version */
+
+@media screen and (max-width: 640px){
+    .bar-search{
+        margin-top: 90px;
+        flex-direction: column;
+    }
+
+    .btn-search{
+        margin: auto;
+    }
 }
