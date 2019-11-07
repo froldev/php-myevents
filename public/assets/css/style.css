@@ -16,6 +16,7 @@
 
 html, body {
     height: 100%;
+}
 
 .top-title {
     margin-top: 100px;
@@ -179,8 +180,8 @@ a {
 }
 
 .button a {
-    color: #FF533D;
     text-decoration: none;
+    box-shadow: 2px 4px 10px grey;
 }
 
 .address {
@@ -205,26 +206,31 @@ a {
 /* -------------------------------------------- */
 /* contact */
 
+.form_input{
+    display: flex;
+}
+
 .title {
     margin-top: 100px;
+    text-align: center;
 }
 
 .container-input {
     display: flex;
     flex-direction: column;
     margin: 10px;
-    justify-content: center;
 }
 
 .button {
     background: #FF533D;
     color: #F5F5F5;
+    width: 40%;
 }
 
 input {
     background-color: #FEE4C5;
     height: 40px;
-    width: 90%;
+    width: 70%;
     margin: 15px auto;
     padding: 10px;
     border-radius: 15px;
@@ -233,7 +239,7 @@ input {
 textarea {
     background-color: #FEE4C5;
     height: 200px;
-    width: 90%;
+    width: 70%;
     margin: 15px auto;
     padding: 10px;
     border-radius: 15px;
