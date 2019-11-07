@@ -4,7 +4,7 @@
     --white: #F5F5F5;
     --orange: #F7882F;
     --orangeDark : #FF533D;
-    --orangeLight : #FFC885;
+    --orangeLight : #FEE4C5;
 }
 
 /* général */
@@ -29,7 +29,36 @@
 }
 
 /* -------------------------------------------- */
+/* Body */
+
+body {
+    width:100%;
+    background: linear-gradient(135deg, var(--dark)55%, var(--orangeDark));
+    background-attachment: fixed;
+}
+
+h1, h2 {
+    color: #F5F5F5;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 50px;
+}
+
+h3 {
+    color: #F5F5F5;
+    font-family: 'McLaren', cursive;
+}
+
+p {
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+/* -------------------------------------------- */
 /* Footer */
+
+footer {
+    background: #0F1626;
+    color: #FEE4C5;
+}
 
 .details {
     text-align: center;
@@ -56,6 +85,12 @@
 
 .menu{
     padding: 10px;
+}
+
+a {
+    color: #FEE4C5;
+    text-decoration: none;
+    background-color: transparent;
 }
 
 /* navbar */
@@ -148,7 +183,7 @@
     border-radius: 25px;
     border-width: 2px;
     box-shadow: 2px 4px 10px grey;
-    background-color: #FFC885;
+    background-color: #FEE4C5;
     padding: 20px !important;
     margin: 30px;
     line-height: 2.5;
@@ -184,4 +219,41 @@
 
 .title {
     margin: 50px;
+}
+
+/* -------------------------------------------- */
+/* contact */
+
+.title {
+    margin-top: 100px;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: center;
+}
+
+.button {
+    background: #FF533D;
+    color: #F5F5F5;
+}
+
+input {
+    background-color: #FEE4C5;
+    height: 40px;
+    width: 90%;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+textarea {
+    background-color: #FEE4C5;
+    height: 200px;
+    width: 90%;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 15px;
 }
