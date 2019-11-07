@@ -9,11 +9,13 @@ class CategoriesController extends AbstractController
     public function list(): string
     {
         $categoriesManager = new CategoriesManager();
-        $categories = $categoriesManager->selectAll();
+        $categories = $categoriesManager->selectCategories();
 
-        return $this->twig->render("Categories/_list.html.twig", [
-            "categories" => $categories,
-        ]);
+
+        return $this->twig->render("Categories/list.html.twig", [
+                "categories" => $categories,
+            ]);
+
     }
 
     public function add(): string
@@ -35,12 +37,12 @@ class CategoriesController extends AbstractController
             }
         }
 
-        return $this->twig->render("Categories/_add.html.twig", [
+        return $this->twig->render("Categories/add.html.twig", [
             "categoryError" => $categoryError,
         ]);
     }
 
-    public function delete(int $id): string
+    public function delete(int $id): void
     {
         $categoriesManager = new CategoriesManager();
         $categoriesManager->deleteCategories($id);
@@ -60,8 +62,8 @@ class CategoriesController extends AbstractController
             }
         }
 
-        return $this->twig->render('Categories/_edit.html.twig', [
-            "category" => $category
-        ]);
+
+        return $this->twig->render('Categories/edit.html.twig', ['category' => $category]);
+
     }
 }
