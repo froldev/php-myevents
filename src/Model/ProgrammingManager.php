@@ -11,7 +11,7 @@ class ProgrammingManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
-    public function insertSearch(string $search)
+    public function insertSearch(string $search): array
     {
         $query = $this->pdo->prepare(
             "SELECT *

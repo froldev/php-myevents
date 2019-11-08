@@ -1,13 +1,12 @@
 <?php
 
-
 namespace App\Controller;
 
 use App\Model\AbstractManager;
 
 class OlympicController extends AbstractController
 {
-    public function info()
+    public function information()
     {
         return $this->twig->render('Olympic/info.html.twig');
     }
