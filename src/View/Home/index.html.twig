@@ -6,13 +6,13 @@
     <h1 class = 'programming-title'>Nos prochains Evènements</h1>
 
     <form class="form-inline my-2 my-lg-0" method="post" action="/programming/search">
-        <input class="mr-sm-2" type="search" placeholder="search" aria-label="search" name="search">
+        <input class="mr-sm-2 bar-search" type="search" placeholder="search" aria-label="search" name="search">
         <button class="btn btn-outline-success btn-search" type="submit">Search</button>
     </form>
 
-    <div class="row">
+    <div class="row programming-section">
     {% for event in events %}
-        <div class="card mb-3 col-4" style="max-width: 540px;">
+        <div class="card mb-3 col-4 programming-card" style="max-width: 540px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="{{ event.image }}" class="card-img img-max-height" alt="...">
