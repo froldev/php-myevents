@@ -9,28 +9,29 @@
         <h2 class="title">FORMULAIRE DE CONTACT</h2>
 
         <div class="form_input">
-            <input type="text"  id="last_name" name="last_name" aria-label="Nom" placeholder="Nom" required>
+            <input type="text"  id="last_name" name="last_name" aria-label="Nom" placeholder="Nom">
         </div>
 
         <div class="form_input">
-            <input type="text"  id="first_name" name="first_name" aria-label="Prénom" placeholder="Prénom" required>
+            <input type="text"  id="first_name" name="first_name" aria-label="Prénom" placeholder="Prénom">
         </div>
 
         <div class="form_input">
-            <input type="text" id="mail" name="user_email" aria-label="Email" placeholder="Email" required>
+            <input type="text" id="mail" name="user_email" aria-label="Email" placeholder="Email">
         </div>
 
         <div class="form_input">
-            <input type="text"  id="object" name="object" aria-label="Objet" placeholder="Objet" required>
+            <input type="text"  id="object" name="object" aria-label="Objet" placeholder="Objet">
         </div>
 
-        <div class="form_input">
-            <textarea id="msg" name="user_message" aria-label="Message" placeholder="Message" required></textarea>
+        <div class="form_input justify-content-center">
+            <textarea id="msg" name="user_message" aria-label="Message" placeholder="Message"></textarea>
         </div>
 
-        <div class="form_input">
-            <button type="submit" class="button mr-sm-2" onclick="alert('Message envoyé !');">Envoyer !</button>
+        <div class="form_input justify-content-center">
+            <button type="submit" class="button" onclick="alert('Message envoyé !');">Envoyer !</button>
         </div>
+
     </form>
 
 {% endblock %}
