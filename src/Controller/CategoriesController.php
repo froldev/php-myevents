@@ -9,9 +9,9 @@ class CategoriesController extends AbstractController
     public function list(): string
     {
         $categoriesManager = new CategoriesManager();
-        $categories = $categoriesManager->selectAll();
+        $categories = $categoriesManager->selectCategories();
 
-        return $this->twig->render("Categories/_list.html.twig", [
+        return $this->twig->render("Categories/list.html.twig", [
             "categories" => $categories,
         ]);
     }
@@ -25,20 +25,22 @@ class CategoriesController extends AbstractController
                 $categoryError = "Merci de saisir une nouvelle catégorie";
                 $isValid = false;
             }
+            // if it's ok
             if ($isValid) {
                 $categoriesManager = new CategoriesManager();
+
                 if ($categoriesManager->insertCategories($_POST)) {
                     header("Location:/categories/list");
                 }
             }
         }
 
-        return $this->twig->render("Categories/_add.html.twig", [
+        return $this->twig->render("Categories/add.html.twig", [
             "categoryError" => $categoryError,
         ]);
     }
 
-    public function delete(int $id)
+    public function delete(int $id): void
     {
         $categoriesManager = new CategoriesManager();
         $categoriesManager->deleteCategories($id);
@@ -52,13 +54,13 @@ class CategoriesController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $category['category'] = $_POST['category'];
+            var_dump($_POST);
             if ($categoriesManager->updateCategories($category)) {
                 header("Location:/categories/list");
             }
         }
 
-        return $this->twig->render('Categories/_edit.html.twig', [
-            "category" => $category
-        ]);
+
+        return $this->twig->render('Categories/edit.html.twig', ['category' => $category]);
     }
 }

@@ -25,7 +25,6 @@ class HomeController extends AbstractController
     {
         $programmingManager = new ProgrammingManager();
         $events = $programmingManager->selectAll();
-
         return $this->twig->render('Home/index.html.twig', ["events" => $events]);
     }
 }

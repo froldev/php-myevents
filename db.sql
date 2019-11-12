@@ -58,12 +58,12 @@ CREATE TABLE event_category(
 
 CREATE TABLE answer(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    message TEXT NOT NULL,
-    date_time DATETIME NOT NULL,
-    email VARCHAR(255) NOT NULL
+    message TEXT NULL,
+    date_time DATETIME NULL,
+    email VARCHAR(255) NULL
 );
 
-CREATE TABLE message(
+CREATE TABLE comment(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE message(
     date_time DATETIME NOT NULL,
     object VARCHAR(255) NOT NULL,
     message TEXT NOT NULL,
-    answer_id INT NOT NULL,
+    answer_id INT NULL,
     FOREIGN KEY (answer_id)
         REFERENCES answer(id)
         ON DELETE CASCADE
@@ -95,10 +95,23 @@ Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus ve
 'https://youtu.be/CfCxItPlidc',
 'https://labo-m.net/'
 ),
-('Sting', '2019-11-29', 30,
+('Angèle', '2019-11-29', 30,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://www.zenith-nantesmetropole.com/media/ic/resize/load.php?src=/images/stories/manifestations/Stars_80_and_friends.jpg&width=240&height=315&crop=1',
+'https://www.zenith-nantesmetropole.com/media/ic/resize/load.php?src=/images/stories/manifestations/angele.jpg&width=240&height=315&crop=1',
 'https://youtu.be/cA46ZNjrzeY',
 ''
 )
+;
+
+INSERT INTO category (category)
+VALUES
+('Rock'),
+('Pop')
+;
+
+INSERT INTO comment (firstname, lastname, email, type, date_time, object,message)
+VALUES
+('Robert', 'Michu', 'robert.michu@gmail.com', 'Je ne sais pas', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
+('Macron', 'Emmanuel', 'president@repubmlique.fr', 'Je suis le président', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?')
+;

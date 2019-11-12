@@ -1,0 +1,10 @@
+<section>
+    <div class="dropdown">
+        <label for="Title">Catégorie :</label></br>
+        <select name="categoryList" size="1">
+            {% for category in categories %}
+                <option>{{ category.category }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</section>

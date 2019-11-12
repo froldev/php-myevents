@@ -7,33 +7,38 @@
 
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/styleAdmin.css">
     {% block stylesheet %}{% endblock %}
     <link rel="icon" href="/assets/images/favicon.png">
 </head>
 
 <body>
-<div class="container-fluid">
-    <!-- Header -->
-    {% include 'Blocks/_adminHeader.html.twig' %}
-    <!-- Header -->
+<div id="page-admin" class="container-fluid">
+    <div id="bloc-principal">
+        <!-- Header -->
+        {% include 'Blocks/_adminHeader.html.twig' %}
+        <!-- Header -->
 
-    <div class="row wrapper">
-        <div id="adminNav" class="col-xs-12 col-md-3">
-            <!-- Aside -->
-            {% include 'Blocks/_adminAside.html.twig' %}
-            <!-- Aside -->
-        </div>
-        <div id="content" class="col-xs-12 col-md-9">
-            <!-- Content -->
-            {% block content %}{% endblock %}
-            <!-- Content -->
-        </div>
+        <div class="row wrapper">
 
+            <div id="adminNav" class="col-xs-12 col-md-3">
+                <!-- Aside -->
+                {% include 'Blocks/_adminAside.html.twig' %}
+                <!-- Aside -->
+            </div>
+            <div id="content" class="col-xs-12 col-md-9">
+                <!-- Content -->
+                {% block content %}{% endblock %}
+                <!-- Content -->
+            </div>
+
+        </div>
     </div>
+
     <!-- Footer -->
     {% include 'Blocks/_adminFooter.html.twig' %}
     <!-- Footer -->
+
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
