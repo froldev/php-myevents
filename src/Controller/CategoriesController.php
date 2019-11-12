@@ -12,8 +12,8 @@ class CategoriesController extends AbstractController
         $categories = $categoriesManager->selectCategories();
 
         return $this->twig->render("Categories/list.html.twig", [
-                "categories" => $categories,
-            ]);
+            "categories" => $categories,
+        ]);
     }
 
     public function add(): string
