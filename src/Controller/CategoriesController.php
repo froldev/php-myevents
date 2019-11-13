@@ -15,7 +15,6 @@ class CategoriesController extends AbstractController
         return $this->twig->render("Categories/list.html.twig", [
                 "categories" => $categories,
             ]);
-
     }
 
     public function add(): string
@@ -61,9 +60,6 @@ class CategoriesController extends AbstractController
                 header("Location:/categories/list");
             }
         }
-
-
         return $this->twig->render('Categories/edit.html.twig', ['category' => $category]);
-
     }
 }
