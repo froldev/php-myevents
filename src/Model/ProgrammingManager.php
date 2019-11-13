@@ -14,7 +14,7 @@ class ProgrammingManager extends AbstractManager
     public function insertSearch(string $search): array
     {
         $query = $this->pdo->prepare(
-            "SELECT *
+            "SELECT *, event.id
             FROM " . self::TABLE . " 
             LEFT JOIN event_category ON event_category.event_id = event.id
             LEFT JOIN category ON category.id = event_category.category_id

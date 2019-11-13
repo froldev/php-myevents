@@ -1,0 +1,33 @@
+{% extends 'adminLayout.html.twig' %}
+
+{% block title %}Olympic Nantais || Ajouter un nouveau Partenaire{% endblock %}
+
+{% block content %}
+
+    <section>
+        <h1>Ajouter une nouveau partenaire :</h1>
+        <form method="POST">
+            <div class="form-row mb-4">
+                <div class="col-12 mb-3">
+                    <input type="text" class="form-control {% if partnerError is not null %}is-invalid{% endif %}"
+                           id="partner" name="partner" placeholder="Nouveau partenaire" aria-describedby="inputNouveauPartenaire" required>
+                    <div class="invalid-feedback">
+                        {{ partnerError }}
+                    </div>
+                </div>
+                <div class="col-12 mb-3">
+                    <input type="text" class="form-control {% if linkPartnerError is not null %}is-invalid{% endif %}"
+                           id="linkPartner" name="linkPartner" placeholder="Url partenaire" aria-describedby="inputUrlNouveauPartenaire" required>
+                    <div class="invalid-feedback">
+                        {{ linkPartnerError }}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg mb-2">Confirmer</button>
+            </div>
+        </form>
+        <button type="submit" class="btn btn-dark mb-2 mx-auto">
+            <a class="text-white" href="/partners/list"> << Retour</a>
+        </button>
+    </section>
+
+{% endblock %}
