@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 use App\Model\ProgrammingManager;
+use App\Model\CategoriesManager;
 
 class HomeController extends AbstractController
 {
@@ -23,8 +24,14 @@ class HomeController extends AbstractController
      */
     public function index()
     {
+        $categories = new CategoriesManager();
+        $listCategory = $categories->selectAll();
+
         $programmingManager = new ProgrammingManager();
         $events = $programmingManager->selectAll();
-        return $this->twig->render('Home/index.html.twig', ["events" => $events]);
+        return $this->twig->render('Home/index.html.twig', [
+            "events" => $events,
+            "categories" => $listCategory
+        ]);
     }
 }

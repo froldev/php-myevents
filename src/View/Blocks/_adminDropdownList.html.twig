@@ -2,6 +2,7 @@
     <div class="dropdown">
         <label for="Title">Catégorie :</label></br>
         <select name="category" size="1">
+            <option selected> Category </option>
             {% for category in categories %}
                 <option value="{{ category.id }}">{{ category.category }}</option>
             {% endfor %}
