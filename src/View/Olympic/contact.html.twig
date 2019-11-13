@@ -4,28 +4,43 @@
 
 {% block content %}
 
-    <form class="container-input" id="contact">
+    <form class="container-input" id="contact" method="post" action="/comments/send">
 
         <h2 class="title">FORMULAIRE DE CONTACT</h2>
 
-        <div class="form_input">
+        <div class="row col-12 justify-content-center {% if lastNameError is not null %}is-invalid{% endif %}">
             <input type="text"  id="last_name" name="last_name" aria-label="Nom" placeholder="Nom">
+            <div class="invalid-feedback">
+                {{ lastNameError }}
+            </div>
         </div>
 
-        <div class="form_input">
+        <div class="row col-12 justify-content-center {% if firstNameError is not null %}is-invalid{% endif %}">
             <input type="text"  id="first_name" name="first_name" aria-label="Prénom" placeholder="Prénom">
+            <div class="invalid-feedback">
+                {{ firstNameError }}
+            </div>
         </div>
 
-        <div class="form_input">
+        <div class="row col-12 justify-content-center {% if userEmailError is not null %}is-invalid{% endif %}">
             <input type="text" id="mail" name="user_email" aria-label="Email" placeholder="Email">
+            <div class="invalid-feedback">
+                {{ userEmailError }}
+            </div>
         </div>
 
-        <div class="form_input">
-            <input type="text"  id="object" name="object" aria-label="Objet" placeholder="Objet">
+        <div class="row col-12 justify-content-center {% if subjectError is not null %}is-invalid{% endif %}">
+            <input type="text"  id="subject" name="subject" aria-label="Objet" placeholder="Objet">
+            <div class="invalid-feedback">
+                {{ subjectError }}
+            </div>
         </div>
 
-        <div class="form_input justify-content-center">
+        <div class="row col-12 justify-content-center {% if userMessageError is not null %}is-invalid{% endif %}">
             <textarea id="msg" name="user_message" aria-label="Message" placeholder="Message"></textarea>
+            <div class="invalid-feedback">
+                {{ userMessageError }}
+            </div>
         </div>
 
         <div class="form_input justify-content-center">
