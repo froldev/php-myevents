@@ -11,12 +11,11 @@ class ProgrammingController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $programmingManager = new ProgrammingManager();
             $events = $programmingManager->insertSearch($_POST['search']);
-
             return $this->twig->render('Home/index.html.twig', [
                 'events' => $events
             ]);
         }
 
-        return $this->twig->render("olympic/index.html.twig");
+        return $this->twig->render("Home/index.html.twig");
     }
 }

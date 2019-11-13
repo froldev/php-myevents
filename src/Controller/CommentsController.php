@@ -11,7 +11,7 @@ class CommentsController extends AbstractController
         $commentsManager = new CommentsManager();
         $comments = $commentsManager->selectAll();
 
-        return $this->twig->render('Comments/_list.html.twig', [
+        return $this->twig->render('Admin/Comments/list.html.twig', [
             'comments' => $comments,
         ]);
     }
@@ -21,7 +21,7 @@ class CommentsController extends AbstractController
         $commentsManager = new CommentsManager();
         $comments = $commentsManager->selectOneById($id);
 
-        return $this->twig->render('Comments/_display.html.twig', [
+        return $this->twig->render('Admin/Comments/display.html.twig', [
             'comments' => $comments,
         ]);
     }
