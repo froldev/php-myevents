@@ -10,4 +10,9 @@ class CommentsManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+    public function insertComments()
+    {
+        return 'a finaliser';
+    }
 }
