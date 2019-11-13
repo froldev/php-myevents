@@ -30,7 +30,7 @@ class EventsManager extends AbstractManager
 
         $request->execute();
 
-        $request = $this->pdo->prepare("INSERT INTO event_category  (category_id, event_id)
+        $request = $this->pdo->prepare("INSERT INTO event_category (category_id, event_id)
         VALUES (:category, (SELECT last_insert_id(MAX(id)) FROM event))
         ");
 
