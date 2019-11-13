@@ -11,6 +11,12 @@ class CategoriesManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
+    public function selectCategories(): array
+    {
+        $request = $this->pdo->query("SELECT * FROM " .self::TABLE. " ORDER BY category");
+        return $request->fetchAll();
+    }
+
     public function insertCategories(array $category): bool
     {
         $request = $this->pdo->prepare("INSERT INTO " .self::TABLE. " (category) VALUES (:category)");
@@ -27,15 +33,9 @@ class CategoriesManager extends AbstractManager
 
     public function updateCategories(array $category):bool
     {
-        $request = $this->pdo->prepare("UPDATE $this->table SET `category`=:category WHERE id=:id");
+        $request = $this->pdo->prepare("UPDATE $this->table SET category=:category WHERE id=:id");
         $request->bindValue(":id", $category['id'], \PDO::PARAM_INT);
         $request->bindValue(":category", ucfirst(strtolower($category["category"])), \PDO::PARAM_STR);
-
         return $request->execute();
-    }
-
-    public function selectCategories(): array
-    {
-        return $this->pdo->query('SELECT * FROM ' . $this->table)->fetchAll();
     }
 }

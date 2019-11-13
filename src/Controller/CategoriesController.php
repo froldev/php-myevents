@@ -9,10 +9,9 @@ class CategoriesController extends AbstractController
     public function list(): string
     {
         $categoriesManager = new CategoriesManager();
-        $categories = $categoriesManager->selectAll();
+        $categories = $categoriesManager->selectCategories();
 
         return $this->twig->render("Admin/Categories/list.html.twig", [
-
                 "categories" => $categories,
             ]);
     }
@@ -54,12 +53,12 @@ class CategoriesController extends AbstractController
         $category = $categoriesManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $category['category'] = $_POST['category'];
-            var_dump($_POST);
-            if ($categoriesManager->updateCategories($category)) {
+            if ($categoriesManager->updateCategories($_POST)) {
                 header("Location:/categories/list");
             }
         }
-        return $this->twig->render('Admin/Categories/edit.html.twig', ['category' => $category]);
+        return $this->twig->render('Admin/Categories/edit.html.twig', [
+            'category' => $category,
+        ]);
     }
 }
