@@ -34,7 +34,6 @@ class CategoriesController extends AbstractController
                 }
             }
         }
-
         return $this->twig->render("Admin/Categories/add.html.twig", [
             "categoryError" => $categoryError,
         ]);
@@ -53,7 +52,8 @@ class CategoriesController extends AbstractController
         $category = $categoriesManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if ($categoriesManager->updateCategories($_POST)) {
+            $category['category'] = $_POST['category'];
+            if ($categoriesManager->updateCategories($category)) {
                 header("Location:/categories/list");
             }
         }
