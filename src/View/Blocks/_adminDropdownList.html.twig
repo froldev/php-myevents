@@ -3,7 +3,7 @@
         <label for="Title">Catégorie :</label></br>
         <select multiple name="categoryList" size="5">
             {% for category in categories %}
-                <option>{{ category.category }}</option>
+                <option value="{{ category.id }}">{{ category.category }}</option>
             {% endfor %}
         </select>
     </div>
