@@ -55,7 +55,6 @@ class CategoriesController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $category['category'] = $_POST['category'];
-            var_dump($_POST);
             if ($categoriesManager->updateCategories($category)) {
                 header("Location:/categories/list");
             }
