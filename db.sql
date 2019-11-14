@@ -68,7 +68,6 @@ CREATE TABLE comment(
     firstname VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    type VARCHAR(255) NOT NULL,
     date_time DATETIME NOT NULL,
     object VARCHAR(255) NOT NULL,
     message TEXT NOT NULL,
@@ -110,8 +109,8 @@ VALUES
 ('Pop')
 ;
 
-INSERT INTO comment (firstname, lastname, email, type, date_time, object,message)
+INSERT INTO comment (firstname, lastname, email, date_time, object,message)
 VALUES
-('Robert', 'Michu', 'robert.michu@gmail.com', 'Je ne sais pas', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
-('Macron', 'Emmanuel', 'president@repubmlique.fr', 'Je suis le président', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?')
+('Robert', 'Michu', 'robert.michu@gmail.com', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
+('Macron', 'Emmanuel', 'president@repubmlique.fr', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?')
 ;
