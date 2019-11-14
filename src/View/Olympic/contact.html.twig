@@ -9,14 +9,14 @@
         <h2 class="title">FORMULAIRE DE CONTACT</h2>
 
         <div class="row col-12 justify-content-center {% if lastNameError is not null %}is-invalid{% endif %}">
-            <input type="text"  id="last_name" name="last_name" aria-label="Nom" placeholder="Nom">
+            <input type="text"  id="last_name" name="lastname" aria-label="Nom" placeholder="Nom">
             <div class="invalid-feedback">
                 {{ lastNameError }}
             </div>
         </div>
 
         <div class="row col-12 justify-content-center {% if firstNameError is not null %}is-invalid{% endif %}">
-            <input type="text"  id="first_name" name="first_name" aria-label="Prénom" placeholder="Prénom">
+            <input type="text"  id="first_name" name="firstname" aria-label="Prénom" placeholder="Prénom">
             <div class="invalid-feedback">
                 {{ firstNameError }}
             </div>
@@ -29,10 +29,10 @@
             </div>
         </div>
 
-        <div class="row col-12 justify-content-center {% if subjectError is not null %}is-invalid{% endif %}">
-            <input type="text"  id="subject" name="subject" aria-label="Objet" placeholder="Objet">
+        <div class="row col-12 justify-content-center {% if objectError is not null %}is-invalid{% endif %}">
+            <input type="text"  id="object" name="object" aria-label="Objet" placeholder="Objet">
             <div class="invalid-feedback">
-                {{ subjectError }}
+                {{ objectError }}
             </div>
         </div>
 

@@ -34,15 +34,15 @@ class CommentsController extends AbstractController
             $userLastNameError = null;
             $userFirstNameError = null;
             $userEmailError = null;
-            $userSubjectError = null;
+            $userObjectError = null;
             $userMessageError = null;
 
-            if (!isset($_POST['last_name']) || empty($_POST['last_name'])) {
+            if (!isset($_POST['lastname']) || empty($_POST['lastname'])) {
                 $userLastNameError = "Merci de renseigner votre nom";
                 $isValid = false;
             }
 
-            if (!isset($_POST['first_name']) || empty($_POST['first_name'])) {
+            if (!isset($_POST['firstname']) || empty($_POST['firstname'])) {
                 $userFirstNameError = "Merci de renseigner votre prénom";
                 $isValid = false;
             }
@@ -55,8 +55,8 @@ class CommentsController extends AbstractController
                 $isValid = false;
             }
 
-            if (!isset($_POST['subject']) || empty($_POST['subject'])) {
-                $userSubjectError = "Merci de préciser l'objet de votre message";
+            if (!isset($_POST['object']) || empty($_POST['object'])) {
+                $userObjectError = "Merci de préciser l'objet de votre message";
                 $isValid = false;
             }
 
@@ -67,7 +67,7 @@ class CommentsController extends AbstractController
 
             if ($isValid) {
                 $commentsManager = new CommentsManager();
-                if ($commentsManager->insertComments()) {
+                if ($commentsManager->insertComments($_POST)) {
                     header("Location:/olympic/contact");
                 }
             }
@@ -76,7 +76,7 @@ class CommentsController extends AbstractController
                 "lastNameError" => $userLastNameError,
                 "firstNameError" => $userFirstNameError,
                 "userEmailError" => $userEmailError,
-                "subjectError" => $userSubjectError,
+                "objectError" => $userObjectError,
                 "userMessageError" => $userMessageError,
             ]);
         }
