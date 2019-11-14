@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\RoleManager;
 use App\Model\UsersManager;
 
 class UsersController extends AbstractController
@@ -9,20 +10,28 @@ class UsersController extends AbstractController
     public function list()
     {
         $usersManager = new UsersManager();
-        $users = $usersManager->selectUsers();
+        $users = $usersManager->selectUsersAndRole();
+
+        $rolesManager = new RoleManager();
+        $roles = $rolesManager->selectAll();
 
         return $this->twig->render("Admin/Users/list.html.twig", [
             "users" => $users,
+            "roles" => $roles,
         ]);
     }
 
     public function add(): string
     {
+        $rolesManager = new RoleManager();
+        $roles = $rolesManager->selectAll();
+
         $lastNameError = null;
         $firstNameError = null;
         $emailError = null;
         $passwordError = null;
         $roleError = null;
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $isValid = true;
             // nom
@@ -63,18 +72,48 @@ class UsersController extends AbstractController
         }
 
         return $this->twig->render("Admin/Users/add.html.twig", [
-            "lastNameError" => $lastNameError,
-            "firstNameError" => $firstNameError,
-            "emailError" => $emailError,
-            "passwordError" => $passwordError,
-            "roleError" => $roleError,
+            "lastNameError"     => $lastNameError,
+            "firstNameError"    => $firstNameError,
+            "emailError"        => $emailError,
+            "passwordError"     => $passwordError,
+            "roleError"         => $roleError,
+            "roles"             => $roles,
         ]);
     }
 
     public function delete(int $id): void
     {
         $usersManager = new UsersManager();
-        $usersManager->deleteUsers($id);
+        $users = $usersManager->selectOneById($id);
+
+        if (strtolower($users['role_id']) != 0) {
+            $usersManager->deleteUsers($id);
+        }
         header("Location:/users/list");
+    }
+
+    public function edit(int $id): string
+    {
+        $usersManager = new UsersManager();
+        $user = $usersManager->selectOneById($id);
+
+        $rolesManager = new RoleManager();
+        $roles = $rolesManager->selectAll();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $user['id'] = $id;
+            $user['lastname'] = $_POST['lastname'];
+            $user['firstname'] = $_POST['firstname'];
+            $user['email'] = $_POST['email'];
+            $user['password'] = $_POST['password'];
+            $user['role'] = $_POST['role'];
+            if ($usersManager->updateUser($user)) {
+                header("Location:/users/list");
+            }
+        }
+        return $this->twig->render('Admin/Users/edit.html.twig', [
+            'user'  => $user,
+            'roles' => $roles,
+        ]);
     }
 }

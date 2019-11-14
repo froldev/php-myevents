@@ -2,18 +2,32 @@ DROP DATABASE IF EXISTS olympic_db;
 CREATE DATABASE olympic_db;
 USE olympic_db;
 
+CREATE TABLE role(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    role VARCHAR(255) NOT NULL
+);
+
+INSERT INTO role (role)
+VALUES
+('SuperAdmin'),
+('Admin'),
+('User')
+;
+
 CREATE TABLE users(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(80) NOT NULL,
     lastname VARCHAR(80) NOT NULL,
     firstname VARCHAR(80) NOT NULL,
-    role VARCHAR(80) NOT NULL
+    role_id VARCHAR(80) NOT NULL
 );
 
-INSERT INTO users (email, password, lastname, firstname, role)
+INSERT INTO users (email, password, lastname, firstname, role_id)
 VALUES
-('admin@admin.fr', 'admin', 'Mr', 'Admin', 'Superadmin')
+('admin@admin.fr', 'admin', 'Super', 'Admin', 1),
+('robert@mail.fr', 'robert', 'Michu', 'Robert', 2),
+('user@mail.fr', 'user', 'Hue', 'Brigitte', 3)
 ;
 
 CREATE TABLE event(

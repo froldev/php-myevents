@@ -1,17 +1,18 @@
 {% extends 'adminLayout.html.twig' %}
 
-{% block title %}Olympic Nantais || Ajouter un nouvel utilisateur{% endblock %}
+{% block title %}Olympic Nantais || Mise à jour d'un utilisateur{% endblock %}
 
 {% block content %}
 
     <section>
-        <h1>Ajouter un nouvel utilisateur :</h1>
+        <h1>Modifier un utilisateur :</h1>
         <form method="POST">
             <div class="form-row mb-4">
                 <!-- lastname -->
                 <div class="col-12 mb-3">
                     <input type="text" class="form-control {% if lastNameError is not null %}is-invalid{% endif %}"
-                           id="lastname" name="lastname" placeholder="Nom" aria-describedby="champsNom" required>
+                           id="lastname" name="lastname" placeholder="Nom" aria-describedby="champsNom"
+                    value="{{ user.lastname }}" required >
                     <div class="invalid-feedback">
                         {{ lastNameError }}
                     </div>
@@ -19,7 +20,8 @@
                 <!-- firstname -->
                 <div class="col-12 mb-3">
                     <input type="text" class="form-control {% if firstNameError is not null %}is-invalid{% endif %}"
-                           id="firstname" name="firstname" placeholder="Prénom" aria-describedby="champsPrénom" required>
+                           id="firstname" name="firstname" placeholder="Prénom" aria-describedby="champsPrénom"
+                           value="{{ user.firstname }}" required >
                     <div class="invalid-feedback">
                         {{ firstNameError }}
                     </div>
@@ -27,7 +29,8 @@
                 <!-- email -->
                 <div class="col-12 mb-3">
                     <input type="email" class="form-control {% if emailError is not null %}is-invalid{% endif %}"
-                           id="email" name="email" placeholder="Mail" aria-describedby="champsMail" required>
+                           id="email" name="email" placeholder="Mail" aria-describedby="champsMail"
+                           value="{{ user.email }}" required >
                     <div class="invalid-feedback">
                         {{ emailError }}
                     </div>
@@ -35,7 +38,8 @@
                 <!-- password -->
                 <div class="col-12 mb-3">
                     <input type="password" class="form-control {% if passwordError is not null %}is-invalid{% endif %}"
-                           id="password" name="password" placeholder="Mot de passe" aria-describedby="champsMotDePasse" required>
+                           id="password" name="password" placeholder="Mot de passe" aria-describedby="champsMotDePasse"
+                           value="{{ user.password }}" required >
                     <div class="invalid-feedback">
                         {{ passwordError }}
                     </div>
@@ -45,14 +49,14 @@
                     <select id="role" name="role" class="form-control {% if roleError is not null %}is-invalid{% endif %}" required>
                         <option value="">-- Sélectionnez un role pour l'utilisateur --</option>
                         {% for role in roles %}
-                        <option value="{{ role.id }}">{{ role.role }}</option>
+                        <option value="{{ role.id }}" {{ user.role_id == role.id ? "selected" }}>{{ role.role }}</option>
                         {% endfor %}
                     </select>
                     <div class="invalid-feedback">
                         {{ roleError }}
                     </div>
                 </div>
-                <button type="submit" class="btn btn-warning btn-lg mb-2">Ajouter</button>
+                <button type="submit" class="btn btn-warning btn-lg mb-2">Modifier</button>
             </div>
         </form>
         <button type="submit" class="btn btn-dark mb-2 mx-auto">
