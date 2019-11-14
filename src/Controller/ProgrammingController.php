@@ -12,13 +12,17 @@ class ProgrammingController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $programmingManager = new ProgrammingManager();
             $events = $programmingManager->insertSearch($_POST);
+            $carousel = $programmingManager->carouselView();
+            var_dump($events);
+
 
             $categories = new CategoriesManager();
             $listCategory = $categories->selectAll();
 
             return $this->twig->render('Home/index.html.twig', [
                 'events' => $events,
-                'categories' => $listCategory
+                'categories' => $listCategory,
+                'carousels' => $carousel
             ]);
         }
 
