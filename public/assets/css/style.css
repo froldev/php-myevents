@@ -19,8 +19,7 @@ html, body {
 }
 
 .top-title {
-    margin-top: 100px;
-
+    margin-top: 140px;
 }
 
 .container-fluid {
@@ -172,7 +171,7 @@ a {
     border-width: 2px;
     box-shadow: 2px 4px 10px grey;
     background-color: var(--orangeLight);
-    padding: 20px !important;
+    padding: 30px !important;
     margin: 30px;
     line-height: 2.5;
 }
@@ -182,6 +181,7 @@ a {
     background: #2A231F;
     padding: 10px;
     text-align: center;
+    margin: auto;
     box-shadow: 2px 4px 10px grey;
 }
 
@@ -192,7 +192,7 @@ a {
 
 .address {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .map {
@@ -209,6 +209,10 @@ a {
     margin: 50px;
 }
 
+.top {
+    margin-top: 30px;
+}
+
 /* -------------------------------------------- */
 /* contact */
 
@@ -217,7 +221,7 @@ a {
 }
 
 .title {
-    margin-top: 100px;
+    margin: 20px;
     text-align: center;
 }
 
@@ -262,9 +266,6 @@ textarea {
     text-align: center;
 }
 
-.col-12 {
-    margin-top: 15px;
-}
 
 /* -------------------------------------------- */
 /* Event  */
