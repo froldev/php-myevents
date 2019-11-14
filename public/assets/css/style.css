@@ -99,6 +99,11 @@ a {
     background-color: transparent;
 }
 
+.admin_login{
+    padding: 10px;
+    text-align: center;
+}
+
 /* navbar */
 
 .fixed-bottom

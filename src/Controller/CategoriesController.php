@@ -11,8 +11,7 @@ class CategoriesController extends AbstractController
         $categoriesManager = new CategoriesManager();
         $categories = $categoriesManager->selectCategories();
 
-
-        return $this->twig->render("Categories/list.html.twig", [
+        return $this->twig->render("Admin/Categories/list.html.twig", [
                 "categories" => $categories,
             ]);
     }
@@ -26,17 +25,16 @@ class CategoriesController extends AbstractController
                 $categoryError = "Merci de saisir une nouvelle catégorie";
                 $isValid = false;
             }
-            // si tout est ok
+            // if it's ok
             if ($isValid) {
                 $categoriesManager = new CategoriesManager();
 
                 if ($categoriesManager->insertCategories($_POST)) {
-                        header("Location:/categories/list");
+                    header("Location:/categories/list");
                 }
             }
         }
-
-        return $this->twig->render("Categories/add.html.twig", [
+        return $this->twig->render("Admin/Categories/add.html.twig", [
             "categoryError" => $categoryError,
         ]);
     }
@@ -55,13 +53,12 @@ class CategoriesController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $category['category'] = $_POST['category'];
-            var_dump($_POST);
             if ($categoriesManager->updateCategories($category)) {
                 header("Location:/categories/list");
             }
         }
-
-
-        return $this->twig->render('Categories/edit.html.twig', ['category' => $category]);
+        return $this->twig->render('Admin/Categories/edit.html.twig', [
+            'category' => $category,
+        ]);
     }
 }

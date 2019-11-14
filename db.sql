@@ -78,6 +78,12 @@ CREATE TABLE comment(
         ON UPDATE NO ACTION
 );
 
+CREATE TABLE partner(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    link VARCHAR(255) NULL
+);
+
 INSERT INTO event (title, date_time, price, description, image, video, link)
 VALUES
 ('Kassav', '2019-10-18', 25,
@@ -103,14 +109,20 @@ Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus ve
 )
 ;
 
+INSERT INTO comment (firstname, lastname, email, date_time, object,message)
+VALUES
+('Robert', 'Michu', 'robert.michu@gmail.com', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
+('Macron', 'Emmanuel', 'president@repubmlique.fr', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?')
+;
+
 INSERT INTO category (category)
 VALUES
 ('Rock'),
 ('Pop')
 ;
 
-INSERT INTO comment (firstname, lastname, email, date_time, object,message)
+INSERT INTO partner (name, link)
 VALUES
-('Robert', 'Michu', 'robert.michu@gmail.com', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
-('Macron', 'Emmanuel', 'president@repubmlique.fr', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?')
+('Les Pays De La Loire', 'http://www.paysdelaloire.fr/'),
+('Stereolux', 'https://www.stereolux.org/')
 ;
