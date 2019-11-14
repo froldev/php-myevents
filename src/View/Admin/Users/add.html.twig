@@ -1,0 +1,63 @@
+{% extends 'adminLayout.html.twig' %}
+
+{% block title %}Olympic Nantais || Ajouter un nouvel utilisateur{% endblock %}
+
+{% block content %}
+
+    <section>
+        <h1>Ajouter un nouvel utilisateur :</h1>
+        <form method="POST">
+            <div class="form-row mb-4">
+                <!-- lastname -->
+                <div class="col-12 mb-3">
+                    <input type="text" class="form-control {% if lastNameError is not null %}is-invalid{% endif %}"
+                           id="lastname" name="lastname" placeholder="Nom" aria-describedby="champsNom" required>
+                    <div class="invalid-feedback">
+                        {{ lastNameError }}
+                    </div>
+                </div>
+                <!-- firstname -->
+                <div class="col-12 mb-3">
+                    <input type="text" class="form-control {% if firstNameError is not null %}is-invalid{% endif %}"
+                           id="firstname" name="firstname" placeholder="Prénom" aria-describedby="champsPrénom" required>
+                    <div class="invalid-feedback">
+                        {{ firstNameError }}
+                    </div>
+                </div>
+                <!-- email -->
+                <div class="col-12 mb-3">
+                    <input type="email" class="form-control {% if emailError is not null %}is-invalid{% endif %}"
+                           id="email" name="email" placeholder="Mail" aria-describedby="champsMail" required>
+                    <div class="invalid-feedback">
+                        {{ emailError }}
+                    </div>
+                </div>
+                <!-- password -->
+                <div class="col-12 mb-3">
+                    <input type="password" class="form-control {% if passwordError is not null %}is-invalid{% endif %}"
+                           id="password" name="password" placeholder="Mot de passe" aria-describedby="champsMotDePasse" required>
+                    <div class="invalid-feedback">
+                        {{ passwordError }}
+                    </div>
+                </div>
+                <!-- role -->
+                <div class="col-12 mb-3">
+                    <select id="role" name="role" class="form-control {% if roleError is not null %}is-invalid{% endif %}" required>
+                        <option value="">-- Sélectionnez un role pour l'utilisateur --</option>
+                        <option value="Superadmin">Superadmin</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">Client</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        {{ roleError }}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg mb-2">Ajouter</button>
+            </div>
+        </form>
+        <button type="submit" class="btn btn-dark mb-2 mx-auto">
+            <a class="text-white" href="/users/list"> << Retour</a>
+        </button>
+    </section>
+
+{% endblock %}
