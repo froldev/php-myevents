@@ -81,8 +81,8 @@ class EventsController extends AbstractController
         $event = $eventsManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $event['title'] = $_POST['title'];
-            if ($eventsManager->updateEvents($event)) {
+            $event = $_POST;
+            if ($eventsManager->updateEvents($event, $id)) {
                 header("Location:/events/list");
             }
         }
@@ -94,5 +94,7 @@ class EventsController extends AbstractController
             'event' => $event,
             'categories' => $listCategory
         ]);
+
+
     }
 }
