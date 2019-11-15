@@ -28,12 +28,14 @@ class EventsManager extends AbstractManager
         $request->bindValue(":video", $event["video"], \PDO::PARAM_STR);
         $request->bindValue(":link", $event["link"], \PDO::PARAM_STR);
 
-        $request->execute();
+        if ($request->execute()) {
+            $lastId = $this->pdo->lastInsertId();
 
-        $request = $this->pdo->prepare("INSERT INTO event_category (category_id, event_id)
-        VALUES (:category, (SELECT last_insert_id(MAX(id)) FROM event))");
+            $request = $this->pdo->prepare("INSERT INTO event_category  (category_id, event_id)
+            VALUES (:category, " . $lastId . ")");
 
-        $request->bindValue(":category", $event["category"], \PDO::PARAM_STR);
+            $request->bindValue(":category", $event["category"], \PDO::PARAM_STR);
+        }
 
         return $request->execute();
     }
