@@ -11,22 +11,27 @@ class UsersController extends AbstractController
     {
         $usersManager = new UsersManager();
         $users = $usersManager->selectUsersAndRole();
+
         $rolesManager = new RoleManager();
         $roles = $rolesManager->selectAll();
+
         return $this->twig->render("Admin/Users/list.html.twig", [
             "users" => $users,
             "roles" => $roles,
         ]);
     }
+
     public function add(): string
     {
         $rolesManager = new RoleManager();
         $roles = $rolesManager->selectAll();
+
         $lastNameError = null;
         $firstNameError = null;
         $emailError = null;
         $passwordError = null;
         $roleError = null;
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $isValid = true;
             // nom
@@ -74,21 +79,26 @@ class UsersController extends AbstractController
             "roles"             => $roles,
         ]);
     }
+
     public function delete(int $id): void
     {
         $usersManager = new UsersManager();
         $users = $usersManager->selectOneById($id);
+
         if (strtolower($users['role_id']) != 0) {
             $usersManager->deleteUsers($id);
         }
         header("Location:/users/list");
     }
+
     public function edit(int $id): string
     {
         $usersManager = new UsersManager();
         $user = $usersManager->selectOneById($id);
+
         $rolesManager = new RoleManager();
         $roles = $rolesManager->selectAll();
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user['id'] = $id;
             $user['lastname'] = $_POST['lastname'];

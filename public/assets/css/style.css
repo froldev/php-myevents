@@ -44,13 +44,13 @@ body {
 }
 
 h1, h2 {
-    color: #F5F5F5;
+    color: var(--white);
     font-family: 'Permanent Marker', cursive;
     font-size: 40px;
 }
 
 h3 {
-    color: #F5F5F5;
+    color: var(--white);
     font-family: 'McLaren', cursive;
 }
 
@@ -62,8 +62,8 @@ p {
 /* Footer */
 
 footer {
-    background: #0F1626;
-    color: #FEE4C5;
+    background: var(--dark);
+    color: white;
 }
 
 .details {
@@ -94,9 +94,14 @@ footer {
 }
 
 a {
-    color: #FEE4C5;
+    color: white;
     text-decoration: none;
     background-color: transparent;
+}
+
+.admin_login{
+    padding: 10px;
+    text-align: center;
 }
 
 /* navbar */
@@ -166,7 +171,7 @@ a {
     border-radius: 25px;
     border-width: 2px;
     box-shadow: 2px 4px 10px grey;
-    background-color: #FEE4C5;
+    background-color: var(--orangeLight);
     padding: 20px !important;
     margin: 30px;
     line-height: 2.5;
@@ -223,13 +228,13 @@ a {
 }
 
 .button {
-    background: #FF533D;
-    color: #F5F5F5;
+    background: var(--orangeDark);
+    color: var(--white);
     width: 20%;
 }
 
 input {
-    background-color: #FEE4C5;
+    background-color: var(--orangeLight);
     height: 40px;
     width: 70%;
     margin: 15px auto;
@@ -238,7 +243,7 @@ input {
 }
 
 textarea {
-    background-color: #FEE4C5;
+    background-color: var(--orangeLight);
     height: 200px;
     width: 70%;
     margin: 15px auto;
@@ -248,7 +253,17 @@ textarea {
 
 .form_input {
     display: flex;
-    margin: 10px;
+    margin: 40px;
+}
+
+.invalid-feedback{
+    color: white;
+    display:block;
+    text-align: center;
+}
+
+.col-12 {
+    margin-top: 15px;
 }
 
 /* -------------------------------------------- */
@@ -261,7 +276,7 @@ textarea {
     border-radius: 25px;
     border-width: 2px;
     box-shadow: 2px 4px 10px grey;
-    background-color: #FEE4C5;
+    background-color: var(--orangeLight);
     padding: 20px !important;
     margin: 30px;
 }
