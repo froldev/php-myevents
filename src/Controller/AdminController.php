@@ -23,4 +23,9 @@ class AdminController extends AbstractController
     {
         return $this->twig->render('Admin/index.html.twig');
     }
+
+    public function login()
+    {
+        return $this->twig->render('Admin/login.html.twig');
+    }
 }

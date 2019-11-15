@@ -47,19 +47,20 @@ class EventsManager extends AbstractManager
         $request->execute();
     }
 
-    public function updateEvents(array $event) : bool
+    public function updateEvents(array $event, int $id) : bool
     {
-        $request = $this->pdo->prepare("UPDATE $this->table SET `title` = :title, `date_time` = :date_time, 
-            `description` = :description, `price` = :price, `image` = :image, `video` = :video, `link` = :link 
+        $request = $this->pdo->prepare("UPDATE " . self::TABLE . "
+            SET title = :title, date_time = :date_time, 
+            price = :price, description = :description, image = :image, video = :video, link = :link 
             WHERE id=:id");
-        $request->bindValue('id', $event['id'], \PDO::PARAM_INT);
-        $request->bindValue('title', $event['title'], \PDO::PARAM_STR);
-        $request->bindValue('date_time', $event['date_time'], \PDO::PARAM_STR);
-        $request->bindValue('description', $event['description'], \PDO::PARAM_STR);
-        $request->bindValue('price', $event['price'], \PDO::PARAM_STR);
-        $request->bindValue('image', $event['image'], \PDO::PARAM_STR);
-        $request->bindValue('video', $event['video'], \PDO::PARAM_STR);
-        $request->bindValue('link', $event['link'], \PDO::PARAM_STR);
+        $request->bindValue(':id', $id, \PDO::PARAM_INT);
+        $request->bindValue(':title', $event['title'], \PDO::PARAM_STR);
+        $request->bindValue(':date_time', $event['date_time'], \PDO::PARAM_STR);
+        $request->bindValue(':description', $event['description'], \PDO::PARAM_STR);
+        $request->bindValue(':price', $event['price'], \PDO::PARAM_INT);
+        $request->bindValue(':image', $event['image'], \PDO::PARAM_STR);
+        $request->bindValue(':video', $event['video'], \PDO::PARAM_STR);
+        $request->bindValue(':link', $event['link'], \PDO::PARAM_STR);
 
         return $request->execute();
     }
