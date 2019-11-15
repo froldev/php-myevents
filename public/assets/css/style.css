@@ -98,11 +98,6 @@ a {
     background-color: transparent;
 }
 
-.admin_login{
-    padding: 10px;
-    text-align: center;
-}
-
 /* navbar */
 
 .fixed-bottom
@@ -174,6 +169,7 @@ a {
     padding: 30px !important;
     margin: 30px;
     line-height: 2.5;
+    font-size: 18px;
 }
 
 .button {
@@ -211,6 +207,10 @@ a {
 
 .top {
     margin-top: 30px;
+}
+
+.orange {
+    color: var(--orangeDark );
 }
 
 /* -------------------------------------------- */
@@ -302,6 +302,24 @@ textarea {
     justify-content: space-around;
 }
 
+/* -------------------------------------------- */
+/* History  */
+
+.history-card{
+    border-color: black;
+    border-radius: 25px;
+    border-width: 2px;
+    box-shadow: 2px 4px 10px grey;
+    background-color: var(--orangeLight);
+    padding: 30px !important;
+    margin: 30px;
+    line-height: 2.5;
+    font-size: 18px;
+}
+
+.img-concert {
+    margin-top: 40px;
+}
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 /* -------------------------------------------- */
