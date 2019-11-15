@@ -9,7 +9,7 @@ class CommentsController extends AbstractController
     public function list(): string
     {
         $commentsManager = new CommentsManager();
-        $comments = $commentsManager->selectAll();
+        $comments = $commentsManager->selectAnswerIsNull();
 
         return $this->twig->render('Admin/Comments/list.html.twig', [
             'comments' => $comments,

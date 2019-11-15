@@ -34,7 +34,7 @@ class PartnersManager extends AbstractManager
 
     public function updatePartners(array $partner): bool
     {
-        $request = $this->pdo->prepare("UPDATE ".self::TABLE." SET name=:partner, link=:linkPartner WHERE id=:id");
+        $request = $this->pdo->prepare("UPDATE " .self::TABLE. " SET name=:partner, link=:linkPartner WHERE id=:id");
         $request->bindValue(":id", $partner["id"], \PDO::PARAM_INT);
         $request->bindValue(":partner", ucwords(strtolower($partner["partner"])), \PDO::PARAM_STR);
         $request->bindValue(":linkPartner", strtolower($partner["linkPartner"]), \PDO::PARAM_STR);

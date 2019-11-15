@@ -53,7 +53,7 @@ html, body {
     padding:3%;
 }
 
-button{
+#adminEvent button{
     width: 80%;
     margin: auto;
 }
