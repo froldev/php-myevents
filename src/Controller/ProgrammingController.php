@@ -13,7 +13,6 @@ class ProgrammingController extends AbstractController
             $programmingManager = new ProgrammingManager();
             $events = $programmingManager->insertSearch($_POST);
             $carousel = $programmingManager->carouselView();
-            var_dump($events);
 
 
             $categories = new CategoriesManager();
