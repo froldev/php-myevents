@@ -64,12 +64,6 @@ CREATE TABLE category(
     category VARCHAR(255) NOT NULL
 );
 
-INSERT INTO category (category)
-VALUES
-('Rock'),
-('Pop')
-;
-
 CREATE TABLE event_category(
     event_id INT NOT NULL,
     category_id INT NOT NULL,
@@ -106,9 +100,9 @@ CREATE TABLE comment(
 
 INSERT INTO comment (firstname, lastname, email, date_time, object, message)
 VALUES
-('Robert', 'Michu', 'robert.michu@gmail.com', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
-('Macron', 'Emmanuel', 'president@republique.fr', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?'),
-('Lux', 'Guy', 'schalala@intervilles.fr', '2019-10-30', 'Question sur le schimilili', 'Bonjour, pouvez me dire quand reviendra le schimililili ?')
+('Michu', 'Robert', 'robert.michu@gmail.com', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
+('Emmanuel', 'Macron', 'president@republique.fr', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?'),
+('Guy', 'Lux', 'schalala@intervilles.fr', '2019-10-30', 'Question sur le schimilili', 'Bonjour, pouvez me dire quand reviendra le schimililili ?')
 ;
 
 CREATE TABLE partner(
@@ -161,12 +155,6 @@ Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus ve
 'https://youtu.be/cA46ZNjrzeY',
 ''
 )
-;
-
-INSERT INTO comment (firstname, lastname, email, date_time, object,message)
-VALUES
-('Robert', 'Michu', 'robert.michu@gmail.com', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
-('Macron', 'Emmanuel', 'president@repubmlique.fr', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?')
 ;
 
 INSERT INTO category (category)
