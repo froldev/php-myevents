@@ -8,10 +8,10 @@
 
         <h1>Gestion des messages : </h1>
         <!-- sélection des demandes en cours ou archivés -->
-        <form method="POST" class="form-row" action="/comments/list">
+        <form method="POST" class="form-row">
             <div class="form-group col-4">
                 <select class="form-control" id="choiceComments" name="choiceComments">
-                    <option value="traitement" selected>A traiter</option>
+                    <option value="traitement">A traiter</option>
                     <option value="archiver">Archiver</option>
                 </select>
             </div>
@@ -35,7 +35,7 @@
                 <tbody>
                     {% for comment in comments %}
                         <tr>
-                            <td>{{ comment.firstname }} {{ comment.lastname }}</td>
+                            <td>{{ comment.lastname }} {{ comment.firstname }}</td>
                             <td>{{ comment.date_time }}</td>
                             <td>{{ comment.object }}</td>
                             <td><button type="button" class="btn btn-success">
