@@ -11,6 +11,10 @@ class CommentsController extends AbstractController
         $commentsManager = new CommentsManager();
         $comments = $commentsManager->selectAnswerIsNull();
 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            var_dump($_POST);
+        }
+
         return $this->twig->render('Admin/Comments/list.html.twig', [
             'comments' => $comments,
         ]);
