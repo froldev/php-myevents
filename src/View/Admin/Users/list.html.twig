@@ -1,0 +1,50 @@
+{% extends 'adminLayout.html.twig' %}
+
+{% block title %}Olympic Nantais || Liste des Utilisateurs{% endblock %}
+
+{% block content %}
+
+    <section id="partnerAdd">
+
+        <h1>Ajouter un nouvel utilisateur :</h1>
+        <div class="row">
+            <button type="submit" class="btn btn-primary btn-lg mb-2 mx-auto">
+                <a class="text-white" href="/users/add">Ajouter</a>
+            </button>
+        </div>
+
+    </section>
+
+    <section id="partnerList">
+
+        <h1>Liste des Utilisateurs :</h1>
+        <div class="row">
+            <table class="table col-12">
+                <thead class="table-striped">
+                <tr class="bg-warning">
+                    <th scope="col">Nom Prénom</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Modifier</th>
+                    <th scope="col">Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{user.lastname}} {{user.firstname}}</td>
+                        <td>{{ user.role }}</td>
+                        <td><button type="button" class="btn btn-success">
+                                <a class="text-white" href="/users/edit/{{ user.id }}">Mise à jour</a>
+                            </button></td>
+                        <td><button type="button" class="btn btn-danger">
+                                <a class="text-white" href="/users/delete/{{ user.id }}">Supprimer</a>
+                            </button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+{% endblock %}
