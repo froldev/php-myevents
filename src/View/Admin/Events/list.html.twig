@@ -38,8 +38,7 @@
             <button type="submit" class="btn btn-warning"><a class="text-white" href="/events/archive/{{ event.id }}">
                     Archiver</a></button>
             <button type="submit" class="btn btn-danger"
-                    name="suppression" src="icons/page_delete.png" alt="Supprimer la recette" value="<?php echo
-                    $donnees['numRecette']; ?>" onclick="if(window.confirm ('Voulez-vous vraiment supprimer cet ' +
+                    name="suppression" src="icons/page_delete.png" alt="Supprimer l'évènement"  onclick="if(window.confirm ('Voulez-vous vraiment supprimer cet ' +
                     'évènement ?')){return true;}else{return false;}"><a class="text-white"
                     href="/events/delete/{{ event.id }}">Supprimer</a></button>
         </div>

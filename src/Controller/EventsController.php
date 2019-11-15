@@ -94,7 +94,5 @@ class EventsController extends AbstractController
             'event' => $event,
             'categories' => $listCategory
         ]);
-
-
     }
 }
