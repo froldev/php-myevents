@@ -1,65 +1,44 @@
 <footer>
 
-<!--Menu-->
+    <!--Menu-->
 
     <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-3 text-center menu">
-                <a href="olympic/programming" title="Tu veux du bon son ?">Du bon son</a>
+        <div class="row justify-content-around">
+            <div class="col-4 d-flex flex-column menu">
+                <a href="olympic/programming" title="Tu veux du bon son ?" class="menu">Du bon son</a>
+                <a href="olympic/info" title="Tu veux tout savoir ?" class="menu">Tout savoir</a>
+                <a href="olympic/history" title="Tu veux connaître notre histoire ?" class="menu">Notre histoire</a>
+                <a href="olympic/contact" title="Tu veux nous contacter ?" class="menu">Nous contacter</a>
             </div>
-            <div class="col-3 text-center menu">
-                <a href="olympic/info" title="Tu veux tout savoir ?">Tout savoir</a>
+            <div class="col-4 d-flex flex-column menu">
+                <p>2 bis Quai François Mitterand
+                    <br>44200 NANTES</p>
+                <a href="mailto:contact@olympic-nantais.com">contact@olympic-nantais.com</a>
+                <br>
+                <a href="tel:+332.40.++.++.++">02.40.++.++.++ </a>
+                <br>
+                <a href="../../admin/login" title="Espace administrateur" class="admin">Espace administrateur</a>
             </div>
-            <div class="col-3 text-center menu">
-                <a href="../../admin/login" title="Espace administrateur">Espace administrateur</a>
+            <div class="col-2 d-flex flex-column menu">
+                <a href="https://twitter.com/Olympic-Nantais"  target="_blank" title="Nous suivre sur Twitter" class="menu">
+                    <img src="https://image.flaticon.com/icons/svg/145/145812.svg" alt="twitter" class="reseaux"></a>
+                <a href="https://www.facebook.com/Olympic-Nantais" target="_blank" title="Notre page Facebook" class="menu">
+                    <img src="https://image.flaticon.com/icons/svg/145/145802.svg" alt="facebook" class="reseaux"></a>
+                <a href="https://www.instagram.com/Olympic-Nantais" target="_blank" title="Les plus belles photos et vidéos" class="menu">
+                    <img src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram" class="reseaux"></a>
+            </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3 text-center menu">
-                <a href="olympic/history" title="Tu veux connaître notre histoire ?">Notre histoire</a>
-            </div>
-            <div class="col-3 text-center menu">
-                <a href="olympic/contact" title="Tu veux nous contacter ?">Nous contacter</a>
-            </div>
-        </div>
-        <br>
-    </div>
-
-    <br>
-
-    <!--Details-->
-
-        <div class="details">
-            <h5>Nos coordonnées</h5>
-            <p>2 bis Quai François Mitterand
-                <br>44200 NANTES</p>
-            <a href="mailto:contact@olympic-nantais.com">contact@olympic-nantais.com</a>
-            <br>
-            <a href="tel:+332.40.++.++.++">02.40.++.++.++ </a>
-        </div>
-
-        <br>
 
     <!--Social medias-->
 
-    <div class="container" >
-        <div class="row" >
-            <div class="col-4 text-center">
-                <a href="https://twitter.com/Olympic-Nantais"  target="_blank" title="Nous suivre sur Twitter">
-                        <img src="https://image.flaticon.com/icons/svg/145/145812.svg" alt="twitter" class="reseaux"></a>
-            </div>
-            <div class="col-4 text-center">
-                <a href="https://www.facebook.com/Olympic-Nantais" target="_blank" title="Notre page Facebook">
-                        <img src="https://image.flaticon.com/icons/svg/145/145802.svg" alt="facebook" class="reseaux"></a>
-            </div>
-            <div class="col-4 text-center">
-                <a href="https://www.instagram.com/Olympic-Nantais" target="_blank" title="Les plus belles photos et vidéos">
-                        <img src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram" class="reseaux"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+
             </div>
         </div>
     </div>
-
-    <br>
 
     <!--Partners-->
 
@@ -68,11 +47,11 @@
             {% for partner in partners %}
             <div class="col-4 text-center">
                 <a href="{{ partner.link }}" target="_blank" title="Partenaire">
-                    <h4>{{ partner.name }}</h4>
+                    <h5>{{ partner.name }}</h5>
                 </a>
             </div>
             {% endfor %}
         </div>
     </div>
-
+    </div>
 </footer>
