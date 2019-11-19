@@ -11,7 +11,7 @@
                 <a href="olympic/info" title="Tu veux tout savoir ?">Tout savoir</a>
             </div>
             <div class="col-3 text-center menu">
-                <a href="Admin/login" title="Espace administrateur">Espace administrateur</a>
+                <a href="../../admin/login" title="Espace administrateur">Espace administrateur</a>
             </div>
         </div>
         <div class="row">
@@ -65,18 +65,13 @@
 
     <div class="container">
         <div class="row">
+            {% for partner in partners %}
             <div class="col-4 text-center">
-                <a href="#" target="_blank" title="Partenaire 1">
-                    <img src="https://via.placeholder.com/140x50" alt="Partenaire 1" class="partners"></a>
+                <a href="{{ partner.link }}" target="_blank" title="Partenaire">
+                    <h4>{{ partner.name }}</h4>
+                </a>
             </div>
-            <div class="col-4 text-center">
-                <a href="#" target="_blank" title="Partenaire 2">
-                    <img src="https://via.placeholder.com/140x50" alt="Partenaire 2" class="partners"></a>
-            </div>
-            <div class="col-4 text-center">
-                <a href="#" target="_blank" title="Partenaire 3">
-                    <img src="https://via.placeholder.com/140x50" alt="Partenaire 3" class="partners"></a>
-            </div>
+            {% endfor %}
         </div>
     </div>
 

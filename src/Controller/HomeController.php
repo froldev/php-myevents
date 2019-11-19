@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Model\PartnersManager;
 use App\Model\ProgrammingManager;
 use App\Model\CategoriesManager;
 
@@ -40,6 +41,7 @@ class HomeController extends AbstractController
             "categories" => $listCategory,
             "carousels" => $carousel,
             "session" => $_SESSION
+            'partners' => $this->getPartners()
         ]);
     }
 }

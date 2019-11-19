@@ -20,6 +20,7 @@ html, body {
 
 .top-title {
     margin-top: 140px;
+    text-align: center;
 }
 
 .container-fluid {
@@ -232,6 +233,7 @@ a {
 }
 
 .button {
+
     background: var(--orangeDark);
     color: var(--white);
     width: 20%;
@@ -265,7 +267,6 @@ textarea {
     display:block;
     text-align: center;
 }
-
 
 /* -------------------------------------------- */
 /* Event  */
