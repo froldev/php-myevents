@@ -31,10 +31,15 @@ class HomeController extends AbstractController
         $events = $programmingManager->selectAll();
         $carousel = $programmingManager->carouselView();
 
+        if (isset($_POST['lastname'])) {
+            $_SESSION['lastname'] = $_POST['lastname'];
+        }
+
         return $this->twig->render('Home/index.html.twig', [
             "events" => $events,
             "categories" => $listCategory,
-            "carousels" => $carousel
+            "carousels" => $carousel,
+            "session" => $_SESSION
         ]);
     }
 }

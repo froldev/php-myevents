@@ -26,6 +26,15 @@ class AdminController extends AbstractController
 
     public function login()
     {
-        return $this->twig->render('Admin/login.html.twig');
+
+
+            return $this->twig->render('Admin/login.html.twig');
+
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        header("/");
     }
 }

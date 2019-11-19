@@ -63,8 +63,13 @@ class EventsController extends AbstractController
         $eventsManager = new EventsManager();
         $events = $eventsManager->selectAll();
 
+        if (isset($_POST['lastname'])) {
+            $_SESSION['lastname'] = $_POST['lastname'];
+        }
+
         return $this->twig->render("Admin/Events/list.html.twig", [
             "events" => $events,
+            "session" => $_SESSION
         ]);
     }
 
