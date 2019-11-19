@@ -8,7 +8,9 @@
 
         <h1>Ajouter une catégorie :</h1>
         <div class="row">
-            <button type="submit" class="btn btn-primary mb-2  mx-auto"><a class="text-white" href="/categories/add">Ajouter une catégorie</a></button>
+            <button type="submit" class="btn btn-primary btn-lg mb-2 mx-auto">
+                <a class="text-white" href="/categories/add">Ajouter</a>
+            </button>
         </div>
 
     </section>
@@ -27,10 +29,15 @@
                 </thead>
                 <tbody>
                 {% for category in categories %}
-                    {% include "Blocks/_adminTableCategories.html.twig" with {
-                        "id" : category.id,
-                        "cat" : category.category,
-                    } %}
+                    <tr>
+                        <td>{{category.category}}</td>
+                        <td><button type="button" class="btn btn-success">
+                                <a class="text-white" href="/categories/edit/{{ category.id }}">Mise à jour</a>
+                            </button></td>
+                        <td><button type="button" class="btn btn-danger">
+                                <a class="text-white" href="/categories/delete/{{ category.id }}">Supprimer</a>
+                            </button></td>
+                    </tr>
                 {% endfor %}
                 </tbody>
             </table>

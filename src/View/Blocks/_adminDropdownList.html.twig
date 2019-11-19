@@ -1,9 +1,11 @@
 <section>
-    <div class="dropdown">
+    <label for="Title">Catégorie :</label></br>
+    <div class="custom-select dropdown">
         <label for="Title">Catégorie :</label></br>
-        <select name="categoryList" size="1">
+        <select multiple name="category" size="5">
+            <option value="" selected> Category </option>
             {% for category in categories %}
-                <option>{{ category.category }}</option>
+                <option value="{{ category.id }}">{{ category.category }}</option>
             {% endfor %}
         </select>
     </div>

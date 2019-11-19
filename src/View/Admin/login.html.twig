@@ -1,0 +1,18 @@
+{% extends "adminLayout.html.twig" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <h2>Veuillez entrer votre identifiant et votre mot de passe :</h2>
+    <form role="form" action="" method="POST">
+        <div class="col-6 form-group">
+            <label>Identifiant :</label>
+            <input type="text" id="identifiant" name="identifiant" class="form-control">
+        </div>
+        <div class="col-6 form-group">
+            <label>Mot de passe :</label>
+            <input type="password" id="password" name="password" class="form-control">
+        </div>
+        <button type="submit" class="col-4 btn btn-primary"><a class="text-white" href="/Events/list">Connexion</a></button>
+    </form>
+{% endblock %}

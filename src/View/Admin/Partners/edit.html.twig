@@ -1,0 +1,35 @@
+{% extends 'adminLayout.html.twig' %}
+
+{% block content %}
+
+    <section>
+
+        <h1>Partenaire à modifier :</h1>
+        <form method="POST">
+            <div class="form-row mb-4">
+                <div class="col-12 mb-3">
+                    <input type="text" class="form-control {% if partnerError is not null %}is-invalid{% endif %}"
+                           id="partner" name="partner" placeholder="Nouveau partenaire"
+                           aria-describedby="inputNouveauPartenaire" value="{{partner.name}}" required>
+                    <div class="invalid-feedback">
+                        {{ partnerError }}
+                    </div>
+                </div>
+                <div class="col-12 mb-3">
+                    <input type="text" class="form-control {% if linkPartnerError is not null %}is-invalid{% endif %}"
+                           id="linkPartner" name="linkPartner" placeholder="Url partenaire"
+                           aria-describedby="inputUrlNouveauPartenaire" value="{{partner.link}}" required>
+                    <div class="invalid-feedback">
+                        {{ linkPartnerError }}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg mb-2">Modifier</button>
+            </div>
+        </form>
+        <button type="submit" class="btn btn-dark mb-2">
+            <a class="text-white" href="/partners/list"> << Retour</a>
+        </button>
+
+    </section>
+
+{% endblock %}

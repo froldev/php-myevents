@@ -48,7 +48,7 @@ class EventsController extends AbstractController
         $categories = new CategoriesManager();
         $listCategory = $categories->selectAll();
 
-        return $this->twig->render("Events/add.html.twig", [
+        return $this->twig->render("Admin/Events/add.html.twig", [
             "titleError" => $titleError,
             "dateTimeError" => $dateTimeError,
             "descriptionError" => $descriptionError,
@@ -63,7 +63,7 @@ class EventsController extends AbstractController
         $eventsManager = new EventsManager();
         $events = $eventsManager->selectAll();
 
-        return $this->twig->render("Events/list.html.twig", [
+        return $this->twig->render("Admin/Events/list.html.twig", [
             "events" => $events,
         ]);
     }
@@ -81,8 +81,8 @@ class EventsController extends AbstractController
         $event = $eventsManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $event['title'] = $_POST['title'];
-            if ($eventsManager->updateEvents($event)) {
+            $event = $_POST;
+            if ($eventsManager->updateEvents($event, $id)) {
                 header("Location:/events/list");
             }
         }
@@ -90,7 +90,7 @@ class EventsController extends AbstractController
         $categories = new CategoriesManager();
         $listCategory = $categories->selectAll();
 
-        return $this->twig->render('Events/edit.html.twig', [
+        return $this->twig->render('Admin/Events/edit.html.twig', [
             'event' => $event,
             'categories' => $listCategory
         ]);
