@@ -1,12 +1,12 @@
 <section>
-    <label for="Title">Catégorie :</label></br>
-    <div class="custom-select dropdown">
-        <label for="Title">Catégorie :</label></br>
-        <select multiple name="category" size="5">
-            <option value="" selected> Category </option>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Catégories :
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
             {% for category in categories %}
-                <option value="{{ category.id }}">{{ category.category }}</option>
+                <option value="{{ category.id }}" name="category">{{ category.category }}</option>
             {% endfor %}
-        </select>
+        </div>
     </div>
 </section>
