@@ -169,7 +169,8 @@ VALUES
 INSERT INTO partner (name, link)
 VALUES
 ('Les Pays De La Loire', 'http://www.paysdelaloire.fr/'),
-('Stereolux', 'https://www.stereolux.org/')
+('Wild Code School', 'https://www.wildcodeschool.com/fr-FR/campus/nantes/')
+('SACEM', 'https://www.sacem.fr/')
 ;
 
 INSERT INTO event_category (event_id, category_id)
