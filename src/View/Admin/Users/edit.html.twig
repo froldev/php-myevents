@@ -12,7 +12,7 @@
                 <div class="col-12 mb-3">
                     <input type="text" class="form-control {% if lastNameError is not null %}is-invalid{% endif %}"
                            id="lastname" name="lastname" placeholder="Nom" aria-describedby="champsNom"
-                    value="{{ user.lastname }}" required >
+                           value="{{ user.lastname }}" required >
                     <div class="invalid-feedback">
                         {{ lastNameError }}
                     </div>
@@ -49,7 +49,7 @@
                     <select id="role" name="role" class="form-control {% if roleError is not null %}is-invalid{% endif %}" required>
                         <option value="">-- Sélectionnez un role pour l'utilisateur --</option>
                         {% for role in roles %}
-                        <option value="{{ role.id }}" {{ user.role_id == role.id ? "selected" }}>{{ role.role }}</option>
+                            <option value="{{ role.id }}" {{ user.role_id == role.id ? "selected" }}>{{ role.role }}</option>
                         {% endfor %}
                     </select>
                     <div class="invalid-feedback">

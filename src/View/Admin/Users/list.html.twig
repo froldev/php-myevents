@@ -32,11 +32,7 @@
                 {% for user in users %}
                     <tr>
                         <td>{{user.lastname}} {{user.firstname}}</td>
-                        {% for role in roles %}
-                            {% if user.role_id == role.id %}
-                            <td>{{ role.role }}</td>
-                            {% endif %}
-                        {% endfor %}
+                        <td>{{ user.role }}</td>
                         <td><button type="button" class="btn btn-success">
                                 <a class="text-white" href="/users/edit/{{ user.id }}">Mise à jour</a>
                             </button></td>

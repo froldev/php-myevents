@@ -70,7 +70,6 @@ class UsersController extends AbstractController
                 }
             }
         }
-
         return $this->twig->render("Admin/Users/add.html.twig", [
             "lastNameError"     => $lastNameError,
             "firstNameError"    => $firstNameError,
@@ -86,7 +85,7 @@ class UsersController extends AbstractController
         $usersManager = new UsersManager();
         $users = $usersManager->selectOneById($id);
 
-        if (strtolower($users['role_id']) != 0) {
+        if (strtolower($users['role_id']) != 1) {
             $usersManager->deleteUsers($id);
         }
         header("Location:/users/list");

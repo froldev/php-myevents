@@ -13,7 +13,8 @@ class UsersManager extends AbstractManager
 
     public function selectUsersAndRole(): array
     {
-        $request = $this->pdo->query("SELECT * 
+        $request = $this->pdo->query("SELECT 
+        u.id, u.email, u.password, u.lastname, u.firstname, r.role AS role 
         FROM " .self::TABLE. " u 
         JOIN role r ON u.role_id = r.id 
         ORDER BY u.lastname");

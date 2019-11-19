@@ -15,4 +15,9 @@ class OlympicController extends AbstractController
     {
         return $this->twig->render('Olympic/contact.html.twig');
     }
+
+    public function history()
+    {
+        return $this->twig->render('Olympic/history.html.twig');
+    }
 }
