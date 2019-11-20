@@ -19,8 +19,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="/partners/list">Partenaires</a>
             </li>
+            {% if session.role == 1 %}
             <li class="nav-item">
                 <a class="nav-link" href="/users/list">Utilisateurs</a>
             </li>
+            {% endif %}
         </ul>
 </nav>

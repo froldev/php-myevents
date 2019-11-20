@@ -32,6 +32,7 @@ class HomeController extends AbstractController
         $events = $programmingManager->selectAll();
         $carousel = $programmingManager->carouselView();
 
+
         if (isset($_POST['lastname'])) {
             $_SESSION['lastname'] = $_POST['lastname'];
         }
@@ -41,7 +42,7 @@ class HomeController extends AbstractController
             "categories" => $listCategory,
             "carousels" => $carousel,
             "session" => $_SESSION,
-            'partners' => $this->getPartners()
+            "partners" => $this->getPartners()
         ]);
     }
 }

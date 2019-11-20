@@ -63,6 +63,26 @@ html, body {
     overflow: hidden;
 }
 
+#login-form{
+    background-color:#6C757C;
+}
+
+#login-form .form-signin {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: auto;
+    border:1px solid #6C757C;
+    border-radius:10px;
+    background-color:#FFF;
+}
+
+#login-form .error-connexion{
+    display:block;
+    font-weight:bold;
+    margin: 40px;
+}
+
 /* -------------------------------------------------------- */
 /* media queries*/
 /* -------------------------------------------------------- */

@@ -10,6 +10,8 @@ class EventsController extends AbstractController
 {
     public function add()
     {
+        $this->verifySession();
+
         $titleError = $dateTimeError = $descriptionError = $priceError = $imageError = null;
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -61,27 +63,10 @@ class EventsController extends AbstractController
 
     public function list(): string
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (empty($_POST['email']) || !isset($_POST['email'])) {
-                return $this->twig->render('Admin/login.html.twig');
-            }
-
-            if (empty($_POST['password']) || !isset($_POST['password'])) {
-                return $this->twig->render('Admin/login.html.twig');
-            } else {
-                $usersManager = new UsersManager();
-                $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                $login = $usersManager->selectUsersByEmail($_POST['email'], $hash);
-                if (!$login) {
-                    return $this->twig->render('Admin/login.html.twig');
-                }
-                $_SESSION = $login;
-            }
-        }
+        $this->verifySession();
 
         $eventsManager = new EventsManager();
         $events = $eventsManager->selectAll();
-
 
         return $this->twig->render("Admin/Events/list.html.twig", [
             "events" => $events,
@@ -91,6 +76,8 @@ class EventsController extends AbstractController
 
     public function delete(int $id): void
     {
+        $this->verifySession();
+
         $eventsManager = new EventsManager();
         $eventsManager->deleteEvent($id);
         header("Location:/events/list");
@@ -98,9 +85,11 @@ class EventsController extends AbstractController
 
     public function edit(int $id)
     {
+        $this->verifySession();
+
         $eventsManager = new EventsManager();
         $event = $eventsManager->selectOneById($id);
-        var_dump($event);
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $event = $_POST;
             if ($eventsManager->updateEvents($event, $id)) {

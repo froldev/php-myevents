@@ -25,9 +25,9 @@ CREATE TABLE users(
 
 INSERT INTO users (email, password, lastname, firstname, role_id)
 VALUES
-('admin@admin.fr', '$2y$10$qiEdkGpA.Nr06pFXCv3p1.Xwy1WNY1GIweZL/qv1VTD03HkEe9.2u', 'Super', 'Admin', 1),
-('robert@mail.fr', '$2y$10$I3WfpAWd9VkN8eNeeuYCDe8McIbAqbHwBSz0tY5vthSal6Sgr8h1a', 'Michu', 'Robert', 2),
-('user@mail.fr', '$2y$10$Oh8yvSQ7zu3pwGzpe0rPzOfZR5axZSH6BZd6lboRSMVImhFCj8Cxq', 'Hue', 'Brigitte', 3)
+('admin@admin.fr', '$2y$10$Fhv9XSpyrwy9lyMYvU1joOB74jHg1FwDedPu84UU3.GosX/QNWJLG', 'SuperAdmin', 'SuperAdmin', 1),
+('robert@mail.fr', '$2y$10$9YfNEyhEuv2rHjFvh94ze.8HXVXXqCmiKv70wg7hev0InRKkvR0uW', 'Michu', 'Robert', 2),
+('user@mail.fr', '$2y$10$nIYFMQ/S1YOhmUzVILXaPudJrsptqCq.BwkcpHpU8YjpDyRrCQer2', 'Hue', 'Brigitte', 3)
 ;
 
 CREATE TABLE event(
@@ -100,9 +100,9 @@ CREATE TABLE comment(
 
 INSERT INTO comment (firstname, lastname, email, date_time, object, message)
 VALUES
-('Michu', 'Robert', 'robert.michu@gmail.com', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
-('Emmanuel', 'Macron', 'president@republique.fr', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?'),
-('Guy', 'Lux', 'schalala@intervilles.fr', '2019-10-30', 'Question sur le schimilili', 'Bonjour, pouvez me dire quand reviendra le schimililili ?')
+('Robert', 'Michu', 'rober.michu@gmail.fr', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
+('Emmanuel', 'Macron', 'prsident@lapresidence.com', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?'),
+('Guy', 'Lux', 'guy.lux@intervilles.fr', '2019-10-30', 'Question sur le schimilili', 'Bonjour, pouvez me dire quand reviendra le schimililili ?')
 ;
 
 CREATE TABLE partner(
@@ -113,45 +113,45 @@ CREATE TABLE partner(
 
 INSERT INTO event (title, date_time, price, description, image, video, link)
 VALUES
-('Soprano', '2019-10-18', 25,
+('Soprano', '2019-12-18', 25,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://www.zenith-nantesmetropole.com/media/ic/resize/load.php?src=/images/stories/manifestations/soprano_phoenix_tour.jpg&width=240&height=315&crop=1',
+'https://zupimages.net/up/19/47/6y8m.jpg',
 '',
 ''
 ),
-('M', '2019-11-15', 20,
+('M', '2019-12-15', 20,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://www.zenith-nantesmetropole.com/media/ic/resize/load.php?src=/images/stories/manifestations/m_novembre.jpg&width=240&height=315&crop=1',
+'https://zupimages.net/up/19/47/ta8q.jpg',
 'https://youtu.be/CfCxItPlidc',
 'https://labo-m.net/'
 ),
-('Angèle', '2019-11-29', 30,
+('Angèle', '2019-12-29', 30,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://www.zenith-nantesmetropole.com/media/ic/resize/load.php?src=/images/stories/manifestations/angele.jpg&width=240&height=315&crop=1',
+'https://zupimages.net/up/19/47/jpmc.jpeg',
 'https://youtu.be/cA46ZNjrzeY',
 ''
 ),
-('Void Shelter', '2019-11-29', 130,
+('Void Shelter', '2019-12-29', 130,
 'Un abri. Votre esprit. À l intérieur un côté ordonné et rassurant, l autre brumeux et tourmenté. Entouré de vide symbolisant l inconnu et l inconscient.
 Void Shelter crée son univers mélancolique en apportant au rock alternatif des compositions viscérales, inspirées d expériences et de récits, aux textes surréalistes. Le groupe emporte le spectateur dans un rock ambiant, élégant et tortueux en misant sur le décalage de ses inspirations.',
 'https://zupimages.net/up/19/46/y77c.jpg',
 'https://www.youtube.com/watch?v=_fZ5wbzrft0',
 ''
 ),
-('Claudio Capéo', '2019-11-29', 12,
+('Claudio Capéo', '2019-12-29', 12,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://www.zenith-nantesmetropole.com/media/ic/resize/load.php?src=/images/stories/manifestations/capeo2.jpg&width=240&height=315&crop=1',
+'https://zupimages.net/up/19/47/b5k7.jpeg',
 'https://youtu.be/cA46ZNjrzeY',
 ''
 ),
-('Trois Cafés Gourmands', '2019-11-29', 30,
+('Trois Cafés Gourmands', '2019-12-29', 30,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://www.zenith-nantesmetropole.com/media/ic/resize/load.php?src=/images/stories/manifestations/3_cafes_gourmands_.jpg&width=240&height=315&crop=1',
+'https://zupimages.net/up/19/47/syhq.jpeg',
 'https://youtu.be/cA46ZNjrzeY',
 ''
 )
@@ -175,6 +175,11 @@ VALUES
 
 INSERT INTO event_category (event_id, category_id)
 VALUES
-('4', '1')
+('1', '2'),
+('2', '4'),
+('3', '3'),
+('4', '1'),
+('5', '5'),
+('6', '2')
 ;
 
