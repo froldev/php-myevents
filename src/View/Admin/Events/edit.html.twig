@@ -16,7 +16,7 @@
         {% include 'Blocks/_adminDropdownList.html.twig' %}
         <div class="form-group">
             <label for="start">Date:</label>
-            <input type="date" id="start" name="date_time" class="form-control {% if descriptionError is not null %}is-invalid{% endif %}" value="{{ event.date_name }}">
+            <input type="date" id="start" name="date_time" class="form-control {% if descriptionError is not null %}is-invalid{% endif %}" value="{{ event.date_time }}">
             <div class="invalid-feedback">
                 {{ dateError }}
             </div>

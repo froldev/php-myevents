@@ -8,6 +8,9 @@
 
 namespace App\Controller;
 
+use App\Model\DetailManager;
+use App\Model\UsersManager;
+
 class AdminController extends AbstractController
 {
 
@@ -27,5 +30,11 @@ class AdminController extends AbstractController
     public function login()
     {
         return $this->twig->render('Admin/login.html.twig');
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        header('Location: index.php');
     }
 }
