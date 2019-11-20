@@ -50,9 +50,16 @@ class AdminController extends AbstractController
                 if (password_verify($_POST['password'], $user["password"])) {
                     $_SESSION['name'] = $user["firstname"];
                     $_SESSION['role'] = $user["role_id"];
-                    $events = new EventsManager();
-                    $events->deleteLastEvents();
-                    header('Location:/events/list');
+
+                    if ($_SESSION['role'] <= 2) {
+                        $events = new EventsManager();
+                        $events->deleteLastEvents();
+                        header('Location:/events/list');
+                    }
+                    $errorConnexion = "Vous n'avez pas les accès à cet espace d'administration";
+                    return $this->twig->render('Admin/login.html.twig', [
+                        'errorConnexion' => $errorConnexion,
+                    ]);
                 }
                 $errorConnexion = "Erreur de connexion";
                 return $this->twig->render('Admin/login.html.twig', [
