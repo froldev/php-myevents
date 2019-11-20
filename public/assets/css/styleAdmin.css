@@ -58,6 +58,10 @@ html, body {
     margin: auto;
 }
 
+.card-overflow {
+    max-height: 100px;
+    overflow: hidden;
+}
 
 /* -------------------------------------------------------- */
 /* media queries*/
