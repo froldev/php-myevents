@@ -8,8 +8,8 @@
 
 namespace App\Controller;
 
-use App\Model\DetailManager;
 use App\Model\UsersManager;
+use App\Model\EventsManager;
 
 class AdminController extends AbstractController
 {
@@ -50,13 +50,14 @@ class AdminController extends AbstractController
                 if (password_verify($_POST['password'], $user["password"])) {
                     $_SESSION['name'] = $user["firstname"];
                     $_SESSION['role'] = $user["role_id"];
+                    $events = new EventsManager();
+                    $events->deleteLastEvents();
                     header('Location:/events/list');
-                } else {
-                    $errorConnexion = "Erreur de connexion";
-                    return $this->twig->render('Admin/login.html.twig', [
-                        'errorConnexion' => $errorConnexion,
-                    ]);
                 }
+                $errorConnexion = "Erreur de connexion";
+                return $this->twig->render('Admin/login.html.twig', [
+                    'errorConnexion' => $errorConnexion,
+                ]);
             }
 
             return $this->twig->render('Admin/login.html.twig', [
