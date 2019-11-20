@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\CommentsManager;
+use App\Model\AnswersManager;
 
 class CommentsController extends AbstractController
 {
@@ -10,10 +11,6 @@ class CommentsController extends AbstractController
     {
         $commentsManager = new CommentsManager();
         $comments = $commentsManager->selectAnswerIsNull();
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            var_dump($_POST);
-        }
 
         return $this->twig->render('Admin/Comments/list.html.twig', [
             'comments' => $comments,
@@ -25,8 +22,27 @@ class CommentsController extends AbstractController
         $commentsManager = new CommentsManager();
         $comments = $commentsManager->selectOneById($id);
 
+        $responseError = null;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $isValid = true;
+            // vérifier si il y a une réponse
+            if (!isset($_POST['response']) || empty($_POST['response'])) {
+                $responseError = "Merci d'indiquer une réponse avant de valider";
+                $isValid = false;
+            }
+            // si tout est ok
+            if ($isValid) {
+                $answersManager = new AnswersManager();
+                // envoyer le mail et intégrer dans la bdd
+                $answer = $answersManager->insertAnswer($id, $_POST);
+                if ($answer) {
+                    header("Location:/comments/list");
+                }
+            }
+        }
         return $this->twig->render('Admin/Comments/display.html.twig', [
-            'comments' => $comments,
+            'comments'       => $comments,
+            'responseError'  => $responseError,
         ]);
     }
 
@@ -41,16 +57,17 @@ class CommentsController extends AbstractController
             $userObjectError = null;
             $userMessageError = null;
 
+            // vérifier si il y a un lastname
             if (!isset($_POST['lastname']) || empty($_POST['lastname'])) {
                 $userLastNameError = "Merci de renseigner votre nom";
                 $isValid = false;
             }
-
+            // vérifier si il y a un firstname
             if (!isset($_POST['firstname']) || empty($_POST['firstname'])) {
                 $userFirstNameError = "Merci de renseigner votre prénom";
                 $isValid = false;
             }
-
+            // vérifier si il y a un email
             if (!isset($_POST['user_email']) || empty($_POST['user_email'])) {
                 $userEmailError = "Merci d'entrer votre email";
                 $isValid = false;
@@ -58,7 +75,7 @@ class CommentsController extends AbstractController
                 $userEmailError = "Merci de renseigner un email valide";
                 $isValid = false;
             }
-
+            // vérifier si il y a un objet
             if (!isset($_POST['object']) || empty($_POST['object'])) {
                 $userObjectError = "Merci de préciser l'objet de votre message";
                 $isValid = false;

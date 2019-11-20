@@ -20,14 +20,7 @@ class CommentsManager extends AbstractManager
         return $request->fetchAll();
     }
 
-    public function selectAnswerIsNotNull(): array
-    {
-        $request = $this->pdo->query("SELECT * FROM " . self::TABLE .
-            " WHERE answer_id IS NOT NULL ORDER BY date_time");
-        return $request->fetchAll();
-    }
-
-    public function insertComments($comments) : bool
+    public function insertComments($comments): bool
     {
         $request = $this->pdo->prepare("INSERT INTO " .self::TABLE. "
         (firstname, lastname, email, object, message, date_time)

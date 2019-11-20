@@ -14,7 +14,7 @@
                 <label class="col-sm-4 col-form-label">Date : </label>
                 <div class="col-sm-8">
                     <input type="text" readonly class="form-control-plaintext"
-                           aria-describedby="email" value="{{ comments.date_time }}" disabled>
+                           aria-describedby="email" value="{{ comments.date_time|date("d/m/Y") }}" disabled>
                 </div>
                 <!-- nom et prénom -->
                 <label class="col-sm-4 col-form-label">Nom et prénom : </label>
@@ -49,16 +49,24 @@
         </form>
 
         <!-- réponse -->
-        <form class="bg-light border rounded m-3 p-3">
+        <form method="POST" class="bg-light border rounded m-3 p-3">
             <div class="form-group row">
+                <!-- date -->
+                <label class="col-sm-4 col-form-label">Date : </label>
+                <div class="col-sm-8">
+                    <input type="text" name="dateResponse" class="form-control-plaintext"
+                           aria-describedby="dateResponse" value="{{ "now"|date("d/m/Y") }}" disabled>
+                </div>
+                <!-- réponse -->
                 <label class="col-sm-4 col-form-label">Réponse : </label>
                 <div class="col-sm-8">
-                    <textarea class="form-control" rows="4"></textarea>
+                    <textarea class="form-control  {% if responseError is not null %}is-invalid{% endif %}" name="response" rows="4"></textarea>
+                    <div class="invalid-feedback mx-auto">
+                        {{ responseError }}
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary m-4 mx-auto">
-                    <a class="text-white" href="/comments/answer/{{ comments.id }}">
-                        Répondre
-                    </a>
+                    Répondre
                 </button>
             </div>
         </form>
