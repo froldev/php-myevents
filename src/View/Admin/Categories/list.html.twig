@@ -1,0 +1,48 @@
+{% extends 'adminLayout.html.twig' %}
+
+{% block title %}Olympic Nantais || Liste des catégories{% endblock %}
+
+{% block content %}
+
+    <section id="categoryAdd">
+
+        <h1>Ajouter une catégorie :</h1>
+        <div class="row">
+            <button type="submit" class="btn btn-primary btn-lg mb-2 mx-auto">
+                <a class="text-white" href="/categories/add">Ajouter</a>
+            </button>
+        </div>
+
+    </section>
+
+    <section id="categoryList">
+
+        <h1>Liste des catégories :</h1>
+        <div class="row">
+            <table class="table col-12">
+                <thead class="table-striped">
+                    <tr class="bg-warning">
+                        <th scope="col">Style de musique</th>
+                        <th scope="col">Modifier</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <td>{{category.category}}</td>
+                        <td><button type="button" class="btn btn-success">
+                                <a class="text-white" href="/categories/edit/{{ category.id }}">Mise à jour</a>
+                            </button></td>
+                        <td><button type="button" class="btn btn-danger">
+                                <a class="text-white" href="/categories/delete/{{ category.id }}">Supprimer</a>
+                            </button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+{% endblock %}

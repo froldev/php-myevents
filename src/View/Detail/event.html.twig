@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div>
+        <h1 class="top-title details-title">{{ details.title }}</h1>
+        <p class="date">Le {{ details.date_time|date("d/m/Y") }}</p>
+        <div class="details-desktop-img-and-desc">
+            <img src="{{ details.image }}" class="details-img" alt="">
+            <div class="details-event-card">
+                <p>{{ details.description }}</p>
+            </div>
+        </div>
+        <p class="details-category">Catégorie : {{ details.category }}</p>
+        <p class="details-reservation">Réservez dès maintenant votre place au prix de </p>
+        <p class="details-price">{{ details.price }} €</p>
+        <div  class="details-button">
+            <a href="https://www.ticketmaster.fr/"><button>Réservez ici !</button></a>
+        </div>
+        <div class="details-link">
+            <a href="{{ details.link }}">{{ details.link }}</a>
+        </div>
+    </div>
+{% endblock %}

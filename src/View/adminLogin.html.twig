@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,23 +7,19 @@
 
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=McLaren%7CMontserrat+Subrayada%7CPermanent+Marker%7CSawarabi+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styleAdmin.css">
     {% block stylesheet %}{% endblock %}
     <link rel="icon" href="/assets/images/favicon.png">
-
 </head>
 
-<body>
-<div class="container-flex">
-    {% include 'Blocks/_header.html.twig' %}
+<body id="login-form" class="text-center" cz-shortcut-listen="true">
+    <!-- Content -->
     {% block content %}{% endblock %}
-    {% include 'Blocks/_footer.html.twig' %}
+    <!-- Content -->
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 {% block javascript %}{% endblock %}
 </body>
 </html>

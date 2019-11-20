@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-secondary text-center justify-content-center">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav flex-column mr-auto">
+            <li class="nav-item d-none">
+                <a class="nav-link" href="/events/list">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/events/list">Evenements</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/categories/list">Catégories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/comments/list">Messages</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/partners/list">Partenaires</a>
+            </li>
+            {% if session.role == 1 %}
+            <li class="nav-item">
+                <a class="nav-link" href="/users/list">Utilisateurs</a>
+            </li>
+            {% endif %}
+        </ul>
+</nav>

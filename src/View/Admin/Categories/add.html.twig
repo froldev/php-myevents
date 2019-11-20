@@ -1,0 +1,27 @@
+{% extends 'adminLayout.html.twig' %}
+
+{% block title %}Olympic Nantais || Ajouter une catégorie{% endblock %}
+
+{% block content %}
+
+    <section>
+        <h1>Ajouter une nouvelle catégorie :</h1>
+        <form method="POST">
+            <div class="form-row mb-4">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control {% if categoryError is not null %}is-invalid{% endif %}"
+                           id="category" name="category" placeholder="Nouvelle catégorie"
+                           aria-describedby="inputNouvelleCategorie" required>
+                    <div class="invalid-feedback">
+                        {{ categoryError }}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg mb-2">Confirmer</button>
+            </div>
+        </form>
+        <button type="submit" class="btn btn-dark mb-2">
+            <a class="text-white" href="/categories/list"> << Retour</a>
+        </button>
+    </section>
+
+{% endblock %}
