@@ -15,7 +15,6 @@ class CommentsManager extends AbstractManager
 
     public function selectAnswerIsNull(): array
     {
-
         $request = $this->pdo->query("SELECT * FROM " .self::TABLE. " WHERE answer_id IS NULL ORDER BY date_time");
         return $request->fetchAll();
     }
