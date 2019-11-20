@@ -82,7 +82,6 @@ class EventsController extends AbstractController
     {
         $eventsManager = new EventsManager();
         $event = $eventsManager->selectOneById($id);
-        var_dump($event);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $event = $_POST;
             if ($eventsManager->updateEvents($event, $id)) {
