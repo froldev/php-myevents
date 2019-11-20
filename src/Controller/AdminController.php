@@ -22,11 +22,6 @@ class AdminController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function index()
-    {
-        return $this->twig->render('Admin/index.html.twig');
-    }
-
     public function login()
     {
         $errorMail = $errorMdp = $errorConnexion = null;
