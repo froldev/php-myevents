@@ -101,7 +101,7 @@ CREATE TABLE comment(
 INSERT INTO comment (firstname, lastname, email, date_time, object, message)
 VALUES
 ('Robert', 'Michu', 'rober.michu@gmail.fr', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
-('Emmanuel', 'Macron', 'prsident@lapresidence.com', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?'),
+('Emmanuel', 'Macron', 'president@lapresidence.com', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?'),
 ('Guy', 'Lux', 'guy.lux@intervilles.fr', '2019-10-30', 'Question sur le schimilili', 'Bonjour, pouvez me dire quand reviendra le schimililili ?')
 ;
 
