@@ -22,7 +22,7 @@ class AdminController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function login()
+    public function login(): string
     {
         $errorMail = $errorMdp = $errorConnexion = null;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -47,8 +47,6 @@ class AdminController extends AbstractController
                     $_SESSION['role'] = $user["role_id"];
 
                     if ($_SESSION['role'] <= 2) {
-                        $events = new EventsManager();
-                        $events->deleteLastEvents();
                         header('Location:/events/list');
                     }
                     $errorConnexion = "Vous n'avez pas les accès à cet espace d'administration";
@@ -71,7 +69,7 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/login.html.twig');
     }
 
-    public function logout()
+    public function logout(): void
     {
         session_destroy();
         header('Location:/');

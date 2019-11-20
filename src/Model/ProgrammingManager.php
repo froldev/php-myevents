@@ -16,8 +16,9 @@ class ProgrammingManager extends AbstractManager
         $query = $this->pdo->prepare(
             "SELECT image 
             FROM " . self::TABLE . " 
+            WHERE date_time > now()
             ORDER BY date_time
-            LIMIT 6
+            LIMIT 6;
             "
         );
         $query -> execute();
@@ -26,9 +27,6 @@ class ProgrammingManager extends AbstractManager
 
     public function insertSearch(array $search): array
     {
-        $request = $this->pdo->prepare("DELETE FROM ".self::TABLE." WHERE date_time < now()");
-        $request->execute();
-
         if (!empty($search['search']) && !empty($search['category'])) {
             $query = $this->pdo->prepare(
                 "SELECT *, event.id
@@ -36,17 +34,9 @@ class ProgrammingManager extends AbstractManager
             LEFT JOIN event_category ON event_category.event_id = event.id
             LEFT JOIN category ON category.id = event_category.category_id
             WHERE category.id LIKE :category
-            AND title LIKE :title;"
+            AND title LIKE :title
+            AND date_time > now();"
             );
-
-            $searchs = '%' . $search['search'] . '%';
-
-            $query->bindValue(':title', $searchs, \PDO::PARAM_STR);
-
-            $query->bindValue(':category', $search['category'], \PDO::PARAM_STR);
-            $query->execute();
-
-            return $query->fetchAll();
         }
 
         if (empty($search['search'])) {
@@ -55,7 +45,8 @@ class ProgrammingManager extends AbstractManager
             FROM " . self::TABLE . " 
             LEFT JOIN event_category ON event_category.event_id = event.id
             LEFT JOIN category ON category.id = event_category.category_id
-            WHERE category.id LIKE :category;"
+            WHERE category.id LIKE :category
+            AND date_time > now();"
             );
 
             $query->bindValue(':category', $search['category'], \PDO::PARAM_STR);
@@ -69,7 +60,8 @@ class ProgrammingManager extends AbstractManager
             FROM " . self::TABLE . " 
             LEFT JOIN event_category ON event_category.event_id = event.id
             LEFT JOIN category ON category.id = event_category.category_id
-            WHERE title LIKE :title
+            WHERE date_time > now()
+            AND title LIKE :title
             OR category LIKE :category;"
         );
 
