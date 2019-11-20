@@ -50,7 +50,7 @@ abstract class AbstractController
 
     public function verifySession()
     {
-        if (!$_SESSION) {
+        if (!$_SESSION['name']) {
             header('Location:/admin/login');
         }
     }
