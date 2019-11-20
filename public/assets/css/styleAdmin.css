@@ -72,6 +72,12 @@ html, body {
     background-color:#FFF;
 }
 
+#login-form .error-connexion{
+    display:block;
+    font-weight:bold;
+    margin: 40px;
+}
+
 
 /* -------------------------------------------------------- */
 /* media queries*/
