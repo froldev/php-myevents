@@ -54,7 +54,7 @@ h3 {
     font-family: 'McLaren', cursive;
 }
 
-h5 {
+.partners-title {
     margin-bottom: 20px;
     padding: 10px;
     background-color: var(--orange);
@@ -94,7 +94,7 @@ footer {
     opacity: 0.5;
 }
 
-.menu{
+.menu {
     padding: 10px;
     margin-bottom: 5px;
 }
@@ -112,20 +112,17 @@ a {
 
 /* navbar */
 
-.fixed-bottom
-{
+.fixed-bottom {
     margin: auto;
 }
 
-.navbar-toggler
-{
+.navbar-toggler {
     background-color: rgba(150, 150, 150, 0.9);
 }
 
 /* -------------------------------------------- */
 /* programming title */
-.programming-title
-{
+.programming-title {
     width: 100%;
     text-align: center;
     height: 50px;
@@ -135,29 +132,39 @@ a {
 
 /* -------------------------------------------- */
 /* programming search input */
-.mr-sm-2
-{
+.mr-sm-2 {
     width: 60%;
     min-width: 100px;
     text-align: center;
     margin-left: 15%;
     margin-bottom: 30px;
 }
-.btn-search
-{
+.btn-search {
     margin-bottom: 30px;
 }
 
 /* -------------------------------------------- */
 /* programming card */
-.card-overflow
-{
+.card-overflow {
     max-height: 150px;
     overflow: hidden;
 }
 
-.float
-{
+.index-dropdown-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.home-title {
+    text-align: center;
+    text-shadow: 5px 5px 5px var(--orangeDark);
+}
+
+.float {
     float: right;
 }
 
@@ -282,27 +289,27 @@ textarea {
 /* -------------------------------------------- */
 /* Event  */
 
-.event-card{
-    width: 80%;
+.event-card, .details-event-card{
+    width: 98%;
     display: flex;
     border-color: black;
     border-radius: 25px;
     border-width: 2px;
     box-shadow: 2px 4px 10px grey;
     background-color: var(--orangeLight);
-    padding: 20px !important;
-    margin: 30px;
+    padding: 5px !important;
+    margin-left: 1%;
 }
 
 .event-card p{
-    width:70%;
+    width:100%;
     text-align: justify;
-    margin-left: 30px;
 }
 
-.event-card img{
-    max-height: 500px;
-    width: auto;
+.details-img{
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
 }
 
 .programming-card{
@@ -312,6 +319,40 @@ textarea {
 
 .programming-section{
     justify-content: space-around;
+}
+
+.details-category, .details-reservation{
+    color: var(--white);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.details-button, .details-link{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.details-title{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.date{
+    color: var(--white);
+    text-align: center;
+    font-size: 30px;
+}
+
+.details-link{
+
+}
+
+.details-price{
+    font-size: 30px;
+    color: var(--white);
+    text-align: center;
+    font-weight: bold;
 }
 
 /* -------------------------------------------- */
@@ -336,6 +377,72 @@ textarea {
 /* -------------------------------------------- */
 /* -------------------------------------------- */
             /* Mobile Version */
+
+@media screen and (min-width: 769px) {
+
+    .details-desktop-img-and-desc{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .details-event-card{
+        width: 80%;
+        padding: 20px !important;
+        margin-left: 10%;
+    }
+
+    .details-event-card p{
+        text-align: justify;
+        margin: auto;
+    }
+
+    .details-img{
+        margin-bottom: 20px;
+    }
+
+    .programming-card{
+        min-width: 300px;
+        flex-direction: column;
+    }
+
+    .programming-section{
+        justify-content: space-around;
+    }
+
+    .details-category, .details-reservation{
+        color: var(--white);
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .details-button, .details-link{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .details-title{
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+
+    .date{
+        color: var(--white);
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .details-link{
+
+    }
+
+    .details-price{
+        font-size: 30px;
+        color: var(--white);
+        text-align: center;
+        font-weight: bold;
+    }
+}
 
 @media screen and (max-width: 640px){
     .bar-search{
