@@ -58,7 +58,8 @@ class EventsManager extends AbstractManager
             SET title = :title, date_time = :date_time, 
             price = :price, description = :description, image = :image, video = :video, link = :link,
             category_id = :category
-            WHERE " . self::TABLE . ".id=:id");
+            WHERE " . self::TABLE . ".id=:id
+            ");
         $request->bindValue(':id', $id, \PDO::PARAM_INT);
         $request->bindValue(':title', $event['title'], \PDO::PARAM_STR);
         $request->bindValue(':date_time', $time, \PDO::PARAM_STR);
@@ -70,11 +71,5 @@ class EventsManager extends AbstractManager
         $request->bindValue(':category', $event['category'], \PDO::PARAM_INT);
 
         return $request->execute();
-    }
-
-    public function deleteLastEvents(): void
-    {
-        $request = $this->pdo->prepare("DELETE FROM ".self::TABLE." WHERE date_time < now()");
-        $request->execute();
     }
 }

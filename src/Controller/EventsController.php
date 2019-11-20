@@ -66,11 +66,10 @@ class EventsController extends AbstractController
         $this->verifySession();
 
         $eventsManager = new EventsManager();
-        $events = $eventsManager->selectAll();
+        $events = $eventsManager->selectAllEventNotPast();
 
         return $this->twig->render("Admin/Events/list.html.twig", [
-            "events" => $events,
-            "session" => $_SESSION
+            "events" => $events
         ]);
     }
 

@@ -29,18 +29,13 @@ class HomeController extends AbstractController
         $listCategory = $categories->selectAll();
 
         $programmingManager = new ProgrammingManager();
-        $events = $programmingManager->selectAll();
+        $events = $programmingManager->selectAllEventNotPast();
         $carousel = $programmingManager->carouselView();
-
-        if (isset($_POST['lastname'])) {
-            $_SESSION['lastname'] = $_POST['lastname'];
-        }
 
         return $this->twig->render('Home/index.html.twig', [
             "events" => $events,
             "categories" => $listCategory,
             "carousels" => $carousel,
-            "session" => $_SESSION,
             "partners" => $this->getPartners()
         ]);
     }
