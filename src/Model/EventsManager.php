@@ -71,4 +71,10 @@ class EventsManager extends AbstractManager
 
         return $request->execute();
     }
+
+    public function deleteLastEvents(): void
+    {
+        $request = $this->pdo->prepare("DELETE FROM ".self::TABLE." WHERE date_time < now()");
+        $request->execute();
+    }
 }
