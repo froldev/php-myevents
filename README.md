@@ -37,11 +37,11 @@ If you develop on Windows, you should edit you git configuration to change your 
 ## URLs availables
 
 * Home page [localhost:8000/](localhost:8000/)
-* Events list (front) at [localhost:8000/item/index](localhost:8000/)
-* Event details (front) at [localhost:8000/item/index/show/:id](localhost:8000/detail/event/{id})
-* Event edit (back) [localhost:8000/item/index/edit/:id](localhost:8000/events/edit/{id})
-* Event add (back) [localhost:8000/item/index/add](localhost:8000/events/add/{id})
-* Event deletion (back)[localhost:8000/item/index/delete/:id](localhost:8000/events/delete/{id})
+* Events list (front) at [localhost:8000/](localhost:8000/)
+* Event details (front) at [localhost:8000/detail/event/:id](localhost:8000/detail/event/{id})
+* Event edit (back) [localhost:8000/events/edit/:id](localhost:8000/events/edit/{id})
+* Event add (back) [localhost:8000/events/add/:id](localhost:8000/events/add/{id})
+* Event deletion (back)[localhost:8000/events/delete/:id](localhost:8000/events/delete/{id})
 ... 
 ## How does URL routing work ?
 

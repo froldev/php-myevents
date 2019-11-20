@@ -62,8 +62,6 @@ html, body {
     max-height: 100px;
     overflow: hidden;
 }
-<<<<<<< HEAD
-=======
 
 #login-form{
     background-color:#6C757C;
@@ -84,7 +82,6 @@ html, body {
     font-weight:bold;
     margin: 40px;
 }
->>>>>>> 636b9c5b5fdeab6968f3d6dcfc8a8e0774a67d34
 
 /* -------------------------------------------------------- */
 /* media queries*/
