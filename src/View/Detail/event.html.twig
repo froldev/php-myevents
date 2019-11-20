@@ -16,12 +16,10 @@
         <p class="details-reservation">Réservez dès maintenant votre place au prix de </p>
         <p class="details-price">{{ details.price }} €</p>
         <div  class="details-button">
-            <a href=""><button>Réservez ici !</button></a>
+            <a href="https://www.ticketmaster.fr/"><button>Réservez ici !</button></a>
         </div>
         <div class="details-link">
             <a href="{{ details.link }}">{{ details.link }}</a>
         </div>
-        <iframe width="100%" height="100%" src="{{ details.video }}">
-        </iframe>
     </div>
 {% endblock %}

@@ -54,7 +54,7 @@ h3 {
     font-family: 'McLaren', cursive;
 }
 
-h5 {
+.partners-title {
     margin-bottom: 20px;
     padding: 10px;
     background-color: var(--orange);
@@ -94,7 +94,7 @@ footer {
     opacity: 0.5;
 }
 
-.menu{
+.menu {
     padding: 10px;
     margin-bottom: 5px;
 }
@@ -112,20 +112,17 @@ a {
 
 /* navbar */
 
-.fixed-bottom
-{
+.fixed-bottom {
     margin: auto;
 }
 
-.navbar-toggler
-{
+.navbar-toggler {
     background-color: rgba(150, 150, 150, 0.9);
 }
 
 /* -------------------------------------------- */
 /* programming title */
-.programming-title
-{
+.programming-title {
     width: 100%;
     text-align: center;
     height: 50px;
@@ -135,29 +132,39 @@ a {
 
 /* -------------------------------------------- */
 /* programming search input */
-.mr-sm-2
-{
+.mr-sm-2 {
     width: 60%;
     min-width: 100px;
     text-align: center;
     margin-left: 15%;
     margin-bottom: 30px;
 }
-.btn-search
-{
+.btn-search {
     margin-bottom: 30px;
 }
 
 /* -------------------------------------------- */
 /* programming card */
-.card-overflow
-{
+.card-overflow {
     max-height: 150px;
     overflow: hidden;
 }
 
-.float
-{
+.index-dropdown-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.home-title {
+    text-align: center;
+    text-shadow: 5px 5px 5px var(--orangeDark);
+}
+
+.float {
     float: right;
 }
 
