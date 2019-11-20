@@ -46,16 +46,24 @@ body {
 h1, h2 {
     color: var(--white);
     font-family: 'Permanent Marker', cursive;
-    font-size: 40px;
+    font-size: 45px;
 }
 
 h3 {
     color: var(--white);
     font-family: 'McLaren', cursive;
+    font-size: 25px;
+}
+
+h6 {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--orange);
 }
 
 p {
     font-family: 'Sawarabi Gothic', sans-serif;
+    padding-top: 5px;
 }
 
 /* -------------------------------------------- */
@@ -68,8 +76,6 @@ footer {
 
 .details {
     text-align: center;
-    border: 2px black solid;
-    border-radius: 10px;
     width: 70%;
     margin: 15px auto;
     padding: 10px;
@@ -80,17 +86,22 @@ footer {
 }
 
 .reseaux {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     justify-content: space-around;
+}
+
+.partners {
+
 }
 
 .partners:hover {
     opacity: 0.5;
 }
 
-.menu{
+.menu {
     padding: 10px;
+    margin-bottom: 5px;
 }
 
 a {
@@ -99,22 +110,24 @@ a {
     background-color: transparent;
 }
 
+.admin{
+    color: var(--orangeDark);
+    margin: 25px 0px;
+}
+
 /* navbar */
 
-.fixed-bottom
-{
+.fixed-bottom {
     margin: auto;
 }
 
-.navbar-toggler
-{
+.navbar-toggler {
     background-color: rgba(150, 150, 150, 0.9);
 }
 
 /* -------------------------------------------- */
 /* programming title */
-.programming-title
-{
+.programming-title {
     width: 100%;
     text-align: center;
     height: 50px;
@@ -124,34 +137,49 @@ a {
 
 /* -------------------------------------------- */
 /* programming search input */
-.mr-sm-2
-{
+.mr-sm-2 {
     width: 60%;
     min-width: 100px;
     text-align: center;
     margin-left: 15%;
     margin-bottom: 30px;
 }
-.btn-search
-{
+.btn-search {
     margin-bottom: 30px;
 }
 
 /* -------------------------------------------- */
 /* programming card */
-.card-overflow
-{
+.card-overflow {
     max-height: 150px;
     overflow: hidden;
 }
 
-.float
-{
+.index-dropdown-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.home-title {
+    text-align: center;
+    text-shadow: 5px 5px 5px var(--orangeDark);
+}
+
+.float {
     float: right;
 }
 
 /* -------------------------------------------- */
 /* programming carousel */
+
+.carousel {
+    margin-top: 150px;
+}
+
 .carousel-inner
 {
     margin-top: 90px;
@@ -184,7 +212,6 @@ a {
 
 .button a {
     text-decoration: none;
-    box-shadow: 2px 4px 10px grey;
 }
 
 .address {
@@ -236,7 +263,7 @@ a {
 
     background: var(--orangeDark);
     color: var(--white);
-    width: 20%;
+    width: 30%;
 }
 
 input {
@@ -266,32 +293,33 @@ textarea {
     color: white;
     display:block;
     text-align: center;
+    font-size: 15px;
 }
 
 /* -------------------------------------------- */
 /* Event  */
 
-.event-card{
-    width: 80%;
+.event-card, .details-event-card{
+    width: 98%;
     display: flex;
     border-color: black;
     border-radius: 25px;
     border-width: 2px;
     box-shadow: 2px 4px 10px grey;
     background-color: var(--orangeLight);
-    padding: 20px !important;
-    margin: 30px;
+    padding: 5px !important;
+    margin-left: 1%;
 }
 
 .event-card p{
-    width:70%;
+    width:100%;
     text-align: justify;
-    margin-left: 30px;
 }
 
-.event-card img{
-    max-height: 500px;
-    width: auto;
+.details-img{
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
 }
 
 .programming-card{
@@ -301,9 +329,45 @@ textarea {
 
 .programming-section{
     justify-content: space-around;
+    margin: 30px 0px;
+}
+
+.card-img {
+    padding: 10px;
+}
+
+.details-category, .details-reservation{
+    color: var(--white);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.details-button, .details-link{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.details-title{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.date{
+    color: var(--white);
+    text-align: center;
+    font-size: 30px;
+}
+
+.details-price{
+    font-size: 30px;
+    color: var(--white);
+    text-align: center;
+    font-weight: bold;
 }
 
 /* -------------------------------------------- */
+
 /* History  */
 
 .history-card{
@@ -316,15 +380,86 @@ textarea {
     margin: 30px;
     line-height: 2.5;
     font-size: 18px;
+    text-align: justify;
 }
 
 .img-concert {
-    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.name{
+    color:var(--dark);
 }
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 /* -------------------------------------------- */
             /* Mobile Version */
+
+@media screen and (min-width: 769px) {
+
+    .details-desktop-img-and-desc{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .details-event-card{
+        width: 80%;
+        padding: 20px !important;
+        margin-left: 10%;
+    }
+
+    .details-event-card p{
+        text-align: justify;
+        margin: auto;
+    }
+
+    .details-img{
+        margin-bottom: 20px;
+    }
+
+    .programming-card{
+        min-width: 300px;
+        flex-direction: column;
+    }
+
+    .programming-section{
+        justify-content: space-around;
+    }
+
+    .details-category, .details-reservation{
+        color: var(--white);
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .details-button, .details-link{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .details-title{
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+
+    .date{
+        color: var(--white);
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .details-link{
+
+    }
+
+    .details-price{
+        font-size: 30px;
+        color: var(--white);
+        text-align: center;
+        font-weight: bold;
+    }
+}
 
 @media screen and (max-width: 640px){
     .bar-search{

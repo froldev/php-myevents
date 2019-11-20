@@ -8,6 +8,8 @@ class CategoriesController extends AbstractController
 {
     public function list(): string
     {
+        $this->verifySession();
+
         $categoriesManager = new CategoriesManager();
         $categories = $categoriesManager->selectCategories();
 
@@ -18,6 +20,8 @@ class CategoriesController extends AbstractController
 
     public function add(): string
     {
+        $this->verifySession();
+
         $categoryError = null;
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $isValid = true;
@@ -41,6 +45,8 @@ class CategoriesController extends AbstractController
 
     public function delete(int $id): void
     {
+        $this->verifySession();
+
         $categoriesManager = new CategoriesManager();
         $categoriesManager->deleteCategories($id);
         header("Location:/categories/list");
@@ -48,6 +54,8 @@ class CategoriesController extends AbstractController
 
     public function edit(int $id): string
     {
+        $this->verifySession();
+
         $categoriesManager = new CategoriesManager();
         $category = $categoriesManager->selectOneById($id);
 

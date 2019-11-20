@@ -51,6 +51,11 @@ abstract class AbstractManager
         return $this->pdo->query('SELECT * FROM ' . $this->table)->fetchAll();
     }
 
+    public function selectAllEventNotPast(): array
+    {
+        return $this->pdo->query('SELECT * FROM ' . $this->table . ' WHERE date_time > now()')->fetchAll();
+    }
+
     /**
      * Get one row from database by ID.
      *

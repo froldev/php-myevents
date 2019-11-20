@@ -21,6 +21,13 @@ class UsersManager extends AbstractManager
         return $request->fetchAll();
     }
 
+    public function selectPassword($email): array
+    {
+        $request = $this->pdo->query("SELECT *  FROM "
+        .self::TABLE. " WHERE email = '$email'");
+        return $request->fetch();
+    }
+
     public function deleteUsers(int $id): void
     {
         $request = $this->pdo->prepare("DELETE FROM " .self::TABLE. " WHERE id=:id");

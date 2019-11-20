@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Model\PartnersManager;
 use App\Model\ProgrammingManager;
 use App\Model\CategoriesManager;
 
@@ -28,13 +29,14 @@ class HomeController extends AbstractController
         $listCategory = $categories->selectAll();
 
         $programmingManager = new ProgrammingManager();
-        $events = $programmingManager->selectAll();
+        $events = $programmingManager->selectAllEventNotPast();
         $carousel = $programmingManager->carouselView();
 
         return $this->twig->render('Home/index.html.twig', [
             "events" => $events,
             "categories" => $listCategory,
-            "carousels" => $carousel
+            "carousels" => $carousel,
+            "partners" => $this->getPartners()
         ]);
     }
 }

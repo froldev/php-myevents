@@ -9,6 +9,7 @@
 
 namespace App\Controller;
 
+use App\Model\PartnersManager;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
@@ -39,5 +40,18 @@ abstract class AbstractController
         );
         $this->twig->addExtension(new DebugExtension());
         $this->twig->addGlobal("session", $_SESSION);
+    }
+
+    protected function getPartners(): array
+    {
+        $partnersManager = new PartnersManager();
+        return $partnersManager->selectAll();
+    }
+
+    public function verifySession()
+    {
+        if (!$_SESSION['name']) {
+            header('Location:/admin/login');
+        }
     }
 }

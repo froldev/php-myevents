@@ -4,11 +4,14 @@ namespace App\Controller;
 
 use App\Model\CategoriesManager;
 use App\Model\EventsManager;
+use App\Model\UsersManager;
 
 class EventsController extends AbstractController
 {
     public function add()
     {
+        $this->verifySession();
+
         $titleError = $dateTimeError = $descriptionError = $priceError = $imageError = null;
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -60,16 +63,20 @@ class EventsController extends AbstractController
 
     public function list(): string
     {
+        $this->verifySession();
+
         $eventsManager = new EventsManager();
-        $events = $eventsManager->selectAll();
+        $events = $eventsManager->selectAllEventNotPast();
 
         return $this->twig->render("Admin/Events/list.html.twig", [
-            "events" => $events,
+            "events" => $events
         ]);
     }
 
     public function delete(int $id): void
     {
+        $this->verifySession();
+
         $eventsManager = new EventsManager();
         $eventsManager->deleteEvent($id);
         header("Location:/events/list");
@@ -77,6 +84,8 @@ class EventsController extends AbstractController
 
     public function edit(int $id)
     {
+        $this->verifySession();
+
         $eventsManager = new EventsManager();
         $event = $eventsManager->selectOneById($id);
 
