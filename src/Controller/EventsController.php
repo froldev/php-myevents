@@ -61,27 +61,9 @@ class EventsController extends AbstractController
 
     public function list(): string
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (empty($_POST['email']) || !isset($_POST['email'])) {
-                return $this->twig->render('Admin/login.html.twig');
-            }
-
-            if (empty($_POST['password']) || !isset($_POST['password'])) {
-                return $this->twig->render('Admin/login.html.twig');
-            } else {
-                $usersManager = new UsersManager();
-                $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                $login = $usersManager->selectUsersByEmail($_POST['email'], $hash);
-                if (!$login) {
-                    return $this->twig->render('Admin/login.html.twig');
-                }
-                $_SESSION = $login;
-            }
-        }
 
         $eventsManager = new EventsManager();
         $events = $eventsManager->selectAll();
-
 
         return $this->twig->render("Admin/Events/list.html.twig", [
             "events" => $events,

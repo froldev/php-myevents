@@ -54,9 +54,11 @@ class EventsManager extends AbstractManager
         $time = $date->format('Y-m-d H:i:s');
 
         $request = $this->pdo->prepare("UPDATE " . self::TABLE . "
+            left JOIN event_category ON event.id = event_category.event_id
             SET title = :title, date_time = :date_time, 
-            price = :price, description = :description, image = :image, video = :video, link = :link 
-            WHERE id=:id");
+            price = :price, description = :description, image = :image, video = :video, link = :link,
+            category_id = :category
+            WHERE " . self::TABLE . ".id=:id");
         $request->bindValue(':id', $id, \PDO::PARAM_INT);
         $request->bindValue(':title', $event['title'], \PDO::PARAM_STR);
         $request->bindValue(':date_time', $time, \PDO::PARAM_STR);
@@ -65,13 +67,7 @@ class EventsManager extends AbstractManager
         $request->bindValue(':image', $event['image'], \PDO::PARAM_STR);
         $request->bindValue(':video', $event['video'], \PDO::PARAM_STR);
         $request->bindValue(':link', $event['link'], \PDO::PARAM_STR);
-
-        return $request->execute();
-
-        $request = $this->pdo->prepare("UPDATE " . self::TABLE . "
-            SET category = :category 
-            WHERE id=:id");
-        $request->bindValue(':id', $id, \PDO::PARAM_INT);
+        $request->bindValue(':category', $event['category'], \PDO::PARAM_INT);
 
         return $request->execute();
     }
