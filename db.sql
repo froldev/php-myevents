@@ -169,7 +169,7 @@ VALUES
 INSERT INTO partner (name, link)
 VALUES
 ('Région Pays De La Loire', 'http://www.paysdelaloire.fr/'),
-('Wild Code School', 'https://www.wildcodeschool.com/fr-FR')
+('Wild Code School', 'https://www.wildcodeschool.com/fr-FR'),
 ('La Copie Privée', 'http://www.copieprivee.org//')
 ;
 
