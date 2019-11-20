@@ -49,10 +49,11 @@ class EventsManager extends AbstractManager
 
     public function updateEvents(array $event, int $id) : bool
     {
-        $request = $this->pdo->prepare("UPDATE " . self::TABLE . "
+        $request = $this->pdo->prepare("UPDATE " . self::TABLE . ", event_category
             SET title = :title, date_time = :date_time, 
-            price = :price, description = :description, image = :image, video = :video, link = :link 
-            WHERE id=:id");
+            price = :price, description = :description, image = :image, video = :video, link = :link,
+            category_id = :category_id
+            WHERE " . self::TABLE . ".id=:id");
         $request->bindValue(':id', $id, \PDO::PARAM_INT);
         $request->bindValue(':title', $event['title'], \PDO::PARAM_STR);
         $request->bindValue(':date_time', $event['date_time'], \PDO::PARAM_STR);
@@ -61,6 +62,8 @@ class EventsManager extends AbstractManager
         $request->bindValue(':image', $event['image'], \PDO::PARAM_STR);
         $request->bindValue(':video', $event['video'], \PDO::PARAM_STR);
         $request->bindValue(':link', $event['link'], \PDO::PARAM_STR);
+        $request->bindValue(':category_id', $event['category'], \PDO::PARAM_INT);
+
 
         return $request->execute();
     }

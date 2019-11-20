@@ -4,16 +4,24 @@
 
 {% block content %}
     <div>
-        <h1 class="top-title">{{ details.title }}</h1>
-        <p>Le {{ details.date_time }}</p>
-        <div class="event-card">
-            <img src="{{ details.image }}" alt="">
-            <p>{{ details.description }}</p>
-            <p>{{ details.category }}</p>
+        <h1 class="top-title details-title">{{ details.title }}</h1>
+        <p class="date">Le {{ details.date_time }}</p>
+        <div class="details-desktop-img-and-desc">
+            <img src="{{ details.image }}" class="details-img" alt="">
+            <div class="details-event-card">
+                <p>{{ details.description }}</p>
+            </div>
         </div>
-        <p>{{ details.price }}</p>
-        <a href="{{ details.link }}">{{ details.link }}</a>
-        <iframe width="350" height="210" src="{{ details.video }}">
+        <p class="details-category">Catégorie : {{ details.category }}</p>
+        <p class="details-reservation">Réservez dès maintenant votre place au prix de </p>
+        <p class="details-price">{{ details.price }} €</p>
+        <div  class="details-button">
+            <a href=""><button>Réservez ici !</button></a>
+        </div>
+        <div class="details-link">
+            <a href="{{ details.link }}">{{ details.link }}</a>
+        </div>
+        <iframe width="100%" height="100%" src="{{ details.video }}">
         </iframe>
     </div>
 {% endblock %}

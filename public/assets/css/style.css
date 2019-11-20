@@ -268,27 +268,27 @@ textarea {
 /* -------------------------------------------- */
 /* Event  */
 
-.event-card{
-    width: 80%;
+.event-card, .details-event-card{
+    width: 98%;
     display: flex;
     border-color: black;
     border-radius: 25px;
     border-width: 2px;
     box-shadow: 2px 4px 10px grey;
     background-color: var(--orangeLight);
-    padding: 20px !important;
-    margin: 30px;
+    padding: 5px !important;
+    margin-left: 1%;
 }
 
 .event-card p{
-    width:70%;
+    width:100%;
     text-align: justify;
-    margin-left: 30px;
 }
 
-.event-card img{
-    max-height: 500px;
-    width: auto;
+.details-img{
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
 }
 
 .programming-card{
@@ -300,10 +300,110 @@ textarea {
     justify-content: space-around;
 }
 
+.details-category, .details-reservation{
+    color: var(--white);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.details-button, .details-link{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.details-title{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.date{
+    color: var(--white);
+    text-align: center;
+    font-size: 30px;
+}
+
+.details-link{
+
+}
+
+.details-price{
+    font-size: 30px;
+    color: var(--white);
+    text-align: center;
+    font-weight: bold;
+}
+
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 /* -------------------------------------------- */
             /* Mobile Version */
+
+@media screen and (min-width: 769px) {
+
+    .details-desktop-img-and-desc{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .details-event-card{
+        width: 80%;
+        padding: 20px !important;
+        margin-left: 10%;
+    }
+
+    .details-event-card p{
+        text-align: justify;
+        margin: auto;
+    }
+
+    .details-img{
+        margin-bottom: 20px;
+    }
+
+    .programming-card{
+        min-width: 300px;
+        flex-direction: column;
+    }
+
+    .programming-section{
+        justify-content: space-around;
+    }
+
+    .details-category, .details-reservation{
+        color: var(--white);
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .details-button, .details-link{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .details-title{
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+
+    .date{
+        color: var(--white);
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .details-link{
+
+    }
+
+    .details-price{
+        font-size: 30px;
+        color: var(--white);
+        text-align: center;
+        font-weight: bold;
+    }
+}
 
 @media screen and (max-width: 640px){
     .bar-search{

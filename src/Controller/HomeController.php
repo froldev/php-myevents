@@ -31,6 +31,8 @@ class HomeController extends AbstractController
         $events = $programmingManager->selectAll();
         $carousel = $programmingManager->carouselView();
 
+        var_dump($_POST);
+
         return $this->twig->render('Home/index.html.twig', [
             "events" => $events,
             "categories" => $listCategory,
