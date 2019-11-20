@@ -48,6 +48,9 @@ abstract class AbstractManager
      */
     public function selectAll(): array
     {
+        $request = $this->pdo->prepare("DELETE FROM event WHERE date_time < now()");
+        $request->execute();
+
         return $this->pdo->query('SELECT * FROM ' . $this->table)->fetchAll();
     }
 
