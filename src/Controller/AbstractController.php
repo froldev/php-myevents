@@ -47,4 +47,11 @@ abstract class AbstractController
         $partnersManager = new PartnersManager();
         return $partnersManager->selectAll();
     }
+
+    public function verifySession()
+    {
+        if (!$_SESSION) {
+            header('Location:/admin/login');
+        }
+    }
 }
