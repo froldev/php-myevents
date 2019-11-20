@@ -25,9 +25,9 @@ CREATE TABLE users(
 
 INSERT INTO users (email, password, lastname, firstname, role_id)
 VALUES
-('admin@admin.fr', '$2y$10$qiEdkGpA.Nr06pFXCv3p1.Xwy1WNY1GIweZL/qv1VTD03HkEe9.2u', 'Super', 'Admin', 1),
-('robert@mail.fr', '$2y$10$I3WfpAWd9VkN8eNeeuYCDe8McIbAqbHwBSz0tY5vthSal6Sgr8h1a', 'Michu', 'Robert', 2),
-('user@mail.fr', '$2y$10$Oh8yvSQ7zu3pwGzpe0rPzOfZR5axZSH6BZd6lboRSMVImhFCj8Cxq', 'Hue', 'Brigitte', 3)
+('admin@admin.fr', '$2y$10$Fhv9XSpyrwy9lyMYvU1joOB74jHg1FwDedPu84UU3.GosX/QNWJLG', 'SuperAdmin', 'SuperAdmin', 1),
+('robert@mail.fr', '$2y$10$9YfNEyhEuv2rHjFvh94ze.8HXVXXqCmiKv70wg7hev0InRKkvR0uW', 'Michu', 'Robert', 2),
+('user@mail.fr', '$2y$10$nIYFMQ/S1YOhmUzVILXaPudJrsptqCq.BwkcpHpU8YjpDyRrCQer2', 'Hue', 'Brigitte', 3)
 ;
 
 CREATE TABLE event(
@@ -169,7 +169,7 @@ VALUES
 INSERT INTO partner (name, link)
 VALUES
 ('Les Pays De La Loire', 'http://www.paysdelaloire.fr/'),
-('Wild Code School', 'https://www.wildcodeschool.com/fr-FR/campus/nantes/')
+('Wild Code School', 'https://www.wildcodeschool.com/fr-FR/campus/nantes/'),
 ('SACEM', 'https://www.sacem.fr/')
 ;
 
