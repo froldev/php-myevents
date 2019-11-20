@@ -46,15 +46,16 @@ body {
 h1, h2 {
     color: var(--white);
     font-family: 'Permanent Marker', cursive;
-    font-size: 40px;
+    font-size: 45px;
 }
 
 h3 {
     color: var(--white);
     font-family: 'McLaren', cursive;
+    font-size: 25px;
 }
 
-h5 {
+h6 {
     margin-bottom: 20px;
     padding: 10px;
     background-color: var(--orange);
@@ -85,9 +86,13 @@ footer {
 }
 
 .reseaux {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     justify-content: space-around;
+}
+
+.partners {
+
 }
 
 .partners:hover {
@@ -105,7 +110,7 @@ a {
     background-color: transparent;
 }
 
-.admin {
+.admin{
     color: var(--orangeDark);
     margin: 25px 0px;
 }
@@ -163,6 +168,11 @@ a {
 
 /* -------------------------------------------- */
 /* programming carousel */
+
+.carousel {
+    margin-top: 150px;
+}
+
 .carousel-inner
 {
     margin-top: 90px;
@@ -195,7 +205,6 @@ a {
 
 .button a {
     text-decoration: none;
-    box-shadow: 2px 4px 10px grey;
 }
 
 .address {
@@ -247,7 +256,7 @@ a {
 
     background: var(--orangeDark);
     color: var(--white);
-    width: 20%;
+    width: 30%;
 }
 
 input {
@@ -277,6 +286,7 @@ textarea {
     color: white;
     display:block;
     text-align: center;
+    font-size: 15px;
 }
 
 /* -------------------------------------------- */
@@ -312,9 +322,14 @@ textarea {
 
 .programming-section{
     justify-content: space-around;
+    margin: 30px 0px;
 }
 
-/* -------------------------------------------- */
+.card-img {
+    padding: 10px;
+}
+
+    /* -------------------------------------------- */
 /* History  */
 
 .history-card{
@@ -327,10 +342,11 @@ textarea {
     margin: 30px;
     line-height: 2.5;
     font-size: 18px;
+    text-align: justify;
 }
 
 .img-concert {
-    margin-top: 40px;
+    margin-bottom: 40px;
 }
 /* -------------------------------------------- */
 /* -------------------------------------------- */

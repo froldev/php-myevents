@@ -40,7 +40,7 @@ class HomeController extends AbstractController
             "events" => $events,
             "categories" => $listCategory,
             "carousels" => $carousel,
-            "session" => $_SESSION
+            "session" => $_SESSION,
             'partners' => $this->getPartners()
         ]);
     }
