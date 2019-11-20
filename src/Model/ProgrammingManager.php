@@ -17,7 +17,8 @@ class ProgrammingManager extends AbstractManager
             "SELECT image 
             FROM " . self::TABLE . " 
             ORDER BY date_time
-            LIMIT 6"
+            LIMIT 6
+            "
         );
         $query -> execute();
         return $query -> fetchAll();
@@ -25,6 +26,9 @@ class ProgrammingManager extends AbstractManager
 
     public function insertSearch(array $search): array
     {
+        $request = $this->pdo->prepare("DELETE FROM ".self::TABLE." WHERE date_time < now()");
+        $request->execute();
+
         if (!empty($search['search']) && !empty($search['category'])) {
             $query = $this->pdo->prepare(
                 "SELECT *, event.id

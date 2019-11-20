@@ -113,42 +113,42 @@ CREATE TABLE partner(
 
 INSERT INTO event (title, date_time, price, description, image, video, link)
 VALUES
-('Soprano', '2019-10-18', 25,
+('Soprano', '2019-12-18', 25,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
 'https://zupimages.net/up/19/47/6y8m.jpg',
 '',
 ''
 ),
-('M', '2019-11-15', 20,
+('M', '2019-12-15', 20,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
 'https://zupimages.net/up/19/47/ta8q.jpg',
 'https://youtu.be/CfCxItPlidc',
 'https://labo-m.net/'
 ),
-('Angèle', '2019-11-29', 30,
+('Angèle', '2019-12-29', 30,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
 'https://zupimages.net/up/19/47/jpmc.jpeg',
 'https://youtu.be/cA46ZNjrzeY',
 ''
 ),
-('Void Shelter', '2019-11-29', 130,
+('Void Shelter', '2019-12-29', 130,
 'Un abri. Votre esprit. À l intérieur un côté ordonné et rassurant, l autre brumeux et tourmenté. Entouré de vide symbolisant l inconnu et l inconscient.
 Void Shelter crée son univers mélancolique en apportant au rock alternatif des compositions viscérales, inspirées d expériences et de récits, aux textes surréalistes. Le groupe emporte le spectateur dans un rock ambiant, élégant et tortueux en misant sur le décalage de ses inspirations.',
 'https://zupimages.net/up/19/46/y77c.jpg',
 'https://www.youtube.com/watch?v=_fZ5wbzrft0',
 ''
 ),
-('Claudio Capéo', '2019-11-29', 12,
+('Claudio Capéo', '2019-12-29', 12,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
 'https://zupimages.net/up/19/47/b5k7.jpeg',
 'https://youtu.be/cA46ZNjrzeY',
 ''
 ),
-('Trois Cafés Gourmands', '2019-11-29', 30,
+('Trois Cafés Gourmands', '2019-12-29', 30,
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
 Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
 'https://zupimages.net/up/19/47/syhq.jpeg',
@@ -168,9 +168,9 @@ VALUES
 
 INSERT INTO partner (name, link)
 VALUES
-('Les Pays De La Loire', 'http://www.paysdelaloire.fr/'),
-('Wild Code School', 'https://www.wildcodeschool.com/fr-FR/campus/nantes/'),
-('SACEM', 'https://www.sacem.fr/')
+('Région Pays De La Loire', 'http://www.paysdelaloire.fr/'),
+('Wild Code School', 'https://www.wildcodeschool.com/fr-FR'),
+('La Copie Privée', 'http://www.copieprivee.org//')
 ;
 
 INSERT INTO event_category (event_id, category_id)

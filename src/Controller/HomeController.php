@@ -32,7 +32,6 @@ class HomeController extends AbstractController
         $events = $programmingManager->selectAll();
         $carousel = $programmingManager->carouselView();
 
-
         if (isset($_POST['lastname'])) {
             $_SESSION['lastname'] = $_POST['lastname'];
         }

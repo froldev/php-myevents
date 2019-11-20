@@ -10,6 +10,8 @@ class EventsController extends AbstractController
 {
     public function add()
     {
+        $this->verifySession();
+
         $titleError = $dateTimeError = $descriptionError = $priceError = $imageError = null;
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -61,6 +63,7 @@ class EventsController extends AbstractController
 
     public function list(): string
     {
+        $this->verifySession();
 
         $eventsManager = new EventsManager();
         $events = $eventsManager->selectAll();
@@ -73,6 +76,8 @@ class EventsController extends AbstractController
 
     public function delete(int $id): void
     {
+        $this->verifySession();
+
         $eventsManager = new EventsManager();
         $eventsManager->deleteEvent($id);
         header("Location:/events/list");
@@ -80,8 +85,11 @@ class EventsController extends AbstractController
 
     public function edit(int $id)
     {
+        $this->verifySession();
+
         $eventsManager = new EventsManager();
         $event = $eventsManager->selectOneById($id);
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $event = $_POST;
             if ($eventsManager->updateEvents($event, $id)) {

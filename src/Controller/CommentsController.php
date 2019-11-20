@@ -9,6 +9,8 @@ class CommentsController extends AbstractController
 {
     public function list(): string
     {
+        $this->verifySession();
+
         $commentsManager = new CommentsManager();
         $comments = $commentsManager->selectAnswerIsNull();
 
@@ -19,6 +21,8 @@ class CommentsController extends AbstractController
 
     public function display(int $id): string
     {
+        $this->verifySession();
+
         $commentsManager = new CommentsManager();
         $comments = $commentsManager->selectOneById($id);
 
@@ -48,6 +52,7 @@ class CommentsController extends AbstractController
 
     public function send(): string
     {
+        $this->verifySession();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $isValid = true;
