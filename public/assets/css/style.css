@@ -34,19 +34,51 @@ html, body {
     margin-right:0px !important;
 }
 
+nav  {
+    background-color: var(--dark);
+}
+
+nav  {
+    border-bottom: 1px solid var(--white);
+}
+
+footer  {
+    border-top: 1px solid var(--white);
+}
+
+.navbar .navbar-nav .nav-link {
+    color: var(--white);
+}
+
+.navbar .navbar-nav .nav-item {
+    margin: 0 10px;
+    border: 1px solid transparent;
+}
+
+.navbar .navbar-nav .nav-item:hover:not(.active) .nav-link {
+    color: var(--orangeDark);
+}
+
+.navbar .navbar-nav .active .nav-link {
+    color: var(--orangeDark);
+    border-top: 1px solid var(--orangeDark);
+    border-bottom: 1px solid var(--orangeDark);
+}
+
+
 /* -------------------------------------------- */
 /* Body */
 
 body {
     width:100%;
-    background: linear-gradient(135deg, var(--dark)55%, var(--orangeDark));
+    background: linear-gradient(135deg, var(--dark)45%, var(--orangeDark));
     background-attachment: fixed;
 }
 
 h1, h2 {
     color: var(--white);
     font-family: 'Permanent Marker', cursive;
-    font-size: 45px;
+    font-size: 40px;
 }
 
 h3 {
@@ -70,7 +102,6 @@ p {
 /* Footer */
 
 footer {
-    background: var(--dark);
     color: white;
 }
 
@@ -388,7 +419,7 @@ textarea {
 }
 
 .name{
-    color:var(--dark);
+    color:var(--white);
 }
 /* -------------------------------------------- */
 /* -------------------------------------------- */

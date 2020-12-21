@@ -9,12 +9,12 @@ CREATE TABLE role(
 
 INSERT INTO role (role)
 VALUES
-('SuperAdmin'),
-('Admin'),
-('User')
+("SuperAdmin"),
+("Admin"),
+("User")
 ;
 
-CREATE TABLE users(
+CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(80) NOT NULL,
@@ -25,12 +25,17 @@ CREATE TABLE users(
 
 INSERT INTO users (email, password, lastname, firstname, role_id)
 VALUES
-('admin@admin.fr', '$2y$10$Fhv9XSpyrwy9lyMYvU1joOB74jHg1FwDedPu84UU3.GosX/QNWJLG', 'SuperAdmin', 'SuperAdmin', 1),
-('robert@mail.fr', '$2y$10$9YfNEyhEuv2rHjFvh94ze.8HXVXXqCmiKv70wg7hev0InRKkvR0uW', 'Michu', 'Robert', 2),
-('user@mail.fr', '$2y$10$nIYFMQ/S1YOhmUzVILXaPudJrsptqCq.BwkcpHpU8YjpDyRrCQer2', 'Hue', 'Brigitte', 3)
+("superadmin@admin.fr", "$2y$10$Fhv9XSpyrwy9lyMYvU1joOB74jHg1FwDedPu84UU3.GosX/QNWJLG", "Super", "Admin", 1),
+("admin@admin.fr", "$2y$10$9YfNEyhEuv2rHjFvh94ze.8HXVXXqCmiKv70wg7hev0InRKkvR0uW", "Just", "Admin", 2),
+("user@mail.fr", "$2y$10$nIYFMQ/S1YOhmUzVILXaPudJrsptqCq.BwkcpHpU8YjpDyRrCQer2", "Just", "User", 3)
 ;
 
-CREATE TABLE event(
+CREATE TABLE placement (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    placement VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE event (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     date_time DATETIME NOT NULL,
@@ -38,7 +43,15 @@ CREATE TABLE event(
     description TEXT NOT NULL,
     image VARCHAR(255) NOT NULL,
     video VARCHAR(255) NULL,
-    link VARCHAR(255) NULL
+    link_artist VARCHAR(255) NULL,
+    organizer VARCHAR(255) NOT NULL,
+    link_organizer VARCHAR(255) NULL,
+    producer VARCHAR(255) NULL,
+    placement_id VARCHAR(100) NOT NULL,
+    reservation1_title VARCHAR(255) NOT NULL,
+    reservation1_link VARCHAR(255) NOT NULL,
+    reservation2_title VARCHAR(255) NULL,
+    reservation2_link VARCHAR(255) NULL
 );
 
 CREATE TABLE artist(
@@ -100,86 +113,227 @@ CREATE TABLE comment(
 
 INSERT INTO comment (firstname, lastname, email, date_time, object, message)
 VALUES
-('Robert', 'Michu', 'rober.michu@gmail.fr', '2019-10-29', 'Demande de renseignement', 'Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?'),
-('Emmanuel', 'Macron', 'president@lapresidence.com', '2019-10-28', 'Question au ministres', 'Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?'),
-('Guy', 'Lux', 'guy.lux@intervilles.fr', '2019-10-30', 'Question sur le schimilili', 'Bonjour, pouvez me dire quand reviendra le schimililili ?')
+("Robert", "Michu", "rober.michu@gmail.fr", "2019-10-29", "Demande de renseignement", "Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?"),
+("Emmanuel", "Macron", "president@lapresidence.com", "2019-10-28", "Question au ministres", "Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?"),
+("Guy", "Lux", "guy.lux@intervilles.fr", "2019-10-30", "Question sur le schimilili", "Bonjour, pouvez me dire quand reviendra le schimililili ?")
 ;
 
 CREATE TABLE partner(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    link VARCHAR(255) NULL
+    link VARCHAR(255) NULL,
+    picture VARCHAR(255) NOT NULL
 );
 
-INSERT INTO event (title, date_time, price, description, image, video, link)
+INSERT INTO placement (placement)
 VALUES
-('Soprano', '2019-12-18', 25,
-'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
-Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://zupimages.net/up/19/47/6y8m.jpg',
-'',
-''
+("Placement libre"),
+("Placement numéroté"),
+("Placement par zones")
+;
+
+INSERT INTO event (title, date_time, price, description, image, video, link_artist, organizer, link_organizer, producer, placement_id, reservation1_title, reservation1_link, reservation2_title, reservation2_link)
+VALUES
+("Jean-Louis Aubert",
+"2070-03-08",
+39,
+"Jean-Louis Aubert se produit seul en scène avec des hologrammes de lui-même qu’il déclenche, en live ! Ce rendez-vous sera l’occasion de découvrir et partager les chansons du nouvel album, mais aussi ses titres incontournables.",
+"https://zenith-nantesmetropole.fnacspectacles.com/static/0/visuel/600/425/JEAN-LOUIS-AUBERT-TOUR_4255485942318709046.jpg",
+"https://www.youtube.com/watch?v=FcIy_qqK5Ko",
+"https://www.jeanlouisaubert.com/",
+"Cheyenne Productions",
+"http://www.cheyenne-prod.com/",
+"Lagardère Unlimited live Entertainement",
+2,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/jean-louis-aubert-billet/idmanif/473737/idtier/5689485",
+"Fnac",
+"https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/rock-jean-louis-aubert-manshjla-lt.htm"
 ),
-('M', '2019-12-15', 20,
-'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
-Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://zupimages.net/up/19/47/ta8q.jpg',
-'https://youtu.be/CfCxItPlidc',
-'https://labo-m.net/'
+("Hoshi",
+"2070-03-15",
+34,
+"Après une tournée de plus de 100 dates pour présenter son premier album « Il suffit d’y croire », certifié disque de platine, Hoshi revient avec un nouvel album ‘Sommeil Levant’ et une nouvelle tournée dans les Zéniths de France à partir de février ! Le nouvel album d’Hoshi, « Sommeil Levant », sortira le 5 juin prochain !",
+"https://www.zenith-nantesmetropole.com/images/stories/manifestations/report_hoshi_d%C3%A9cembre_2021_copie.jpg",
+"https://www.youtube.com/watch?v=nCKtYXIh1Ac",
+"https://www.difymusic.com/hoshi-musique",
+"0 Spectacles",
+"https://www.ospectacles.fr/",
+"Caramba culture live",
+2,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/hoshi-billet/idmanif/479669/idtier/5689485",
+"Fnac",
+"https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/variete-et-chanson-francaises-hoshi-manshhos-lt.htm"
 ),
-('Angèle', '2019-12-29', 30,
-'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
-Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://zupimages.net/up/19/47/jpmc.jpeg',
-'https://youtu.be/cA46ZNjrzeY',
-''
+("Christophe Mae",
+"2070-03-29",
+37,
+"Christophe Maé enfin de retour ! Depuis plus d’une décennie, le chanteur enchaîne les succès, chacune de ses tournées crée l’événement. Christophe Maé sortira son nouveau single 'Les gens' le 4 septembre, extrait de son nouvel album à paraître à l’automne, et remontera sur scène dans toute la France. Ce prochain show ambitieux et généreux nous réserve de nombreuses surprises !",
+"https://www.zenith-nantesmetropole.com/images/ma%C3%A9.jpg",
+"https://youtu.be/NQY8EhTX3tA",
+"https://www.christophe-mae.fr/",
+"0 Spectacles",
+"https://www.ospectacles.fr/",
+"Décibels Productions",
+2,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/christophe-mae-billet/idmanif/474716/idtier/5689485",
+"Fnac",
+"https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/variete-et-chanson-francaises-christophe-mae-manshmae-lt.htm"
 ),
-('Void Shelter', '2019-12-29', 130,
-'Un abri. Votre esprit. À l intérieur un côté ordonné et rassurant, l autre brumeux et tourmenté. Entouré de vide symbolisant l inconnu et l inconscient.
-Void Shelter crée son univers mélancolique en apportant au rock alternatif des compositions viscérales, inspirées d expériences et de récits, aux textes surréalistes. Le groupe emporte le spectateur dans un rock ambiant, élégant et tortueux en misant sur le décalage de ses inspirations.',
-'https://zupimages.net/up/19/46/y77c.jpg',
-'https://www.youtube.com/watch?v=_fZ5wbzrft0',
-''
+("Iam",
+"2070-04-05",
+45,
+"Face à la demande, IAM annonce la suite de son Rap Warrior Tour avec 12 concerts dans les Zénith à travers la France, la Belgique et la Suisse. La formation marseillaise viendra défendre sur scène son nouvel album Yasuke (déjà disponible).",
+"https://www.zenith-nantesmetropole.com/images/stories/manifestations/IAM_report.jpg",
+"https://youtu.be/ONS45hZ4vQM",
+"https://www.christophe-mae.fr/",
+"0 Spectacles",
+"https://www.ospectacles.fr/",
+"Live Nation",
+3,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/iam-billet/idmanif/482048/idtier/5689485",
+"Fnac",
+"https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/rap-hip-hop-slam-iam-mannaiam-lt.htm"
 ),
-('Claudio Capéo', '2019-12-29', 12,
-'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
-Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://zupimages.net/up/19/47/b5k7.jpeg',
-'https://youtu.be/cA46ZNjrzeY',
-''
+("Fascination",
+"2070-04-19",
+49,
+"Le plus spectaculaire des shows équestres en Tournée dans toute la France ! 'Fascination' : Quand l’art équestre réunit cascades, tradition, poésie et liberté ! Ce grand spectacle, mêlant émotion et audace vous fera rêver pendant près de deux heures ! 
+Pour la première fois, l’homme-orchestre du cheval à la renommée mondiale, Mario Luraschi, se met en scène ! Ce spectacle vient couronner 50 ans de carrière équestre : sur un plateau de 1000m2 avec sa troupe de 15 cavaliers, Mario vous fera voyager à travers le temps, son histoire du cheval, les grandes fresques du cinéma et de la tradition équestre. 
+Musique, lumières, costumes, pyrotechnie : un véritable show à la gloire du cheval !",
+"https://www.zenith-nantesmetropole.com/images/stories/manifestations/visuel_fascination.jpg",
+"",
+"",
+"Az Prod",
+"",
+"",
+2,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/mario-luraschi-billet/idmanif/460020/idtier/5689485",
+"Fnac",
+"https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/spectacle-equestre-mario-luraschi-manshlur-lt.htm#/calendrier/"
 ),
-('Trois Cafés Gourmands', '2019-12-29', 30,
-'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a quam congue, pretium velit nec, egestas lacus. Quisque sagittis odio in nisi facilisis, ut pellentesque felis egestas. Praesent pharetra eros orci, at feugiat augue finibus eu. Suspendisse tristique sem nec nibh dapibus faucibus. Ut at sollicitudin turpis. Mauris sagittis ante sed aliquam efficitur. Vivamus quam arcu, tempus semper tortor malesuada, pulvinar molestie mauris. Fusce in vestibulum ex. Cras vel justo eget dui tempus ullamcorper.
-Morbi et laoreet massa, vel luctus lacus. Donec facilisis leo ex, nec maximus velit porttitor eget. Cras bibendum tempor est, viverra efficitur urna tincidunt ac. Etiam eget velit vitae neque venenatis tempor. Curabitur eu massa velit. Quisque a porta velit. Nullam feugiat commodo efficitur. Proin ullamcorper, mauris ut pulvinar imperdiet, lorem est ullamcorper eros',
-'https://zupimages.net/up/19/47/syhq.jpeg',
-'https://youtu.be/cA46ZNjrzeY',
-''
+("The Avener",
+"2070-04-26",
+39,
+"Le producteur et DJ Français de Pop Electro s’est révélé au grand public avec le tube mondial Fade Out Lines, véritable hymne Electro bluesy intemporel qui figure même dans la playlist de Michelle & Barack Obama. 
+Le niçois confirme son talent de producteur en 2015 avec son premier album The Wandering of The Avener, déjà certifié triple platine en France. Ses morceaux irrésistibles mêlant avec aisance Electro et Pop le voient collaborer avec les plus grands artistes, de Bob Dylan à Rodriguez en passant par Lana Del Rey ou Mylène Farmer. Avec le tubesque 'Beautiful' — joué en avant-première sur le toit du Palais des Festivals de Cannes pendant le FIF — il prépare les esprits pour son grand retour avec un nouvel album à paraître début de l'année !",
+"https://www.zenith-nantesmetropole.com/images/stories/manifestations/the_avener_site_.jpg",
+"https://youtu.be/vrYSTFezt5s",
+"http://www.theavener.com/",
+"0 Spectacles",
+"https://www.ospectacles.fr/",
+"Miala",
+3,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/the-avener-billet/idmanif/480777/idtier/5689485",
+"Fnac",
+"https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/musique-electronique-the-avener-manshtav-lt.htm"
+),
+("Gad Elmaleh",
+"2070-05-03",
+35,
+"5 ans après 'Sans tambour' et une tournée internationale avec un spectacle en anglais dans plus de 15 pays, Gad Elmaleh est de retour avec un one-man show inédit: 'D’AILLEURS'.",
+"https://www.zenith-nantesmetropole.com/images/stories/manifestations/gad.jpg",
+"https://youtu.be/ltRGQfXgpWY",
+"https://gadelmaleh.com/",
+"0 Spectacles",
+"https://www.ospectacles.fr/",
+"Live Nation",
+2,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/gad-elmaleh-billet/idmanif/481722/idtier/5689485",
+"Fnac",
+"https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/one-man-woman-show-gad-elmaleh-manshgad-lt.htm"
+),
+("Asaf Avidan & Band",
+"2070-05-10",
+41,
+"Asaf Avidan est la quintessence de l’émotion à l’état brut. Originaire de Jérusalem, ce songwriter hors du commun façonne un imaginaire puissant, propulsé avec délicatesse par une voix rocailleuse et singulière. 
+De nouvelles influences que l’on retrouve dans 'Earth Odyssey' et 'Lost Horse', déjà disponibles sur les plateformes. 
+Fort d’un nouvel album prévu en septembre, Asaf Avidan annonce l’Anagnorisis Tour avec son nouveau groupe.",
+"https://www.zenith-nantesmetropole.com/images/stories/manifestations/ASAF_.jpg",
+"https://youtu.be/NyS0OUhJKQM",
+"https://www.asafavidanmusic.com/",
+"K Production",
+"",
+"Gérard Drouot Productions",
+3,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/asaf-avidan-band-billet/idmanif/492186/idtier/5689485",
+"",
+""
+),
+("Muriel Robin",
+"2070-05-17",
+36,
+"Depuis plus de 30 ans nous vivons avec ses sketchs. L’addition, Le noir, La réunion de chantier et tant d’autres… Ils ont accompagné nos vies, marqué notre quotidien, ils font partie de notre mémoire, de notre histoire collective, de notre jeunesse. 
+Les répliques sont cultes, les expressions incontournables, indissociables d’une époque qui continue de vivre en nous. Qui n’a pas rêvé de remonter le temps ? De retrouver ces instants qui nous ont rendu si heureux ? 
+Muriel Robin nous fait ce cadeau fou… l’espace de quelques soirs elle reprend ses sketchs cultes ! Le passé et le présent vont danser ensemble en une grande fête de la joie pour célébrer notre si belle histoire commune. Et Pof !",
+"https://www.zenith-nantesmetropole.com/images/stories/manifestations/muriel_robin.jpg",
+"",
+"https://www.murielrobin-etpof.com/fr",
+"0 Spectacles",
+"https://www.ospectacles.fr/",
+"Ts3",
+2,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/muriel-robin-billet/idmanif/465370/idtier/5689485",
+"",
+""
+),
+("Patric Bruel",
+"2070-05-31",
+55,
+"Nouvel album, nouveau show et toujours la touche Bruel : La tournée Ce soir on sort… de Patrick Bruel vous fait voyager ici et là entre succès mythiques et audaces toujours inattendues. 
+Des millions d’albums vendus, des tournées gigantesques et des concerts qui restent gravés dans les mémoires, retrouvez Patrick Bruel dans les plus grandes salles de France, Suisse, Belgique. 
+Avec 1 million de spectateurs et 120 dates programmées, l’artiste jouera les prolongations au printemps ! L’aventure continue…! Retrouvez dès à présent l’édition spéciale de l’album 'Ce soir on sort…' avec 8 titres bonus, 3 inédits dont un duo avec Boulevard Des Airs",
+"https://www.zenith-nantesmetropole.com/images/stories/manifestations/bruel_2020.jpg",
+"https://youtu.be/5HxJNl-CfTc",
+"https://www.patrickbruel.com/",
+"Cheyenne Productions",
+"http://www.cheyenne-prod.com/",
+"14 productions",
+2,
+"Ticketmaster",
+"https://www.ticketmaster.fr/fr/manifestation/patrick-bruel-billet/idmanif/481733/idtier/5689485",
+"Fnac",
+"https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/variete-et-chanson-francaises-patrick-bruel-manshpat-lt.htm"
 )
 ;
 
 INSERT INTO category (category)
 VALUES
-('Rock'),
-('Pop'),
-('Jazz'),
-('Metal'),
-('Rap')
-;
-
-INSERT INTO partner (name, link)
-VALUES
-('Région Pays De La Loire', 'http://www.paysdelaloire.fr/'),
-('Wild Code School', 'https://www.wildcodeschool.com/fr-FR'),
-('La Copie Privée', 'http://www.copieprivee.org//')
+("Cirque"),
+("Electro"),
+("Humour"),
+("Metal"),
+("Pop / Rock / Blues"),
+("Rap / hip Hop"),
+("Variété française"),
+("variété internationale")
 ;
 
 INSERT INTO event_category (event_id, category_id)
 VALUES
-('1', '2'),
-('2', '4'),
-('3', '3'),
-('4', '1'),
-('5', '5'),
-('6', '2')
+("1", "5"),
+("2", "7"),
+("3", "7"),
+("4", "6"),
+("5", "1"),
+("6", "8"),
+("7", "3"),
+("8", "8"),
+("9", "3"),
+("10", "7")
 ;
 
+INSERT INTO partner (name, link, picture)
+VALUES
+("Région Pays De La Loire", "http://www.paysdelaloire.fr/", ''),
+("Wild Code School", "https://www.wildcodeschool.com/fr-FR", ''),
+("La Copie Privée", "http://www.copieprivee.org//", '')
+;
