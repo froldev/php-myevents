@@ -14,7 +14,7 @@ class ProgrammingManager extends AbstractManager
     public function carouselView()
     {
         $query = $this->pdo->prepare(
-            "SELECT image 
+            "SELECT id, title, date_time, picture 
             FROM " . self::TABLE . " 
             WHERE date_time > now()
             ORDER BY date_time

@@ -1,47 +1,48 @@
 <footer>
-
-    <div class="container">
-        <div class="row justify-content-around">
-            <!-- Menu -->
-            <div class="col-4 d-flex flex-column menu">
-                <a href="/" title="Tu veux du bon son ?" class="menu">Du bon son</a>
-                <a href="../../../olympic/information" title="Tu veux tout savoir ?" class="menu">Tout savoir</a>
-                <a href="../../../olympic/history" title="Tu veux connaître notre histoire ?" class="menu">Notre histoire</a>
-                <a href="../../../olympic/contact" title="Tu veux nous contacter ?" class="menu">Nous contacter</a>
-            </div>
-            <!-- Details -->
-            <div class="col-4 d-flex flex-column menu">
-                <p>2 bis Quai François Mitterand
-                    <br>44200 NANTES</p>
-                <a href="mailto:contact@olympic-nantais.com">contact@olympic-nantais.com</a>
-                <br>
-                <a href="tel:+332.40.++.++.++">02.40.++.++.++ </a>
-                <br>
-                <a href="../../admin/login" title="Espace administrateur" class="admin">Espace administrateur</a>
-            </div>
-            <!-- Social medias -->
-            <div class="col-2 d-flex flex-column menu text-right">
-                <a href="https://twitter.com/Olympic-Nantais"  target="_blank" title="Nous suivre sur Twitter" class="menu">
-                    <img src="https://image.flaticon.com/icons/svg/145/145812.svg" alt="twitter" class="reseaux"></a>
-                <a href="https://www.facebook.com/Olympic-Nantais" target="_blank" title="Notre page Facebook" class="menu">
-                    <img src="https://image.flaticon.com/icons/svg/145/145802.svg" alt="facebook" class="reseaux"></a>
-                <a href="https://www.instagram.com/Olympic-Nantais" target="_blank" title="Les plus belles photos et vidéos" class="menu">
-                    <img src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram" class="reseaux"></a>
-            </div>
-            </div>
+    <div id="footer" class="container">
+        <!-- Nav -->
+        <div id="footer-nav">
+            <ul>
+                <li><a href="/" title="Tu veux du bon son ?" >Du bon son</a></li>
+                <li><a href="../../../olympic/information" title="Tu veux tout savoir ?" >Tout savoir</a></li>
+                <li><a href="../../../olympic/history" title="Tu veux connaître notre histoire ?" >Notre histoire</a></li>
+                <li><a href="../../../olympic/contact" title="Tu veux nous contacter ?" >Nous contacter</a></li>
+                <li><a href="../../admin/login" title="Accès pro" class="btn btn-outline-orange">Accès pro</a></li>
+            </ul>
         </div>
-        <!--Partners-->
-        <div class="container">
-            <div class="row justify-content-between">
-                {% for partner in partners %}
-                <div class="col-4 text-center partners">
-                    <a href="{{ partner.link }}" target="_blank" title="Partenaire">
-                        <h6>{{ partner.name }}</h6>
+        <!-- Details -->
+        <div id="footer-contact">
+            <h3>Nous contacter : </h3>
+            <p>2 bis Quai François Mitterand</p>
+            <p>44200 NANTES</p>
+            <ul>
+                <li><a href="mailto:contact@olympic-nantais.com">contact@olympic-nantais.com</a></li>
+                <li><a href="tel:+339.99.99.99.99">99.99.99.99.99</a></li>
+            </ul>
+        </div>
+        <!-- Social medias -->
+        <div id="footer-social">
+            <h3>Nous suivre : </h3>
+            <ul>
+                <li>
+                    <a href="https://twitter.com/Olympic-Nantais" target="_blank" title="Nous suivre sur Twitter" >
+                        <span class="fa-stack fa-lg"><i class="fa fa-twitter fa-stack-1x"></i></span>
+                         Twitter
                     </a>
-                </div>
-                {% endfor %}
-            </div>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/Olympic-Nantais" target="_blank" title="Notre page Facebook" >
+                        <span class="fa-stack fa-lg"><i class="fa fa-facebook fa-stack-1x"></i></span>
+                         Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/Olympic-Nantais" target="_blank" title="Les plus belles photos et vidéos" >
+                        <span class="fa-stack fa-lg"><i class="fa fa-instagram fa-stack-1x"></i></span>
+                         Instagram
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
-
 </footer>

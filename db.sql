@@ -41,7 +41,7 @@ CREATE TABLE event (
     date_time DATETIME NOT NULL,
     price INT NOT NULL,
     description TEXT NOT NULL,
-    image VARCHAR(255) NOT NULL,
+    picture VARCHAR(255) NOT NULL,
     video VARCHAR(255) NULL,
     link_artist VARCHAR(255) NULL,
     organizer VARCHAR(255) NOT NULL,
@@ -132,7 +132,7 @@ VALUES
 ("Placement par zones")
 ;
 
-INSERT INTO event (title, date_time, price, description, image, video, link_artist, organizer, link_organizer, producer, placement_id, reservation1_title, reservation1_link, reservation2_title, reservation2_link)
+INSERT INTO event (title, date_time, price, description, picture, video, link_artist, organizer, link_organizer, producer, placement_id, reservation1_title, reservation1_link, reservation2_title, reservation2_link)
 VALUES
 ("Jean-Louis Aubert",
 "2070-03-08",
@@ -333,7 +333,7 @@ VALUES
 
 INSERT INTO partner (name, link, picture)
 VALUES
-("Région Pays De La Loire", "http://www.paysdelaloire.fr/", ''),
-("Wild Code School", "https://www.wildcodeschool.com/fr-FR", ''),
-("La Copie Privée", "http://www.copieprivee.org//", '')
+("Région Pays De La Loire", "http://www.paysdelaloire.fr/", "https://www.zenith-nantesmetropole.com/images/partenaires/nantesmetropole.png"),
+("Wild Code School", "https://www.wildcodeschool.com/fr-FR", "https://res.cloudinary.com/wildcodeschool/image/upload/c_fill,h_50/v1/static/irjoy97aq0eol8bf6959"),
+("La Copie Privée", "http://www.copieprivee.org//", "https://getvectorlogo.com/wp-content/uploads/2019/08/la-culture-avec-la-copie-privee-vector-logo.png")
 ;

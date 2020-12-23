@@ -1,10 +1,8 @@
 <section>
-
-            <select name="category">
-                <option value="">Categorie</option>
-            {% for category in categories %}
-                <option value="{{ category.id }}">{{ category.category }}</option>
-            {% endfor %}
-            </select>
-
+    <select name="category">
+        <option value="">Categories</option>
+    {% for category in categories %}
+        <option value="{{ category.id }}">{{ category.category }}</option>
+    {% endfor %}
+    </select>
 </section>

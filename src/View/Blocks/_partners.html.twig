@@ -1,0 +1,12 @@
+<div id="partners-title" class="index-title">
+  <h1>Nos partenaires :</h1>
+</div>
+<div id="partners" class="container">
+  {% for partner in partners %}
+  <div class="partner-picture">
+    <a href="{{partner.link}}" title="{{partner.name}}" target="_blank" >
+      <img src="{{partner.picture}}" alt="{{partner.name}}" />
+    </a>
+  </div>
+  {% endfor %}
+</div>

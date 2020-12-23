@@ -33,6 +33,27 @@ class OlympicController extends AbstractController
         ]);
     }
 
+    public function search()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $programmingManager = new ProgrammingManager();
+            $events = $programmingManager->insertSearch($_POST);
+            $carousel = $programmingManager->carouselView();
+
+
+            $categories = new CategoriesManager();
+            $listCategory = $categories->selectAll();
+
+            return $this->twig->render('Olympic/index.html.twig', [
+                'events' => $events,
+                'categories' => $listCategory,
+                'carousels' => $carousel
+            ]);
+        }
+
+        return $this->twig->render("Olympic/index.html.twig");
+    }
+
     public function information()
     {
         return $this->twig->render('Olympic/info.html.twig', [
@@ -51,6 +72,16 @@ class OlympicController extends AbstractController
     {
         return $this->twig->render('Olympic/history.html.twig', [
             'partners' => $this->getPartners(),
+        ]);
+    }
+
+    public function partner()
+    {
+        $partnersManager = new PartnersManager();
+        $partners = $partnersManager->selectAll();
+
+        return $this->twig->render('Programming/layout.html.twig', [
+            "partners" =>   $partners
         ]);
     }
 }
