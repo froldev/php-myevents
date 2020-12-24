@@ -11,13 +11,14 @@
     "require": {
         "php" : ">=7.2",
         "ext-pdo" : "*",
-        "twig/twig": "^2.4"
+        "twig/twig": "^2.4",
+        "twig/extensions": "^1.5",
+        "filp/whoops": "^2.9"
     },
     "require-dev": {
         "phpmd/phpmd": "^2.7",
         "phpstan/phpstan": "^0.11.2",
-        "squizlabs/php_codesniffer": "*",
-        "filp/whoops": "^2.4"
+        "squizlabs/php_codesniffer": "*"
     },
     "autoload": {
         "psr-4": {

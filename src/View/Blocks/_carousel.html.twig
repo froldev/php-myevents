@@ -6,8 +6,8 @@
           <img src="{{ carousel.picture }}" class="d-block carousel-picture" alt="{{carousel.title}}">
           <div class="carousel-caption d-none d-md-block">
             <h5 class="carousel-title">{{carousel.title}}</h5>
-            <p>A partir du {{carousel.date_time|date("d/m/Y")}}</p>
-            <a href="../detail/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
+            <p>Le {{carousel.date_time|date("d/m/Y")}}</p>
+            <a href="../olympic/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
           </div>
         </div>
       {% else %}
@@ -15,8 +15,8 @@
           <img src="{{ carousel.picture }}" class="d-block carousel-picture" alt="{{carousel.title}}">
           <div class="carousel-caption d-none d-md-block">
             <h5 class="carousel-title">{{carousel.title}}</h5>
-            <p>A partir du {{carousel.date_time|date("d/m/Y")}}</p>
-            <a href="../detail/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
+            <p>Le {{carousel.date_time|date("d/m/Y")}}</p>
+            <a href="../olympic/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
           </div>
         </div>
       {% endif %}

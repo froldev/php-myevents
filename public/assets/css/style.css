@@ -1,4 +1,5 @@
-
+/* -------------------------------------------- */
+/* colors */
 :root {
     --dark: #0F1626;
     --white: #F5F5F5;
@@ -10,65 +11,51 @@
 /* -------------------------------------------- */
 /* main */
 * {
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
-
-html, body {
-    height: 100%;
-}
-
+html, body { height: 100%; }
 body {
     width:100%;
     background: linear-gradient(135deg, var(--dark)35%, var(--orangeDark));
     background-attachment: fixed;
-}
-
-h1, h2 {
     color: var(--white);
+}
+h1, h2 {
     font-family: 'Permanent Marker', cursive;
     font-size: 40px;
 }
-
 h3 {
-    color: var(--white);
     font-family: 'McLaren', cursive;
     font-size: 25px;
 }
-
 h6 {
     margin-bottom: 20px;
     padding: 10px;
     background-color: var(--orange);
 }
-
 p {
     font-family: 'Sawarabi Gothic', sans-serif;
-    padding-top: 5px;
 }
-
 a {
     color: var(--white);
     text-decoration: none;
     background-color: transparent;
 }
-
-a:hover {
-    color: var(--orangeDark);
-}
-
+a:hover { color: var(--orangeDark); }
 .row{
     margin-left:0px !important;
     margin-right:0px !important;
 }
-
 .container-fluid,
 .container {
     padding-right:0px;
     padding-left:0px;
-    margin:0px;
+    margin:auto;
 }
-
+.main {
+    margin-top: 150px;
+}
 .index-title {
     width: 100%;
     text-align: center;
@@ -87,29 +74,34 @@ a:hover {
     border-color: var(--orangeDark);
     text-transform: uppercase;
 }
-
 .btn-outline-orange:hover {
     color: var(--white);
     background-color: var(--orangeDark);
     border-color: var(--orangeDark);
 }
-
+.btn-dark {
+    min-width: 150px;
+    height: 40px;
+    color: var(--white);
+    background-color: var(--dark);
+    text-transform: uppercase;
+}
+.btn-dark:hover {
+    font-weight: bold;
+    background-color: var(--orangeDark);
+    border: 1px solid var(--white);
+}
 /* -------------------------------------------- */
 /* navbar */
 nav  {
     background-color: var(--dark);
     border-bottom: 1px solid var(--white);
 }
-
-.navbar .navbar-nav .nav-link {
-    color: var(--white);
-}
-
+.navbar .navbar-nav .nav-link { color: var(--white); }
 .navbar .navbar-nav .nav-item {
     margin: 0 10px;
     border: 1px solid transparent;
 }
-
 .navbar .navbar-nav .nav-item:hover:not(.active) .nav-link {
     color: var(--orangeDark);
     border-bottom: 1px solid var(--orangeDark);
@@ -120,11 +112,7 @@ nav  {
     border-top: 1px solid var(--orangeDark);
     border-bottom: 1px solid var(--orangeDark);
 }
-
-.fixed-bottom {
-    margin: auto;
-}
-
+.fixed-bottom { margin: auto; }
 .navbar-toggler {
     background-color: var(--orangeDark);
 }
@@ -164,18 +152,13 @@ footer {
     padding-left: 0;
     text-align: center;
 }
-#footer ul li {
-    padding: 10px 0;
-}
-.fa {
-    font-size: 40px;
-}
+#footer ul li { padding: 10px 0; }
+.fa { font-size: 40px; }
 
 /* -------------------------------------------- */
 /* carousel */
 
 #carousel {
-    margin-top: 150px;
     display: flex;
     justify-content: center;
 }
@@ -186,9 +169,7 @@ footer {
     border: 1px solid var(--white);
     border-radius: 5px;
 }
-.carousel-picture {
-    width: 50%;
-}
+.carousel-picture { width: 50%; }
 .carousel-caption {
     width: 50%;
     position: absolute;
@@ -202,9 +183,7 @@ footer {
     text-transform: uppercase;
     margin-bottom: 20%;
 }
-.carousel-caption p {
-    margin-bottom: 25%;
-}
+.carousel-caption p { margin-bottom: 25%; }
 .carousel-control-next:hover,
 .carousel-control-prev:hover {
     opacity: 1;
@@ -226,16 +205,13 @@ footer {
     border: 1px solid var(--white);
     border-radius: 5px;
 }
-
 #search form {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-#search input {
-    width: 60%;
-}
+#search input { width: 60%; }
 #search input,
 #search select {
     height: 40px;
@@ -260,10 +236,10 @@ footer {
 .card-img {
     height: 300px;
     width: auto;
+    border: 1px solid transparent;
 }
-.card-body  {
-    text-align: center;
-}
+.card-img:hover { border: 1px solid var(--orangeDark); }
+.card-body  { text-align: center; }
 .card-title {
     font-weight: bold;
     text-transform: uppercase;
@@ -294,20 +270,157 @@ footer {
     filter: grayscale(0%);
     opacity: 1;
 }
+/* -------------------------------------------- */
+/* event */
+.navigation {
+    margin-bottom: 40px;
+}
+.navigation a {
+    width: 20%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.event {
+    display: flex;
+    flex-direction: row;
+}
+.event-col-left {
+    width: 40%;
+}
+.event-col-right{
+    width: 60%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.event-picture {
+    display: flex;
+    justify-content: center;
+}
+.event-picture img {
+    width: 450px;
+    border-radius: 5px;
+}
+.event-informations,
+.event-presentation,
+.event-reservation  {
+    width: 100%;
+    display: flex;
+    color: var(--dark);
+    background-color: var(--white);
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--orangeDark);
+    border-radius: 5px;
+    margin: auto;
+}
+.event-presentation ,
+.event-reservation  {
+    padding-bottom: 20px;;
+}
+.event-informations {
+    width: 80%;
+}
+.event-title {
+    width: 100%;
+    text-transform: uppercase;
+    color: var(--white);
+    background-color: var(--orangeDark);
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+.event-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--orangeDark);
+    padding: 10px;
+}
+.event-subtitle {
+    color: var(--orangeDark);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.event-data {
+    padding: 0 20px;
+}
+.event-presentation {
+    margin-bottom: 40px;
+}
+.event-presentation .event-details,
+.event-reservation .event-details {
+    border: none;
+}
+.event-presentation .event-subtitle  {
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+.event-presentation .event-video {
+    width: 550px;
+    height: 350px;
+}
+.event-price {
+    font-weight: bold;
+}
+.event-date-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.event-date,
+.event-time  {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.event-date {
+    border-right: 1px solid var(--orangeDark);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-.float {
-    float: right;
+/* -------------------------------------------- */
+/* modal */
+.modal-content {
+    height: 350px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/assets/images/background-reservation.jpg");
+    background-color: var(--dark);
+}
+.modal-content .btn-close { 
+    color: var(--dark);
+    border: 1px solid transparent;
+ }
+.modal-content .btn-close:hover {
+    color: var(--white);
+    background-color: var(--orangeDark);
+    border: 1px solid var(--white);
+}
+.modal-body-title ,
+.modal-body-buttons {
+    padding: 20px 60px;
+}
+.modal-body-title {
+    text-transform: uppercase;
+}
+.modal-body-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-body-title h4 {
+    padding: 20px;
+    background-color: var(--orangeDark);
 }
 
 /* -------------------------------------------- */
@@ -419,64 +532,6 @@ textarea {
 }
 
 /* -------------------------------------------- */
-/* Event  */
-
-.event-card, .details-event-card{
-    width: 98%;
-    display: flex;
-    border-color: black;
-    border-radius: 25px;
-    border-width: 2px;
-    box-shadow: 2px 4px 10px grey;
-    background-color: var(--orangeLight);
-    padding: 5px !important;
-    margin-left: 1%;
-}
-
-.event-card p{
-    width:100%;
-    text-align: justify;
-}
-
-.details-img{
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 20px;
-}
-
-
-.details-category, .details-reservation{
-    color: var(--white);
-    text-align: center;
-    margin-top: 30px;
-}
-
-.details-button, .details-link{
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.details-title{
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 40px;
-}
-
-.date{
-    color: var(--white);
-    text-align: center;
-    font-size: 30px;
-}
-
-.details-price{
-    font-size: 30px;
-    color: var(--white);
-    text-align: center;
-    font-weight: bold;
-}
-
-/* -------------------------------------------- */
-
 /* History  */
 
 .history-card{

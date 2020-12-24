@@ -1,0 +1,134 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Olympic Nantais || {{details.title}}{% endblock %}
+
+{% block stylesheet %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="navigation">
+        <a href="/" class="btn btn-outline-orange">
+            <span class="fa-stack fa-lg"><i class="fa fa-angle-double-left fa-stack-1x"></i></span> Programmation
+        </a>
+    </div>
+    <div class="event">
+        <div class="event-col-left">
+            <div class="event-picture">
+                <img src="{{ details.picture }}" class="details-img" alt="{{ details.title }}">
+            </div>
+            <div class="event-informations">
+                <div class="event-details event-title">
+                    <h3>Informations</h3>
+                </div>
+                {% if details.organizer %}
+                <div class="event-details">
+                    <div class="event-subtitle">Organisateur : </div>
+                    <div class="event-data">
+                        <a href="{{details.link_organizer}}" class="btn btn-outline-orange" alt="{{details.organizer}}" target="_blank">{{details.organizer}}</a>
+                    </div>
+                </div>
+                {% endif %}
+                {% if details.producer %}
+                <div class="event-details">
+                    <div class="event-subtitle">Producteur : </div>
+                    <div class="event-data">{{details.producer}}</div>
+                </div>
+                {% endif %}
+                {% if details.placement_id %}
+                <div class="event-details">
+                    <div class="event-subtitle">Placement : </div>
+                    {% for placement in placements %}
+                    <div class="event-data">{{ details.placement_id == placement.id ? placement.placement }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if details.category %}
+                <div class="event-details">
+                    <div class="event-subtitle">Catégorie : </div>
+                    <div class="event-data">{{details.category}}</div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="event-col-right">
+            <div class="event-presentation">
+                <div class="event-details event-title">
+                    <h3>Présentation</h3>
+                </div>
+                <div class="event-details">
+                    <h1>{{ details.title }}</h1>
+                    <div class="event-data">{{ details.description }}</div>
+                </div>
+                {% if details.link_artist %}
+                <div class="event-details">
+                    <div class="event-subtitle">Découvrir l'artiste</div>
+                    <div class="event-data"><a href="{{ details.link_artist }}" class="btn btn-outline-orange" target="_blank" >Site officiel</a></div>
+                </div>
+                {% endif %}
+                {% if details.video %}
+                <div class="event-details">
+                    <div class="event-data">
+                        <iframe class="event-video" src="{{ details.video }}" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="event-reservation">
+                <div class="event-details event-title">
+                    <h3>Réservation</h3>
+                </div>
+                {% if details.price %}
+                <div class="event-details">
+                    <div class="event-data event-price">A partir de {{ details.price }} €</div>
+                </div>
+                {% endif %}
+                {% if details.date_time %}
+                <div class="event-details event-date-time">
+                    <div class="event-date">
+                        <div class="event-subtitle">Date</div>
+                        <div class="event-data">Le {{ details.date_time|date("d/m/Y") }}</div>
+                    </div>
+                    <div class="event-time">
+                        <div class="event-subtitle">Début de la séance</div>
+                        <div class="event-data">{{ details.date_time|date('H') }}h{{ details.date_time|date('i') }}</div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if details.reservation1_title %}
+                <div class="event-details">
+                    <a type="button" class="btn btn-outline-orange" data-bs-toggle="modal" data-bs-target="#reservation">Réserver</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="reservation" tabindex="-1" aria-labelledby="Modal Réservation" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-title">
+            <h4>Réservez votre place</h4>
+        </div>
+        <div class="modal-body-buttons">
+            {% if details.reservation1_title %}
+            <a type="button" class="btn btn-dark" href="{{details.reservation1_link}}" target="_blank" >{{details.reservation1_title}}</a>
+            {% endif %}
+            {% if details.reservation2_title %}
+            <a type="button" class="btn btn-dark" href="{{details.reservation2_link}}" target="_blank" >{{details.reservation2_title}}</a>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}{% endblock %}

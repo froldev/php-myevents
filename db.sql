@@ -135,11 +135,11 @@ VALUES
 INSERT INTO event (title, date_time, price, description, picture, video, link_artist, organizer, link_organizer, producer, placement_id, reservation1_title, reservation1_link, reservation2_title, reservation2_link)
 VALUES
 ("Jean-Louis Aubert",
-"2070-03-08",
+"2070-03-08 21:00:00",
 39,
 "Jean-Louis Aubert se produit seul en scène avec des hologrammes de lui-même qu’il déclenche, en live ! Ce rendez-vous sera l’occasion de découvrir et partager les chansons du nouvel album, mais aussi ses titres incontournables.",
 "https://zenith-nantesmetropole.fnacspectacles.com/static/0/visuel/600/425/JEAN-LOUIS-AUBERT-TOUR_4255485942318709046.jpg",
-"https://www.youtube.com/watch?v=FcIy_qqK5Ko",
+"https://www.youtube.com/embed/PuFFzmyAzaE",
 "https://www.jeanlouisaubert.com/",
 "Cheyenne Productions",
 "http://www.cheyenne-prod.com/",
@@ -151,11 +151,11 @@ VALUES
 "https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/rock-jean-louis-aubert-manshjla-lt.htm"
 ),
 ("Hoshi",
-"2070-03-15",
+"2070-03-15 20:45:00",
 34,
 "Après une tournée de plus de 100 dates pour présenter son premier album « Il suffit d’y croire », certifié disque de platine, Hoshi revient avec un nouvel album ‘Sommeil Levant’ et une nouvelle tournée dans les Zéniths de France à partir de février ! Le nouvel album d’Hoshi, « Sommeil Levant », sortira le 5 juin prochain !",
 "https://www.zenith-nantesmetropole.com/images/stories/manifestations/report_hoshi_d%C3%A9cembre_2021_copie.jpg",
-"https://www.youtube.com/watch?v=nCKtYXIh1Ac",
+"https://youtube.com/embed/DipEiYAyKxY",
 "https://www.difymusic.com/hoshi-musique",
 "0 Spectacles",
 "https://www.ospectacles.fr/",
@@ -167,11 +167,11 @@ VALUES
 "https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/variete-et-chanson-francaises-hoshi-manshhos-lt.htm"
 ),
 ("Christophe Mae",
-"2070-03-29",
+"2070-03-29 21:00:00",
 37,
 "Christophe Maé enfin de retour ! Depuis plus d’une décennie, le chanteur enchaîne les succès, chacune de ses tournées crée l’événement. Christophe Maé sortira son nouveau single 'Les gens' le 4 septembre, extrait de son nouvel album à paraître à l’automne, et remontera sur scène dans toute la France. Ce prochain show ambitieux et généreux nous réserve de nombreuses surprises !",
 "https://www.zenith-nantesmetropole.com/images/ma%C3%A9.jpg",
-"https://youtu.be/NQY8EhTX3tA",
+"https://youtube.com/embed/NQY8EhTX3tA",
 "https://www.christophe-mae.fr/",
 "0 Spectacles",
 "https://www.ospectacles.fr/",
@@ -183,11 +183,11 @@ VALUES
 "https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/variete-et-chanson-francaises-christophe-mae-manshmae-lt.htm"
 ),
 ("Iam",
-"2070-04-05",
+"2070-04-05 20:50:00",
 45,
 "Face à la demande, IAM annonce la suite de son Rap Warrior Tour avec 12 concerts dans les Zénith à travers la France, la Belgique et la Suisse. La formation marseillaise viendra défendre sur scène son nouvel album Yasuke (déjà disponible).",
 "https://www.zenith-nantesmetropole.com/images/stories/manifestations/IAM_report.jpg",
-"https://youtu.be/ONS45hZ4vQM",
+"https://youtube.com/embed/ONS45hZ4vQM",
 "https://www.christophe-mae.fr/",
 "0 Spectacles",
 "https://www.ospectacles.fr/",
@@ -199,7 +199,7 @@ VALUES
 "https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/rap-hip-hop-slam-iam-mannaiam-lt.htm"
 ),
 ("Fascination",
-"2070-04-19",
+"2070-04-19 20:30:30",
 49,
 "Le plus spectaculaire des shows équestres en Tournée dans toute la France ! 'Fascination' : Quand l’art équestre réunit cascades, tradition, poésie et liberté ! Ce grand spectacle, mêlant émotion et audace vous fera rêver pendant près de deux heures ! 
 Pour la première fois, l’homme-orchestre du cheval à la renommée mondiale, Mario Luraschi, se met en scène ! Ce spectacle vient couronner 50 ans de carrière équestre : sur un plateau de 1000m2 avec sa troupe de 15 cavaliers, Mario vous fera voyager à travers le temps, son histoire du cheval, les grandes fresques du cinéma et de la tradition équestre. 
@@ -217,12 +217,12 @@ Musique, lumières, costumes, pyrotechnie : un véritable show à la gloire du c
 "https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/spectacle-equestre-mario-luraschi-manshlur-lt.htm#/calendrier/"
 ),
 ("The Avener",
-"2070-04-26",
+"2070-04-26 21:00:00",
 39,
 "Le producteur et DJ Français de Pop Electro s’est révélé au grand public avec le tube mondial Fade Out Lines, véritable hymne Electro bluesy intemporel qui figure même dans la playlist de Michelle & Barack Obama. 
 Le niçois confirme son talent de producteur en 2015 avec son premier album The Wandering of The Avener, déjà certifié triple platine en France. Ses morceaux irrésistibles mêlant avec aisance Electro et Pop le voient collaborer avec les plus grands artistes, de Bob Dylan à Rodriguez en passant par Lana Del Rey ou Mylène Farmer. Avec le tubesque 'Beautiful' — joué en avant-première sur le toit du Palais des Festivals de Cannes pendant le FIF — il prépare les esprits pour son grand retour avec un nouvel album à paraître début de l'année !",
 "https://www.zenith-nantesmetropole.com/images/stories/manifestations/the_avener_site_.jpg",
-"https://youtu.be/vrYSTFezt5s",
+"https://youtube.com/embed/vrYSTFezt5s",
 "http://www.theavener.com/",
 "0 Spectacles",
 "https://www.ospectacles.fr/",
@@ -234,11 +234,11 @@ Le niçois confirme son talent de producteur en 2015 avec son premier album The 
 "https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/musique-electronique-the-avener-manshtav-lt.htm"
 ),
 ("Gad Elmaleh",
-"2070-05-03",
+"2070-05-03 21:00:00",
 35,
 "5 ans après 'Sans tambour' et une tournée internationale avec un spectacle en anglais dans plus de 15 pays, Gad Elmaleh est de retour avec un one-man show inédit: 'D’AILLEURS'.",
 "https://www.zenith-nantesmetropole.com/images/stories/manifestations/gad.jpg",
-"https://youtu.be/ltRGQfXgpWY",
+"https://youtube.com/embed/ltRGQfXgpWY",
 "https://gadelmaleh.com/",
 "0 Spectacles",
 "https://www.ospectacles.fr/",
@@ -250,13 +250,13 @@ Le niçois confirme son talent de producteur en 2015 avec son premier album The 
 "https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/one-man-woman-show-gad-elmaleh-manshgad-lt.htm"
 ),
 ("Asaf Avidan & Band",
-"2070-05-10",
+"2070-05-10 20:45:00",
 41,
 "Asaf Avidan est la quintessence de l’émotion à l’état brut. Originaire de Jérusalem, ce songwriter hors du commun façonne un imaginaire puissant, propulsé avec délicatesse par une voix rocailleuse et singulière. 
 De nouvelles influences que l’on retrouve dans 'Earth Odyssey' et 'Lost Horse', déjà disponibles sur les plateformes. 
 Fort d’un nouvel album prévu en septembre, Asaf Avidan annonce l’Anagnorisis Tour avec son nouveau groupe.",
 "https://www.zenith-nantesmetropole.com/images/stories/manifestations/ASAF_.jpg",
-"https://youtu.be/NyS0OUhJKQM",
+"https://youtube.com/embed/NyS0OUhJKQM",
 "https://www.asafavidanmusic.com/",
 "K Production",
 "",
@@ -268,7 +268,7 @@ Fort d’un nouvel album prévu en septembre, Asaf Avidan annonce l’Anagnorisi
 ""
 ),
 ("Muriel Robin",
-"2070-05-17",
+"2070-05-17 21:00:00",
 36,
 "Depuis plus de 30 ans nous vivons avec ses sketchs. L’addition, Le noir, La réunion de chantier et tant d’autres… Ils ont accompagné nos vies, marqué notre quotidien, ils font partie de notre mémoire, de notre histoire collective, de notre jeunesse. 
 Les répliques sont cultes, les expressions incontournables, indissociables d’une époque qui continue de vivre en nous. Qui n’a pas rêvé de remonter le temps ? De retrouver ces instants qui nous ont rendu si heureux ? 
@@ -286,13 +286,13 @@ Muriel Robin nous fait ce cadeau fou… l’espace de quelques soirs elle repren
 ""
 ),
 ("Patric Bruel",
-"2070-05-31",
+"2070-05-31 21:00:00",
 55,
 "Nouvel album, nouveau show et toujours la touche Bruel : La tournée Ce soir on sort… de Patrick Bruel vous fait voyager ici et là entre succès mythiques et audaces toujours inattendues. 
 Des millions d’albums vendus, des tournées gigantesques et des concerts qui restent gravés dans les mémoires, retrouvez Patrick Bruel dans les plus grandes salles de France, Suisse, Belgique. 
 Avec 1 million de spectateurs et 120 dates programmées, l’artiste jouera les prolongations au printemps ! L’aventure continue…! Retrouvez dès à présent l’édition spéciale de l’album 'Ce soir on sort…' avec 8 titres bonus, 3 inédits dont un duo avec Boulevard Des Airs",
 "https://www.zenith-nantesmetropole.com/images/stories/manifestations/bruel_2020.jpg",
-"https://youtu.be/5HxJNl-CfTc",
+"https://youtube.com/embed/5HxJNl-CfTc",
 "https://www.patrickbruel.com/",
 "Cheyenne Productions",
 "http://www.cheyenne-prod.com/",

@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Model\AbstractManager;
-use App\Model\ProgrammingManager;
 use App\Model\CategoriesManager;
+use App\Model\DetailManager;
+use App\Model\PlacementManager;
+use App\Model\ProgrammingManager;
 
 class OlympicController extends AbstractController
 {
@@ -39,7 +41,6 @@ class OlympicController extends AbstractController
             $programmingManager = new ProgrammingManager();
             $events = $programmingManager->insertSearch($_POST);
             $carousel = $programmingManager->carouselView();
-
 
             $categories = new CategoriesManager();
             $listCategory = $categories->selectAll();
@@ -81,7 +82,21 @@ class OlympicController extends AbstractController
         $partners = $partnersManager->selectAll();
 
         return $this->twig->render('Programming/layout.html.twig', [
-            "partners" =>   $partners
+            "partners" =>   $this->getPartners(),
+        ]);
+    }
+
+    public function event(int $id)
+    {
+        $detailManager = new DetailManager();
+        $detail = $detailManager->selectOneByIdJoin($id);
+
+        $placements = new PlacementManager();
+        $listPlacement = $placements->selectAll();
+
+        return $this->twig->render('Olympic/event.html.twig', [
+            'details' => $detail,
+            'placements' => $listPlacement,
         ]);
     }
 }
