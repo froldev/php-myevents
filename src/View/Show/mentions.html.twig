@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{society.name|capitalize}} || Mentions Légales{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="navigation">
+        <a href="/" class="btn btn-outline-orange">
+            <span class="fa-stack fa-lg"><i class="fa fa-angle-double-left fa-stack-1x"></i></span> Programmation
+        </a>
+    </div>
+    <div id="mentions">
+        <h2 class="top-title">Mentions Légales</h2>
+        <p id="propriety">{{mention.propriety}}</p>
+        <p id="legal-notice">{{mention.mentions}}</p>
+    </div>
+</div>
+{% endblock %}

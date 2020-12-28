@@ -70,7 +70,7 @@ VALUES
 ("Tu veux nous contacter ?", "/show/contact")
 ;
 
-CREATE TABLE partner(
+CREATE TABLE partner (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     link VARCHAR(255) NULL,
@@ -83,6 +83,39 @@ VALUES
 ("Région Pays De La Loire", "http://www.paysdelaloire.fr/", "https://www.zenith-nantesmetropole.com/images/partenaires/nantesmetropole.png", 1),
 ("Wild Code School", "https://www.wildcodeschool.com/fr-FR", "https://res.cloudinary.com/wildcodeschool/image/upload/c_fill,h_50/v1/static/irjoy97aq0eol8bf6959", 2),
 ("La Copie Privée", "http://www.copieprivee.org//", "https://getvectorlogo.com/wp-content/uploads/2019/08/la-culture-avec-la-copie-privee-vector-logo.png", 3)
+;
+
+CREATE TABLE mentions (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    propriety TEXT NULL,
+    mentions TEXT NULL
+);
+
+INSERT INTO mentions (propriety, mentions)
+VALUES
+("Ce Site Web est la propriété de la Société XXXXXXX, immatriculée XXXXXXXXX dont le siège est situé à Nantes (France).",
+"Conformément à la législation en vigueur, vous disposez d'un droit d'accès, de modification, de rectification et de suppression des données nominatives qui vous concernent, 
+en adressant votre demande exclusivement par courrier à XXXXXXX .
+Nous nous s'engageons en outre à prendre toutes précautions utiles afin de protéger les données à caractère personnel traitées par nos services, 
+et notamment d'empêcher qu'elles ne soient déformées, endommagées ou communiquées à des tiers non autorisés. 
+Nous rappelons que le contenu de ce Site Web peut être modifié ou mis à jour sans préavis et ne correspond en aucun cas a un engagement contractuel.")
+;
+
+CREATE TABLE category (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    category VARCHAR(255) NOT NULL
+);
+
+INSERT INTO category (category)
+VALUES
+("Cirque"),
+("Electro"),
+("Humour"),
+("Metal"),
+("Pop / Rock / Blues"),
+("Rap / hip Hop"),
+("Variété française"),
+("variété internationale")
 ;
 
 CREATE TABLE placement (
@@ -132,11 +165,6 @@ CREATE TABLE event_artist(
         REFERENCES artist(id)
         ON DELETE CASCADE
         ON UPDATE NO ACTION
-);
-
-CREATE TABLE category(
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    category VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE event_category(
@@ -351,18 +379,6 @@ Avec 1 million de spectateurs et 120 dates programmées, l’artiste jouera les 
 "Fnac",
 "https://zenith-nantesmetropole.fnacspectacles.com/place-spectacle/ticket-evenement/variete-et-chanson-francaises-patrick-bruel-manshpat-lt.htm"
 )
-;
-
-INSERT INTO category (category)
-VALUES
-("Cirque"),
-("Electro"),
-("Humour"),
-("Metal"),
-("Pop / Rock / Blues"),
-("Rap / hip Hop"),
-("Variété française"),
-("variété internationale")
 ;
 
 INSERT INTO event_category (event_id, category_id)

@@ -6,6 +6,7 @@ use App\Model\AbstractManager;
 use App\Model\CategoriesManager;
 use App\Model\DetailManager;
 use App\Model\NavbarManager;
+use App\Model\MentionsManager;
 use App\Model\PartnersManager;
 use App\Model\PlacementManager;
 use App\Model\ProgrammingManager;
@@ -45,7 +46,7 @@ class ShowController extends AbstractController
 
             return $this->twig->render('Show/index.html.twig', [
                 "society"   => $this->getSociety(),
-            "navbars"   => $this->getNavbar(),
+                "navbars"   => $this->getNavbar(),
                 "current"       => "0",
                 'events'        => $events,
                 'categories'    => $listCategory,
@@ -88,6 +89,19 @@ class ShowController extends AbstractController
             "society"   => $this->getSociety(),
             "navbars"   => $this->getNavbar(),
             "current"   => "3",
+        ]);
+    }
+
+    public function mentions()
+    {
+        $mentions = new MentionsManager();
+        $mention = $mentions->selectMentions();
+
+        return $this->twig->render('Show/mentions.html.twig', [
+            "society"   => $this->getSociety(),
+            "navbars"   => $this->getNavbar(),
+            "current"   => "-1",
+            "mention"   => $mention,
         ]);
     }
 
