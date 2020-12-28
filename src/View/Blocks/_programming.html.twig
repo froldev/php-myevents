@@ -1,14 +1,18 @@
 <div id="programming" class="row">
-    {% for event in events %}
-        <div class="card col-3 m-3 p-3">
-            <a href="../olympic/event/{{ event.id }}" title="{{event.title}}">
-                <img src="{{ event.picture }}" class="card-img" alt="{{event.title}}">
-            </a>
-            <div class="card-body">
-                <h5 class="card-title">{{ event.title }}</h5>
-                <p class="card-text">Le {{ event.date_time|date("d/m/Y") }}</p>
-                <a href="../olympic/event/{{ event.id }}" class="btn btn-outline-orange">Détails</a>
+    {% if events|length == 0 %}
+        <p>Aucun résultat ne correspond à votre recherche.</p>
+    {% else %}
+        {% for event in events %}
+            <div class="card col-3 m-3 p-3">
+                <a href="../show/event/{{ event.id }}" title="{{event.title}}">
+                    <img src="{{ event.picture }}" class="card-img" alt="{{event.title}}">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.title }}</h5>
+                    <p class="card-text">Le {{ event.date_time|date("d/m/Y") }}</p>
+                    <a href="../show/event/{{ event.id }}" class="btn btn-outline-orange">Détails</a>
+                </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
     </div>

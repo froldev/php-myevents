@@ -3,45 +3,50 @@
         <!-- Nav -->
         <div id="footer-nav">
             <ul>
-                <li><a href="/" title="Tu veux du bon son ?" >Du bon son</a></li>
-                <li><a href="../../../olympic/information" title="Tu veux tout savoir ?" >Tout savoir</a></li>
-                <li><a href="../../../olympic/history" title="Tu veux connaître notre histoire ?" >Notre histoire</a></li>
-                <li><a href="../../../olympic/contact" title="Tu veux nous contacter ?" >Nous contacter</a></li>
-                <li><a href="../../admin/login" title="Accès pro" class="btn btn-outline-orange">Accès pro</a></li>
+                {% for navbar in navbars %}
+                    <li><a href="{{navbar.link}}" title="{{navbar.title}}" >{{navbar.title}}</a></li>
+                {% endfor %}
+                <li><a href="/admin/login" title="Accès pro" class="btn btn-outline-orange">Accès pro</a></li>
             </ul>
         </div>
-        <!-- Details -->
+        <!-- Contact -->
         <div id="footer-contact">
             <h3>Nous contacter : </h3>
-            <p>2 bis Quai François Mitterand</p>
-            <p>44200 NANTES</p>
+            <p>{{society.address}}</p>
+            <p>{{society.cp}} {{society.town|upper}}</p>
             <ul>
-                <li><a href="mailto:contact@olympic-nantais.com">contact@olympic-nantais.com</a></li>
-                <li><a href="tel:+339.99.99.99.99">99.99.99.99.99</a></li>
+                <li><a href="mailto:{{society.mail}}">{{society.mail}}</a></li>
+                <li><a href="tel:{{society.phone}}">{{society.phone}}</a></li>
             </ul>
         </div>
         <!-- Social medias -->
         <div id="footer-social">
             <h3>Nous suivre : </h3>
             <ul>
+                {% if society.twitter %}
                 <li>
-                    <a href="https://twitter.com/Olympic-Nantais" target="_blank" title="Nous suivre sur Twitter" >
+                    <a href="{{society.twitter}}" target="_blank" title="Nous suivre sur Twitter" >
                         <span class="fa-stack fa-lg"><i class="fa fa-twitter fa-stack-1x"></i></span>
                          Twitter
                     </a>
                 </li>
+                {% endif %}
+                {% if society.facebook %}
                 <li>
-                    <a href="https://www.facebook.com/Olympic-Nantais" target="_blank" title="Notre page Facebook" >
+                    <a href="{{society.facebook}}" target="_blank" title="Notre page Facebook" >
                         <span class="fa-stack fa-lg"><i class="fa fa-facebook fa-stack-1x"></i></span>
                          Facebook
                     </a>
                 </li>
+                {% endif %}
+                {% if society.instagram %}
                 <li>
-                    <a href="https://www.instagram.com/Olympic-Nantais" target="_blank" title="Les plus belles photos et vidéos" >
+                    <a href="{{society.instagram}}" target="_blank" title="Les plus belles photos et vidéos" >
                         <span class="fa-stack fa-lg"><i class="fa fa-instagram fa-stack-1x"></i></span>
                          Instagram
                     </a>
                 </li>
+                {% endif %}
             </ul>
         </div>
     </div>

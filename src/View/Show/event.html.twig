@@ -2,9 +2,7 @@
 
 {% block title %}Olympic Nantais || {{details.title}}{% endblock %}
 
-{% block stylesheet %}
-
-{% endblock %}
+{% block stylesheet %}{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -64,7 +62,7 @@
                 {% if details.link_artist %}
                 <div class="event-details">
                     <div class="event-subtitle">Découvrir l'artiste</div>
-                    <div class="event-data"><a href="{{ details.link_artist }}" class="btn btn-outline-orange" target="_blank" >Site officiel</a></div>
+                    <div class="event-data"><button href="{{ details.link_artist }}" class="btn btn-outline-orange" target="_blank" >Site officiel</button></div>
                 </div>
                 {% endif %}
                 {% if details.video %}
@@ -98,7 +96,7 @@
                 {% endif %}
                 {% if details.reservation1_title %}
                 <div class="event-details">
-                    <a type="button" class="btn btn-outline-orange" data-bs-toggle="modal" data-bs-target="#reservation">Réserver</a>
+                    <button type="button" class="btn btn-outline-orange" data-bs-toggle="modal" data-bs-target="#reservation">Réserver</button>
                 </div>
                 {% endif %}
             </div>

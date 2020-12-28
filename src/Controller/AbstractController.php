@@ -9,7 +9,8 @@
 
 namespace App\Controller;
 
-use App\Model\PartnersManager;
+use App\Model\NavbarManager;
+use App\Model\SocietyManager;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
@@ -42,12 +43,29 @@ abstract class AbstractController
         $this->twig->addGlobal("session", $_SESSION);
     }
 
-    protected function getPartners(): array
+    /**
+     * Society
+     * return array
+     */
+    protected function getSociety(): array
     {
-        $partnersManager = new PartnersManager();
-        return $partnersManager->selectAll();
+        $societyManager = new SocietyManager();
+        return $societyManager->selectSociety();
     }
 
+    /**
+     * Navbar
+     * return array
+     */
+    protected function getNavbar(): array
+    {
+        $navbarManager = new NavbarManager();
+        return $navbarManager->selectNavbar();
+    }
+
+    /**
+     * Session
+     */
     public function verifySession()
     {
         if (!$_SESSION['name']) {

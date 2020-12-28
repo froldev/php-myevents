@@ -25,15 +25,77 @@ CREATE TABLE users (
 
 INSERT INTO users (email, password, lastname, firstname, role_id)
 VALUES
-("superadmin@admin.fr", "$2y$10$Fhv9XSpyrwy9lyMYvU1joOB74jHg1FwDedPu84UU3.GosX/QNWJLG", "Super", "Admin", 1),
-("admin@admin.fr", "$2y$10$9YfNEyhEuv2rHjFvh94ze.8HXVXXqCmiKv70wg7hev0InRKkvR0uW", "Just", "Admin", 2),
-("user@mail.fr", "$2y$10$nIYFMQ/S1YOhmUzVILXaPudJrsptqCq.BwkcpHpU8YjpDyRrCQer2", "Just", "User", 3)
+("superadmin@admin.fr", "$2y$10$Fhv9XSpyrwy9lyMYvU1joOB74jHg1FwDedPu84UU3.GosX/QNWJLG", "Super", "Admin", 1)
+;
+
+CREATE TABLE society (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(25) NOT NULL,
+    picture VARCHAR(255) NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    cp VARCHAR(5) NOT NULL,
+    town VARCHAR(100) NOT NULL,
+    mail VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    twitter VARCHAR(100) NOT NULL,
+    facebook VARCHAR(100) NOT NULL,
+    instagram VARCHAR(100) NOT NULL
+);
+
+INSERT INTO society (name, picture, address, cp, town, mail, phone, twitter, facebook, instagram)
+VALUES
+("OLYMPIC NANTAIS",
+"https://zupimages.net/up/20/52/xa4o.png",
+"2 bis Quai François Mitterand",
+"44200",
+"Nantes",
+"contact@olympic-nantais.com",
+"99.99.99.99.99",
+"https://twitter.com/Olympic-Nantais",
+"https://www.facebook.com/Olympic-Nantais",
+"https://www.instagram.com/Olympic-Nantais")
+;
+
+CREATE TABLE navbar (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(40) NOT NULL,
+    link VARCHAR(255) NOT NULL
+);
+
+INSERT INTO navbar (title, link)
+VALUES
+("Tu veux du bon son ?", "/"),
+("Tu veux tout savoir ?", "/show/information"),
+("Tu veux connaître notre histoire ?", "/show/history"),
+("Tu veux nous contacter ?", "/show/contact")
+;
+
+CREATE TABLE partner(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    link VARCHAR(255) NULL,
+    picture VARCHAR(255) NOT NULL,
+    position INT NOT NULL
+);
+
+INSERT INTO partner (name, link, picture, position)
+VALUES
+("Région Pays De La Loire", "http://www.paysdelaloire.fr/", "https://www.zenith-nantesmetropole.com/images/partenaires/nantesmetropole.png", 1),
+("Wild Code School", "https://www.wildcodeschool.com/fr-FR", "https://res.cloudinary.com/wildcodeschool/image/upload/c_fill,h_50/v1/static/irjoy97aq0eol8bf6959", 2),
+("La Copie Privée", "http://www.copieprivee.org//", "https://getvectorlogo.com/wp-content/uploads/2019/08/la-culture-avec-la-copie-privee-vector-logo.png", 3)
 ;
 
 CREATE TABLE placement (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     placement VARCHAR(100) NOT NULL
 );
+
+INSERT INTO placement (placement)
+VALUES
+("Placement libre"),
+("Placement numéroté"),
+("Placement par zones")
+;
 
 CREATE TABLE event (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -116,20 +178,6 @@ VALUES
 ("Robert", "Michu", "rober.michu@gmail.fr", "2019-10-29", "Demande de renseignement", "Bonjour, pouvez me dire quand le spectacle de Johnny arrivera ?"),
 ("Emmanuel", "Macron", "president@lapresidence.com", "2019-10-28", "Question au ministres", "Bonjour, pouvez me dire quand le spectacle avec Brigitte arrivera ?"),
 ("Guy", "Lux", "guy.lux@intervilles.fr", "2019-10-30", "Question sur le schimilili", "Bonjour, pouvez me dire quand reviendra le schimililili ?")
-;
-
-CREATE TABLE partner(
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    link VARCHAR(255) NULL,
-    picture VARCHAR(255) NOT NULL
-);
-
-INSERT INTO placement (placement)
-VALUES
-("Placement libre"),
-("Placement numéroté"),
-("Placement par zones")
 ;
 
 INSERT INTO event (title, date_time, price, description, picture, video, link_artist, organizer, link_organizer, producer, placement_id, reservation1_title, reservation1_link, reservation2_title, reservation2_link)
@@ -329,11 +377,4 @@ VALUES
 ("8", "8"),
 ("9", "3"),
 ("10", "7")
-;
-
-INSERT INTO partner (name, link, picture)
-VALUES
-("Région Pays De La Loire", "http://www.paysdelaloire.fr/", "https://www.zenith-nantesmetropole.com/images/partenaires/nantesmetropole.png"),
-("Wild Code School", "https://www.wildcodeschool.com/fr-FR", "https://res.cloudinary.com/wildcodeschool/image/upload/c_fill,h_50/v1/static/irjoy97aq0eol8bf6959"),
-("La Copie Privée", "http://www.copieprivee.org//", "https://getvectorlogo.com/wp-content/uploads/2019/08/la-culture-avec-la-copie-privee-vector-logo.png")
 ;

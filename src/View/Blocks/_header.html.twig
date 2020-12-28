@@ -1,29 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <a class="col-1 offest-1 navbar-brand" href="/">
-        <img src="/assets/images/logo_Olympic_Nantais.png" width="150"  alt="logo Olympic Nantais">
+    <a class="navbar-brand col-md-4 col-sm-12" href="/">
+        {% if society.picture %}
+            <img src="{{society.picture}}" width="150"  alt="logo {{society.name}}">
+        {% endif %}
+        {% if society.name %}
+            <h1>{{society.name}}</h1>
+        {% endif %}
     </a>
-    <h1 class="col-2 dark mx-auto name">Olympic Nantais</h1>
-    <div class="menu-burger">
-        <button class="navbar-toggler fixed-bottom" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Tu veux du bon son ?</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../../olympic/information">Tu veux tout savoir ?</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../../olympic/history">Tu veux connaître notre histoire ?</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../../olympic/contact">Tu veux nous contacter ?</a>
-            </li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% for key, navbar in navbars %}
+                <li class="nav-item {{ current == key ? " active" }}">
+                    <a class="nav-link" href="{{navbar.link}}">{{navbar.title}}</a>
+                </li>
+            {% endfor %}
         </ul>
-        </form>
     </div>
 </nav>

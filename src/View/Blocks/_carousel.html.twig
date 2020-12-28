@@ -7,7 +7,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h5 class="carousel-title">{{carousel.title}}</h5>
             <p>Le {{carousel.date_time|date("d/m/Y")}}</p>
-            <a href="../olympic/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
+            <a href="../show/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
           </div>
         </div>
       {% else %}
@@ -16,7 +16,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h5 class="carousel-title">{{carousel.title}}</h5>
             <p>Le {{carousel.date_time|date("d/m/Y")}}</p>
-            <a href="../olympic/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
+            <a href="../show/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
           </div>
         </div>
       {% endif %}
@@ -24,10 +24,11 @@
   </div>
   <a class="carousel-control-prev" href="#carousel" role="button" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <span class="visually-hidden"></span>
   </a>
   <a class="carousel-control-next" href="#carousel" role="button" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+    <span class="visually-hidden"></span>
   </a>
 </div>
+<div id="anchor"></div>

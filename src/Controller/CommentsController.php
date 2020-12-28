@@ -94,11 +94,11 @@ class CommentsController extends AbstractController
             if ($isValid) {
                 $commentsManager = new CommentsManager();
                 if ($commentsManager->insertComments($_POST)) {
-                    header("Location:/olympic/contact");
+                    header("Location:/show/contact");
                 }
             }
 
-            return $this->twig->render("Olympic/contact.html.twig", [
+            return $this->twig->render("Show/contact.html.twig", [
                 "lastNameError" => $userLastNameError,
                 "firstNameError" => $userFirstNameError,
                 "userEmailError" => $userEmailError,

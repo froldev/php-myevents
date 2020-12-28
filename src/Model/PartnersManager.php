@@ -13,7 +13,7 @@ class PartnersManager extends AbstractManager
 
     public function selectPartner(): array
     {
-        $request = $this->pdo->query("SELECT * FROM " .self::TABLE. " ORDER BY name");
+        $request = $this->pdo->query("SELECT * FROM " .self::TABLE. " ORDER BY position");
         return $request->fetchAll();
     }
 
