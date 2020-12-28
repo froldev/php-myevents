@@ -33,14 +33,12 @@ class ProgrammingManager extends AbstractManager
             LEFT JOIN event_category ON event_category.event_id = event.id
             LEFT JOIN category ON category.id = event_category.category_id
             WHERE date_time > now()
-            AND title LIKE :title
-            OR category LIKE :category;"
+            AND title LIKE :title;"
         );
 
         $searchs = '%' . $search['search'] . '%';
 
         $query->bindValue(':title', $searchs, \PDO::PARAM_STR);
-        $query->bindValue(':category', $searchs, \PDO::PARAM_STR);
         $query->execute();
 
         return $query->fetchAll();

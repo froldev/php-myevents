@@ -49,13 +49,13 @@ function searchEvents()
         response.forEach(function (event) {
           let date = convertDate(event.date_time);
           let eventHtml = '<div class="card col-3 m-3 p-3">' +
-            '<a href="/events/event/' + event.id + '" title="' + event.title + '">' +
+            '<a href="/events/detail/' + event.id + '" title="' + event.title + '">' +
               '<img src="' + event.picture + '" class="card-img" alt="' + event.title + '">' +
             '</a>' +
             '<div class="card-body">' +
               '<h5 class="card-title">' + event.title + '</h5>' +
               '<p class="card-text">Le ' + date + '</p>' +
-              '<a href="/events/event/' + event.id + '" class="btn btn-outline-orange">Détails</a>' +
+              '<a href="/events/detail/' + event.id + '" class="btn btn-outline-orange">Détails</a>' +
             '</div>' +
           '</div>';
           $('#programming').append(eventHtml);

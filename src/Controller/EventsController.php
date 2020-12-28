@@ -98,30 +98,24 @@ class EventsController extends AbstractController
             } else {
                 $events = $programmingManager->selectAllEventNotPast();
             }
-
             return json_encode($events);
         }
     }
 
-    public function event(int $id)
+    public function detail(int $id)
     {
-        $societyManager = new SocietyManager();
-        $society = $societyManager->selectSociety();
-
-        $navbarManager = new NavbarManager();
-        $navbars = $navbarManager->selectNavbar();
-
         $detailManager = new DetailManager();
         $detail = $detailManager->selectOneByIdJoin($id);
 
         $placements = new PlacementManager();
         $listPlacement = $placements->selectAll();
 
-        return $this->twig->render('Events/event.html.twig', [
-            "society" => $society,
-            "navbars"       => $navbars,
-            'details' => $detail,
-            'placements' => $listPlacement,
+        return $this->twig->render('Events/detail.html.twig', [
+            "society"       => $this->getSociety(),
+            "navbars"       => $this->getNavbar(),
+            "current"       => "-1",
+            'details'       => $detail,
+            'placements'    => $listPlacement,
         ]);
     }
 }

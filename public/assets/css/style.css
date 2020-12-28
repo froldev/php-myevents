@@ -91,12 +91,12 @@ a:hover { color: var(--orangeDark); }
     height: 40px;
     color: var(--white);
     background-color: var(--dark);
+    border: 1px solid var(--white);
     text-transform: uppercase;
 }
 .btn-dark:hover {
     font-weight: bold;
     background-color: var(--orangeDark);
-    border: 1px solid var(--white);
 }
 /* -------------------------------------------- */
 /* navbar */
@@ -435,15 +435,27 @@ footer {
     align-items: center;
     background-image: url("/assets/images/background-reservation.jpg");
     background-color: var(--dark);
+    border: 1px solid var(--dark);
 }
-.modal-content .btn-close { 
-    color: var(--dark);
-    border: 1px solid transparent;
+.modal-header {
+    border-bottom: none;
+}
+.modal-content .btn-close {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: var(--white);
+    background-color: var(--dark);
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
  }
 .modal-content .btn-close:hover {
     color: var(--white);
     background-color: var(--orangeDark);
-    border: 1px solid var(--white);
+    border: 1px solid var(--dark);
 }
 .modal-body-title ,
 .modal-body-buttons {

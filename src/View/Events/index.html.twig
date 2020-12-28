@@ -1,5 +1,7 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}{{society.name|capitalize}} || {{navbar.title}}{% endblock %}
+
 {% block content %}
     {% include 'Blocks/_carousel.html.twig' %}
     {% include 'Blocks/_search.html.twig' %}

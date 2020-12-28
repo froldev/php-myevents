@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Olympic Nantais || {{details.title}}{% endblock %}
+{% block title %}{{society.name|capitalize}} || {{details.title}}{% endblock %}
 
 {% block stylesheet %}{% endblock %}
 
@@ -96,7 +96,7 @@
                 {% endif %}
                 {% if details.reservation1_title %}
                 <div class="event-details">
-                    <button type="button" class="btn btn-outline-orange" data-bs-toggle="modal" data-bs-target="#reservation">Réserver</button>
+                    <button type="button" class="btn btn-outline-orange" data-toggle="modal" data-target="#reservation">Réserver</button>
                 </div>
                 {% endif %}
             </div>
@@ -105,11 +105,11 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="reservation" tabindex="-1" aria-labelledby="Modal Réservation" aria-hidden="true">
+<div id="reservation" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
         <div class="modal-body-title">
