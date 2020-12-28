@@ -65,9 +65,9 @@ CREATE TABLE navbar (
 INSERT INTO navbar (title, link)
 VALUES
 ("Tu veux du bon son ?", "/"),
-("Tu veux tout savoir ?", "/show/information"),
-("Tu veux connaître notre histoire ?", "/show/history"),
-("Tu veux nous contacter ?", "/show/contact")
+("Tu veux tout savoir ?", "/events/information"),
+("Tu veux connaître notre histoire ?", "/events/history"),
+("Tu veux nous contacter ?", "/events/contact")
 ;
 
 CREATE TABLE partner (
@@ -93,7 +93,7 @@ CREATE TABLE mentions (
 
 INSERT INTO mentions (propriety, mentions)
 VALUES
-("Ce Site Web est la propriété de la Société XXXXXXX, immatriculée XXXXXXXXX dont le siège est situé à Nantes (France).",
+("Ce Site Web est la propriété de la Société XXXXXXX, immatriculée XXXXXXXXX dont le siège est situé à XXXXXXXX (France).",
 "Conformément à la législation en vigueur, vous disposez d'un droit d'accès, de modification, de rectification et de suppression des données nominatives qui vous concernent, 
 en adressant votre demande exclusivement par courrier à XXXXXXX .
 Nous nous s'engageons en outre à prendre toutes précautions utiles afin de protéger les données à caractère personnel traitées par nos services, 

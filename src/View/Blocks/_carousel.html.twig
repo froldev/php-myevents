@@ -3,20 +3,24 @@
     {% for key, carousel in carousels %}
       {% if key == 0 %}
         <div class="carousel-item active">
-          <img src="{{ carousel.picture }}" class="d-block carousel-picture" alt="{{carousel.title}}">
+          <a href="/events/event/{{carousel.id}}">
+            <img src="{{ carousel.picture }}" class="d-block carousel-picture" alt="{{carousel.title}}">
+          </a>
           <div class="carousel-caption d-none d-md-block">
             <h5 class="carousel-title">{{carousel.title}}</h5>
             <p>Le {{carousel.date_time|date("d/m/Y")}}</p>
-            <a href="../show/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
+            <a href="/events/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
           </div>
         </div>
       {% else %}
         <div class="carousel-item">
-          <img src="{{ carousel.picture }}" class="d-block carousel-picture" alt="{{carousel.title}}">
+          <a href="/events/event/{{carousel.id}}">
+            <img src="{{ carousel.picture }}" class="d-block carousel-picture" alt="{{carousel.title}}">
+          </a>
           <div class="carousel-caption d-none d-md-block">
             <h5 class="carousel-title">{{carousel.title}}</h5>
             <p>Le {{carousel.date_time|date("d/m/Y")}}</p>
-            <a href="../show/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
+            <a href="/events/event/{{carousel.id}}" class="btn btn-outline-orange">Détails</a>
           </div>
         </div>
       {% endif %}

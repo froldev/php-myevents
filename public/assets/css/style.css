@@ -195,7 +195,13 @@ footer {
     border: 1px solid var(--white);
     border-radius: 5px;
 }
-.carousel-picture { width: 50%; }
+.carousel-picture {
+    width: 50%;
+    border: 1px solid transparent;
+ }
+ .carousel-picture:hover {
+     border: 1px solid var(--orangeDark);
+ }
 .carousel-caption {
     width: 50%;
     position: absolute;

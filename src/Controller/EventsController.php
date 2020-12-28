@@ -2,106 +2,128 @@
 
 namespace App\Controller;
 
+use App\Model\AbstractManager;
 use App\Model\CategoriesManager;
-use App\Model\EventsManager;
-use App\Model\UsersManager;
+use App\Model\DetailManager;
+use App\Model\NavbarManager;
+use App\Model\MentionsManager;
+use App\Model\PartnersManager;
+use App\Model\PlacementManager;
+use App\Model\ProgrammingManager;
+use App\Model\SocietyManager;
 
 class EventsController extends AbstractController
 {
-    public function add()
-    {
-        $this->verifySession();
 
-        $titleError = $dateTimeError = $descriptionError = $priceError = $imageError = null;
+    /**
+     * Display home page
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function index()
+    {
+        $categories = new CategoriesManager();
+        $listCategory = $categories->selectAll();
+
+        $programmingManager = new ProgrammingManager();
+        $events = $programmingManager->selectAllEventNotPast();
+        $carousel = $programmingManager->carouselView();
+
+        $partnersManager = new PartnersManager();
+        $partners = $partnersManager->selectPartner();
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $isValid = true;
-            if (empty($_POST["title"]) || !isset($_POST["title"])) {
-                $titleError = "Indiquez un nom d'évènement";
-                $isValid = false;
-            }
-            if (empty($_POST["date_time"]) || !isset($_POST["date_time"])) {
-                $dateTimeError = "Indiquez une date";
-                $isValid = false;
-            }
-            if (empty($_POST["description"]) || !isset($_POST["description"])) {
-                $descriptionError = "Décrivez l'évènement";
-                $isValid = false;
-            }
-            if (empty($_POST["price"]) || !isset($_POST["price"])) {
-                $priceError = "Indiquez un prix";
-                $isValid = false;
-            }
-            if (empty($_POST["image"]) || !isset($_POST["image"])) {
-                $imageError = "Ajouter une image";
-                $isValid = false;
-            }
 
-            if ($isValid) {
-                $eventsManager = new EventsManager();
+            $programmingManager = new ProgrammingManager();
+            $events = $programmingManager->insertSearch($_POST);
+            $carousel = $programmingManager->carouselView();
 
-                if ($eventsManager->insertEvent($_POST)) {
-                    header("Location:/events/list");
-                }
-            }
+            $categories = new CategoriesManager();
+            $listCategory = $categories->selectAll();
+
+            return $this->twig->render('Events/index.html.twig', [
+                "society"   => $this->getSociety(),
+                "navbars"   => $this->getNavbar(),
+                "current"       => "0",
+                'events'        => $events,
+                'categories'    => $listCategory,
+                'carousels'     => $carousel
+            ]);
         }
 
-        // pour sélectionner la liste déroulante des catégories
-
-        $categories = new CategoriesManager();
-        $listCategory = $categories->selectAll();
-
-        return $this->twig->render("Admin/Events/add.html.twig", [
-            "titleError" => $titleError,
-            "dateTimeError" => $dateTimeError,
-            "descriptionError" => $descriptionError,
-            "priceError" => $priceError,
-            "imageError" => $imageError,
-            "categories"=> $listCategory
+        return $this->twig->render('Events/index.html.twig', [
+            "society"   => $this->getSociety(),
+            "navbars"   => $this->getNavbar(),
+            "current"       => "0",
+            "events"        => $events,
+            "categories"    => $listCategory,
+            "carousels"     => $carousel,
+            "partners"      => $partners,
         ]);
     }
 
-    public function list(): string
+    public function information()
     {
-        $this->verifySession();
-
-        $eventsManager = new EventsManager();
-        $events = $eventsManager->selectAllEventNotPast();
-
-        return $this->twig->render("Admin/Events/list.html.twig", [
-            "events" => $events
+        return $this->twig->render('Events/information.html.twig', [
+            "society"   => $this->getSociety(),
+            "navbars"   => $this->getNavbar(),
+            "current"   => "1",
         ]);
     }
 
-    public function delete(int $id): void
+    public function history()
     {
-        $this->verifySession();
-
-        $eventsManager = new EventsManager();
-        $eventsManager->deleteEvent($id);
-        header("Location:/events/list");
+        return $this->twig->render('Events/history.html.twig', [
+            "society"   => $this->getSociety(),
+            "navbars"   => $this->getNavbar(),
+            "current"   => "2",
+        ]);
     }
 
-    public function edit(int $id)
+    public function contact()
     {
-        $this->verifySession();
+        return $this->twig->render('Events/contact.html.twig', [
+            "society"   => $this->getSociety(),
+            "navbars"   => $this->getNavbar(),
+            "current"   => "3",
+        ]);
+    }
 
-        $eventsManager = new EventsManager();
-        $event = $eventsManager->selectOneById($id);
+    public function mentions()
+    {
+        $mentions = new MentionsManager();
+        $mention = $mentions->selectMentions();
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $event = $_POST;
-            if ($eventsManager->updateEvents($event, $id)) {
-                header("Location:/events/list");
-            }
-        }
-        // pour sélectionner la liste déroulante des catégories
-        $categories = new CategoriesManager();
-        $listCategory = $categories->selectAll();
+        return $this->twig->render('Events/mentions.html.twig', [
+            "society"   => $this->getSociety(),
+            "navbars"   => $this->getNavbar(),
+            "current"   => "-1",
+            "mention"   => $mention,
+        ]);
+    }
 
-        return $this->twig->render('Admin/Events/edit.html.twig', [
-            'event' => $event,
-            'categories' => $listCategory
+    public function event(int $id)
+    {
+        $societyManager = new SocietyManager();
+        $society = $societyManager->selectSociety();
+
+        $navbarManager = new NavbarManager();
+        $navbars = $navbarManager->selectNavbar();
+
+        $detailManager = new DetailManager();
+        $detail = $detailManager->selectOneByIdJoin($id);
+
+        $placements = new PlacementManager();
+        $listPlacement = $placements->selectAll();
+
+        return $this->twig->render('Events/event.html.twig', [
+            "society" => $society,
+            "navbars"       => $navbars,
+            'details' => $detail,
+            'placements' => $listPlacement,
         ]);
     }
 }
