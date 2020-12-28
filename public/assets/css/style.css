@@ -229,7 +229,7 @@ footer {
 
 /* -------------------------------------------- */
 /* search */
-#search {
+#block-search {
     color: var(--white);
     background-color: var(--dark);
     padding: 30px 75px;
@@ -237,22 +237,22 @@ footer {
     border: 1px solid var(--white);
     border-radius: 5px;
 }
-#search form {
+#block-search form {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-#search input { width: 60%; }
-#search input,
-#search select {
+#block-search input { width: 60%; }
+#block-search input,
+#block-search select {
     height: 40px;
 }
 
 /* -------------------------------------------- */
 /* programming */
 #programming {
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: 50px 0px;
 }
 .card {

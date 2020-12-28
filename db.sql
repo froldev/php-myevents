@@ -59,15 +59,16 @@ VALUES
 CREATE TABLE navbar (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(40) NOT NULL,
-    link VARCHAR(255) NOT NULL
+    link VARCHAR(255) NOT NULL,
+    visibility INT NOT NULL
 );
 
-INSERT INTO navbar (title, link)
+INSERT INTO navbar (title, link, visibility)
 VALUES
-("Tu veux du bon son ?", "/"),
-("Tu veux tout savoir ?", "/events/information"),
-("Tu veux connaître notre histoire ?", "/events/history"),
-("Tu veux nous contacter ?", "/events/contact")
+("Tu veux du bon son ?", "/", 1),
+("Tu veux tout savoir ?", "/events/information", 1),
+("Tu veux connaître notre histoire ?", "/events/history", 1),
+("Tu veux nous contacter ?", "/events/contact", 1)
 ;
 
 CREATE TABLE partner (

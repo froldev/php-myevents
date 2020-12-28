@@ -25,36 +25,8 @@ class ProgrammingManager extends AbstractManager
         return $query -> fetchAll();
     }
 
-    public function insertSearch(array $search): array
+    public function searchEventsByText(array $search): array
     {
-        if (!empty($search['search']) && !empty($search['category'])) {
-            $query = $this->pdo->prepare(
-                "SELECT *, event.id
-            FROM " . self::TABLE . " 
-            LEFT JOIN event_category ON event_category.event_id = event.id
-            LEFT JOIN category ON category.id = event_category.category_id
-            WHERE category.id LIKE :category
-            AND title LIKE :title
-            AND date_time > now();"
-            );
-        }
-
-        if (empty($search['search'])) {
-            $query = $this->pdo->prepare(
-                "SELECT *, event.id
-            FROM " . self::TABLE . " 
-            LEFT JOIN event_category ON event_category.event_id = event.id
-            LEFT JOIN category ON category.id = event_category.category_id
-            WHERE category.id LIKE :category
-            AND date_time > now();"
-            );
-
-            $query->bindValue(':category', $search['category'], \PDO::PARAM_STR);
-            $query->execute();
-
-            return $query->fetchAll();
-        }
-
         $query = $this->pdo->prepare(
             "SELECT *, event.id
             FROM " . self::TABLE . " 
@@ -69,6 +41,23 @@ class ProgrammingManager extends AbstractManager
 
         $query->bindValue(':title', $searchs, \PDO::PARAM_STR);
         $query->bindValue(':category', $searchs, \PDO::PARAM_STR);
+        $query->execute();
+
+        return $query->fetchAll();
+    }
+
+    public function searchEventsByCategory(array $search): array
+    {
+        $query = $this->pdo->prepare(
+            "SELECT *, event.id
+        FROM " . self::TABLE . " 
+        LEFT JOIN event_category ON event_category.event_id = event.id
+        LEFT JOIN category ON category.id = event_category.category_id
+        WHERE category.id LIKE :category
+        AND date_time > now();"
+        );
+
+        $query->bindValue(':category', $search['category'], \PDO::PARAM_STR);
         $query->execute();
 
         return $query->fetchAll();

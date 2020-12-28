@@ -13,16 +13,16 @@ class NavbarManager extends AbstractManager
 
     public function selectNavbar(): array
     {
-        $request = $this->pdo->query("SELECT * FROM " .self::TABLE);
+        $request = $this->pdo->query("SELECT * FROM " .self::TABLE. " WHERE visibility=1");
         return $request->fetchAll();
     }
 
     public function updateNavbar(array $navbar): bool
     {
-        $request = $this->pdo->prepare("UPDATE " .self::TABLE. " SET name=:title, position=:position WHERE id=:id");
+        $request = $this->pdo->prepare("UPDATE " .self::TABLE. " SET name=:title, visibility=:visibility WHERE id=:id");
         $request->bindValue(":id", $navbar["id"], \PDO::PARAM_INT);
         $request->bindValue(":title", $navbar["title"], \PDO::PARAM_STR);
-        $request->bindValue(":position", $navbar["position"], \PDO::PARAM_STR);
+        $request->bindValue(":visibility", $navbar["visibility"], \PDO::PARAM_STR);
         return $request->execute();
     }
 }

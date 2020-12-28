@@ -35,25 +35,6 @@ class EventsController extends AbstractController
         $partnersManager = new PartnersManager();
         $partners = $partnersManager->selectPartner();
 
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-            $programmingManager = new ProgrammingManager();
-            $events = $programmingManager->insertSearch($_POST);
-            $carousel = $programmingManager->carouselView();
-
-            $categories = new CategoriesManager();
-            $listCategory = $categories->selectAll();
-
-            return $this->twig->render('Events/index.html.twig', [
-                "society"   => $this->getSociety(),
-                "navbars"   => $this->getNavbar(),
-                "current"       => "0",
-                'events'        => $events,
-                'categories'    => $listCategory,
-                'carousels'     => $carousel
-            ]);
-        }
-
         return $this->twig->render('Events/index.html.twig', [
             "society"   => $this->getSociety(),
             "navbars"   => $this->getNavbar(),
@@ -103,6 +84,23 @@ class EventsController extends AbstractController
             "current"   => "-1",
             "mention"   => $mention,
         ]);
+    }
+
+    public function search()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+            $programmingManager = new ProgrammingManager();
+            if(!empty($_POST['search'])) {
+                $events = $programmingManager->searchEventsByText($_POST);
+            } elseif (!empty($_POST['category']) && $_POST['category'] > 0) {
+                $events = $programmingManager->searchEventsByCategory($_POST);
+            } else {
+                $events = $programmingManager->selectAllEventNotPast();
+            }
+
+            return json_encode($events);
+        }
     }
 
     public function event(int $id)
