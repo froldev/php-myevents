@@ -43,6 +43,18 @@ a {
     background-color: transparent;
 }
 a:hover { color: var(--orangeDark); }
+.link-orange {
+    padding: 5px 10px;
+    color: var(--orangeDark);
+    text-decoration: underline;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.link-orange:hover {
+    color: var(--white);
+    background-color: var(--orangeDark);
+    border: 1px solid var(--white);
+}
 .row{
     margin-left:0px !important;
     margin-right:0px !important;
@@ -475,140 +487,48 @@ footer {
 }
 
 /* -------------------------------------------- */
-/* info */
-
-.info-card{
-    border-color: black;
-    border-radius: 25px;
-    border-width: 2px;
-    box-shadow: 2px 4px 10px grey;
-    background-color: var(--orangeLight);
-    padding: 30px !important;
-    margin: 30px;
-    line-height: 2.5;
-    font-size: 18px;
+/* informations */
+.informations-card {
+    background-color: var(--dark);
+    margin: 40px;
+    padding: 40px;
+    border: 1px solid var(--white);
+    border-radius: 5px;
 }
-
-.button {
-    border-radius: 20px;
-    background: #2A231F;
-    padding: 10px;
-    text-align: center;
-    margin: auto;
-    box-shadow: 2px 4px 10px grey;
-}
-
-.button a {
-    text-decoration: none;
-}
-
-.address {
+.informations-card .header,
+.informations-card .body-map,
+.informations-card .text,
+.informations-card .picture {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-.map {
-    margin: 20px 70px;
+.informations-card .body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
-
-.map img {
-    box-shadow: 2px 4px 10px grey;
-    border-radius: 10px;
-    max-width: 100%;
+.informations-card .header {
+    margin: 20px 0 40px 0;
 }
-
-.title {
-    margin: 50px;
+.informations-card .body-map {
+    height: 300px;
 }
-
-.top {
-    margin-top: 30px;
+.informations-card .map {
+    width: 500px;
+    height: 250px;
 }
-
-.orange {
-    color: var(--orangeDark );
-}
+/* -------------------------------------------- */
+/* history  */
 
 /* -------------------------------------------- */
 /* contact */
 
-.form_input{
-    display: flex;
-}
 
-.title {
-    margin: 20px;
-    text-align: center;
-}
 
-.container-input {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-}
-
-.button {
-
-    background: var(--orangeDark);
-    color: var(--white);
-    width: 30%;
-}
-
-input {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-textarea {
-    background-color: var(--orangeLight);
-    height: 200px;
-    width: 70%;
-    margin: 15px auto;
-    padding: 10px;
-    border-radius: 15px;
-}
-
-.form_input {
-    display: flex;
-    margin: 40px;
-}
-
-.invalid-feedback{
-    color: white;
-    display:block;
-    text-align: center;
-    font-size: 15px;
-}
-
-/* -------------------------------------------- */
-/* History  */
-
-.history-card{
-    border-color: black;
-    border-radius: 25px;
-    border-width: 2px;
-    box-shadow: 2px 4px 10px grey;
-    background-color: var(--orangeLight);
-    padding: 30px !important;
-    margin: 30px;
-    line-height: 2.5;
-    font-size: 18px;
-    text-align: justify;
-}
-
-.img-concert {
-    margin-bottom: 40px;
-}
-
-.name{
-    color:var(--white);
-}
-/* -------------------------------------------- */
-/* -------------------------------------------- */
-/* -------------------------------------------- */
-            /* Mobile Version */
+/* Mobile Version */
 
 @media screen and (min-width: 769px) {
 

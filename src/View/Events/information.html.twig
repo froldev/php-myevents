@@ -1,86 +1,107 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}{{society.name|capitalize}} || {{navbar.title}}% endblock %}
+{% block title %}{{society.name|capitalize}} || {{navbar.title}}{% endblock %}
 
 {% block content %}
+<div class="container">
 
-    <div class="title">
-        <h2 class="top-title"> COMMENT NOUS TROUVER ?</h2>
-        <h3>Fastoche...</h3>
-    </div>
-
-    <div class=" justify-content-around title">
-            <div class="address">
-                <div class="title info-card">
-                    <div>
-                        <h3 class="orange">NOS COORDONNEES</h3>
-                        <p>2 bis Quai François Mitterand<br>44200 NANTES<br>
-                            <a href="tel:+332.40.++.++.++" class="orange">02.40.++.++.++ </a>
-                        </p>
-                    </div>
-                    <div class="map">
-                       <img src="https://phareouestblog.files.wordpress.com/2012/11/staticmap_nantes_beghin_say.png" alt="map">
-                    </div>
-                    <div class="button">
-                     <a href="https://bit.ly/32Z5Xm2" target="_blank"
-                        title="Itinéraire">Itinéraire</a>
-                    </div>
+    <section class="informations-card">
+        <div class="row">
+            <div class="col-12 header">
+                <h2 class="top-title-1">Comment nous trouver ?</h2>
+                <h3 class="subtitle-1">Fastoche...</h3>
+            </div>
+            <div class="col-12 body">
+                <div class="text">
+                    <p>{{society.address}}</p>
+                    <p>{{society.cp}} {{society.town|upper}}</p>
+                    <a href="tel:+{{society.phone}}"><p>{{society.phone}}</p></a>
                 </div>
-
-            <div class="info-card">
-                <h3 class="orange">VENIR A L'OLYMPIC NANTAIS</h3>
-                <p>
-                    <strong>En voiture :</strong> GPS 47°12'26.4"N 1°33'20.1"W<br>
-                    <strong>En bus :</strong> Arrêt République - Ligne 26 ou C5<br>
-                    <strong>En tram :</strong> Arrêt Commerce<br><strong>En covoiturage :</strong>
-                    <a href="https://www.nantesmetropole.fr/pratique/deplacements/covoiturage-22880.kjsp" target="_blank" class="orange">
-                        Site Nantes Métropole</a>
-                </p>
-            </div>
-
-            <div class="info-card">
-                <h3 class="orange">SE GARER</h3>
-                    <p>
-                        <strong>Parking 1 :</strong> Les Machines de Nantes<br>
-                        <strong>Adresse :</strong> 10 rue Arthur III 44200 NANTES<br>
-                        <strong>Distance à pied :</strong> 8 minutes<br>
-                        <strong>Parking 2 :</strong> Gloriette<br>
-                        <strong>Adresse :</strong> 7 quai de Tourville 44200 NANTES<br>
-                        <strong>Distance à pied :</strong> 6 minutes
-                    </p>
+                <div class="picture body-map">
+                    <iframe src="{{society.google_map}}" class="map" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="justify-content-center title">
+    </section>
 
-        <div>
-            <h2 class="top"> QUELS SONT NOS EQUIPEMENTS ?</h2>
-            <h3>WoW ! Dingue...</h3>
+    <section class="informations-card">
+        <div class="row">
+            <div class="col-12 header">
+                <h2 class="top-title-2">Comment je peux venir ?</h2>
+                <h3 class="subtitle-2">Trop bien...</h3>
+            </div>
+            <div class="col-12 body">
+                <div class="picture">
+                </div>
+                <div class="text">
+                    <p>En voiture : GPS 47°12'26.4"N 1°33'20.1"W <a class="link-orange" href="https://metropole.nantes.fr/services/deplacements-stationnement" target="_blank">Voir</a></p>
+                    <p>En bus : Arrêt République - Ligne 26 ou C5 <a class="link-orange" href="https://www.tan.fr/fr/itineraires" target="_blank">Rechercher un itinéraire</a></p>
+                    <p>En tram : Arrêt Médiathèque ou Commerce <a class="link-orange" href="https://www.tan.fr/fr/itineraires" target="_blank">Rechercher un itinéraire</a></p>
+                    <p>En covoiturage : <a class="link-orange" href="https://www.ouestgo.fr/" target="_blank">Voir</a></p>
+                    <p>En vélo : <a class="link-orange" href="https://www.bicloo.nantesmetropole.fr/fr/home" target="_blank">Voir</a></p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="info-card">
-            <p>
-                <strong>Capacité :</strong> 550 pers.<br>
-                <strong>Accessibilié :</strong> rampe et espace dédié dans la salle<br>
-                <strong>Vestiaires :</strong> Deux (un à chaque entrée)<br>
-                <strong>Bar :</strong> Bière, Soft drinks, Eau minérale, Café<br>
-                <strong>Snack :</strong> Sandwich, Hot dog, Frites
-            </p>
+    <section class="informations-card">
+        <div class="row">
+            <div class="col-12 header">
+                <h2 class="top-title-3">Et on se gare où ?</h2>
+                <h3 class="subtitle-3">Ouais ça serait cool...</h3>
+            </div>
+            <div class="col-12 body">
+                <div class="text">
+                    <p>Parking 1 : Les Machines de Nantes</p>
+                    <p>Adresse : 10 rue Arthur III 44200 NANTES</p>
+                    <p>Distance à pied : 8 minutes</p>
+                    <p>Parking 2 : Gloriette</p>
+                    <p>Adresse : 7 quai de Tourville 44200 NANTES</p>
+                    <p>Distance à pied : 6 minutes</p>
+                </div>
+                <div class="picture">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div>
-            <h2 class="top"> A QUELLE HEURE ON S'AMBIANCE ?</h2>
-            <h3>C'est parti !!</h3>
+    <section class="informations-card">
+        <div class="row">
+            <div class="col-12 header">
+                <h2 class="top-title-4">Quels sont nos équipements ?</h2>
+                <h3 class="subtitle-4">WoW ! Dingue...</h3>
+            </div>
+            <div class="col-12 body">
+                <div class="picture">
+                </div>
+                <div class="text">
+                    <p>Capacité : 550 pers.</p>
+                    <p>Accessibilié : rampe et espace dédié dans la salle</p>
+                    <p>Vestiaires : Deux (un à chaque entrée)</p>
+                    <p>Bar : Bière, Soft drinks, Eau minérale, Café</p>
+                    <p>Snack : Sandwich, Hot dog, Frites</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="info-card">
-            <p>
-                <strong>Ouverture des portes :</strong> 1/2 heure avant le début des concerts<br>
-                <strong>Ouverture du bar/snack :</strong> Entracte et fin de spectacle<br>
-                <strong>Horaires du bureau :</strong> Du lundi au vendredi<br>De 13h30 à 17h30
-            </p>
+    <section class="informations-card">
+        <div class="row">
+            <div class="col-12 header">
+                <h2 class="top-title-5">A quelle heure on s'ambiance ?</h2>
+                <h3 class="subtitle-5">C'est parti !!!</h3>
+            </div>
+            <div class="col-12 body">
+                <div class="text">
+                    <p>Ouverture des portes : 1/2 heure avant le début des concerts</p>
+                    <p>Ouverture du bar/snack : Entracte et fin de spectacle</p>
+                    <p>Horaires du bureau : Du lundi au vendredi de 13h30 à 17h30</p>
+                </div>
+                <div class="picture">
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-
+</div>
 {% endblock %}
