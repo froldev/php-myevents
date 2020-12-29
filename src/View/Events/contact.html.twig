@@ -2,51 +2,59 @@
 
 {% block title %}{{society.name|capitalize}} || {{navbar.title}}{% endblock %}
 
+{% block stylesheet %}<script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>{% endblock %}
+
 {% block content %}
+<div class="container">
 
-    <form class="container-input" id="contact" method="post" action="/comments/send">
-
-        <h2 class="top-title">FORMULAIRE DE CONTACT</h2>
-
-        <div class="row col-12 justify-content-center {% if lastNameError is not null %}is-invalid{% endif %}">
-            <input type="text"  id="last_name" name="lastname" aria-label="Nom" placeholder="Nom">
-            <div class="invalid-feedback">
-                {{ lastNameError }}
+    <section class="informations-card">
+        <div class="row">
+            <div class="col-12 header">
+                <h2 class="top-title-1">Formulaire de contact</h2>
+                <h3 class="subtitle-1">Tu veux nous demander quelque chose...</h3>
+            </div>
+            <div class="col-12 body">
+                <form id="form-contact" method="post" action="/comments/send">
+                    <div class="form-group {% if lastNameError is not null %}is-invalid{% endif %}">
+                        <label for="lastname">Nom * : </label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" aria-label="Nom" required >
+                        <div class="invalid-feedback">{{ lastNameError }}</div>
+                    </div>
+                    <div class="form-group {% if firstNameError is not null %}is-invalid{% endif %}">
+                        <label for="fisrtname">Prénom * : </label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" aria-label="Prénom" required >
+                        <div class="invalid-feedback">{{ firstNameError }}</div>
+                    </div>
+                    <div class="form-group {% if userEmailError is not null %}is-invalid{% endif %}">
+                        <label for="email">Email * : </label>
+                        <input type="text" class="form-control" id="email" name="email" aria-label="Email" required >
+                        <div class="invalid-feedback">
+                            {{ userEmailError }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if objectError is not null %}is-invalid{% endif %}">
+                        <label for="object">Objet * : </label>
+                        <input type="text" class="form-control" id="object" name="object" aria-label="Objet" required >
+                        <div class="invalid-feedback">{{ objectError }}</div>
+                    </div>
+                    <div class="form-group {% if userMessageError is not null %}is-invalid{% endif %}">
+                        <label for="message">Message * : </label>
+                        <textarea id="message" name="message" aria-label="Message" required ></textarea>
+                        <script>
+                            CKEDITOR.replace( 'message' );
+                        </script>
+                        <div class="invalid-feedback">{{ userMessageError }}</div>
+                    </div>
+                    <div class="form-group">
+                        <button id="form-button" type="submit" class="btn btn-outline-orange" onclick="alert('Message envoyé !');">C'est parti !!!</button>
+                    </div>
+                    <div class="form-group">
+                        <p id="dispositions">Conformément aux dispositions de la loi n°78-17 du 6 janvier 1978 relatives à l'informatique, aux fichiers et aux libertés, vous conservez la possibilité d'accéder à ces informations et de les rectifier si vous le jugez nécessaire.</p>
+                    </div>
+                </form>
             </div>
         </div>
+    </section>
 
-        <div class="row col-12 justify-content-center {% if firstNameError is not null %}is-invalid{% endif %}">
-            <input type="text"  id="first_name" name="firstname" aria-label="Prénom" placeholder="Prénom">
-            <div class="invalid-feedback">
-                {{ firstNameError }}
-            </div>
-        </div>
-
-        <div class="row col-12 justify-content-center {% if userEmailError is not null %}is-invalid{% endif %}">
-            <input type="text" id="mail" name="user_email" aria-label="Email" placeholder="Email">
-            <div class="invalid-feedback">
-                {{ userEmailError }}
-            </div>
-        </div>
-
-        <div class="row col-12 justify-content-center {% if objectError is not null %}is-invalid{% endif %}">
-            <input type="text"  id="object" name="object" aria-label="Objet" placeholder="Objet">
-            <div class="invalid-feedback">
-                {{ objectError }}
-            </div>
-        </div>
-
-        <div class="row col-12 justify-content-center {% if userMessageError is not null %}is-invalid{% endif %}">
-            <textarea id="msg" name="user_message" aria-label="Message" placeholder="Message"></textarea>
-            <div class="invalid-feedback">
-                {{ userMessageError }}
-            </div>
-        </div>
-
-        <div class="form_input justify-content-center">
-            <button type="submit" class="button" onclick="alert('Message envoyé !');">Envoyer !</button>
-        </div>
-
-    </form>
-
+</div>
 {% endblock %}

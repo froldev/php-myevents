@@ -3,9 +3,7 @@
 :root {
     --dark: #0F1626;
     --white: #F5F5F5;
-    --orange: #F7882F;
     --orangeDark : #FF533D;
-    --orangeLight : #FEE4C5;
 }
 
 /* -------------------------------------------- */
@@ -32,11 +30,9 @@ h3 {
 h6 {
     margin-bottom: 20px;
     padding: 10px;
-    background-color: var(--orange);
+    background-color: var(--orangeDark);
 }
-p {
-    font-family: 'Sawarabi Gothic', sans-serif;
-}
+p { font-family: 'Sawarabi Gothic', sans-serif; }
 a {
     color: var(--white);
     text-decoration: none;
@@ -55,7 +51,7 @@ a:hover { color: var(--orangeDark); }
     background-color: var(--orangeDark);
     border: 1px solid var(--white);
 }
-.row{
+.row {
     margin-left:0px !important;
     margin-right:0px !important;
 }
@@ -487,7 +483,7 @@ footer {
 }
 
 /* -------------------------------------------- */
-/* informations */
+/* card for pages informations, history and contact */
 .informations-card {
     background-color: var(--dark);
     margin: 40px;
@@ -528,13 +524,44 @@ footer {
     width: 450px;
     height: auto;
 }
-/* -------------------------------------------- */
-/* history  */
 
 /* -------------------------------------------- */
 /* contact */
-
-
+#form-contact {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#form-contact .form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+#form-contact input,
+#form-contact select,
+#form-contact textarea,
+#form-contact #cke_message {
+    width: 600px;
+    border-radius: 5px;
+}
+#form-contact label {
+    width: 140px;
+    margin-bottom: 0px;
+}
+#form-contact #form-button {
+    margin: 20px;
+}
+#form-contact #dispositions {
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+}
 
 /* Mobile Version */
 
