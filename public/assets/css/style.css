@@ -513,12 +513,20 @@ footer {
 .informations-card .header {
     margin: 20px 0 40px 0;
 }
+.informations-card .text,
+.informations-card .picture {
+    padding: 20px;
+}
 .informations-card .body-map {
     height: 300px;
 }
 .informations-card .map {
     width: 500px;
     height: 250px;
+}
+.informations-card .informations-picture {
+    width: 450px;
+    height: auto;
 }
 /* -------------------------------------------- */
 /* history  */
