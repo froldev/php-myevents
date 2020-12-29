@@ -1,16 +1,14 @@
-<header id="adminHeader" class="navbar navbar-dark bg-dark d-flex text-center text-white">
-        <div class="col-sm-3" >
-            <a href="/">
-                <img src="/assets/images/logo_Olympic_Nantais.png" width="150"  alt="Olympic Nantais">
-            </a>
+<header id="adminHeader" class="navbar">
+        <div id="header-society" >
+            <h1>{{society.name}}</h1>
         </div>
-        <div class="col-sm-4" >
-            <h4>Le {{ "now"|date("d/m/Y") }}</h4>
-        </div>
-        <div class="col-sm-3" >
-            <h4>Bonjour {{ session.name }}</h4>
-        </div>
-        <div class="col-sm-2" >
-            <a href="/admin/logout"><button type="button" class="btn btn-primary">Déconnexion</button></a>
+        <div id="header-user" class="dropdown">
+            <button type="button" class="btn btn-outline-orange dropdown-toggle" data-toggle="dropdown">
+                Nom Prénom {{ session.name }}
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Mon Profil</a>
+                <a class="dropdown-item" href="/admin/logout">Deconnexion</a>
+            </div>
         </div>
 </header>

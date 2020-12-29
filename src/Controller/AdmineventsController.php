@@ -6,7 +6,7 @@ use App\Model\CategoriesManager;
 use App\Model\EventsManager;
 use App\Model\UsersManager;
 
-class AdminEventsController extends AbstractController
+class AdmineventsController extends AbstractController
 {
     public function add()
     {
@@ -63,7 +63,7 @@ class AdminEventsController extends AbstractController
 
     public function list(): string
     {
-        $this->verifySession();
+        /* $this->verifySession(); */
 
         $eventsManager = new EventsManager();
         $events = $eventsManager->selectAllEventNotPast();

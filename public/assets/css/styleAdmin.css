@@ -1,3 +1,11 @@
+/* -------------------------------------------- */
+/* colors */
+:root {
+    --dark: #0F1626;
+    --white: #F5F5F5;
+    --orangeDark : #FF533D;
+}
+
 /* général */
 * {
     padding:0;
@@ -14,15 +22,66 @@ html, body {
     margin:0px;
 }
 
-.row{
+.row {
     margin-left:0px !important;
     margin-right:0px !important;
 }
+/* -------------------------------------------- */
+/* buttons */
+.btn-outline-orange {
+    padding: 10px 25px;
+    color: var(--orangeDark);
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid var(--orangeDark);
+    text-transform: uppercase;
+}
+.btn-outline-orange:hover {
+    color: var(--white);
+    background-color: var(--orangeDark);
+    border-color: var(--orangeDark);
+}
+.btn-dark {
+    padding: 10px 25px;
+    color: var(--white);
+    background-color: var(--dark);
+    background-image: none;
+    border: 1px solid var(--white);
+    text-transform: uppercase;
+}
+.btn-dark:hover {
+    font-weight: bold;
+    background-color: var(--orangeDark);
+}
 
+/* -------------------------------------------- */
+/* page login */
+#login-form{
+    background: linear-gradient(135deg, var(--dark)35%, var(--orangeDark));
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form .form-signin {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: auto;
+    border:1px solid var(--orangeDark);
+    border-radius:5px;
+    background-color:var(--white);
+}
+
+#login-form .error-connexion{
+    display:block;
+    font-weight:bold;
+    margin: 40px;
+}
 
 /* -------------------------------------------- */
 /* admin */
-/* -------------------------------------------- */
 #page-admin{
     min-height: 100%;
     position: relative;
@@ -45,8 +104,18 @@ html, body {
     padding-right:0px;
 }
 
-#adminNav{
-    background-color: #6C757C;
+/* -------------------------------------------- */
+/* header */
+#adminHeader {
+    background: linear-gradient(135deg, var(--orangeDark)15%, var(--dark));
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#adminNav {
+    background-color: var(--dark);
 }
 
 #content section{
@@ -63,25 +132,6 @@ html, body {
     overflow: hidden;
 }
 
-#login-form{
-    background-color:#6C757C;
-}
-
-#login-form .form-signin {
-    width: 100%;
-    max-width: 400px;
-    padding: 15px;
-    margin: auto;
-    border:1px solid #6C757C;
-    border-radius:10px;
-    background-color:#FFF;
-}
-
-#login-form .error-connexion{
-    display:block;
-    font-weight:bold;
-    margin: 40px;
-}
 
 /* -------------------------------------------------------- */
 /* media queries*/
