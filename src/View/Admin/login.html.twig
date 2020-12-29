@@ -1,8 +1,20 @@
-{% extends "adminLogin.html.twig" %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if society.name %}
+        <title>{{society.name}} || Connexion</title>
+    {% else %}
+        <title>Première Connexion</title>
+    {% endif %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/styleAdmin.css">
+</head>
 
-{% block title %}Login{% endblock %}
-
-{% block content %}
+<body id="login-form" class="text-center" cz-shortcut-listen="true">
+    <!-- Content -->
 
     <form role="form" action="/admin/login" method="POST" class="form-signin">
         {% if society.picture %}
@@ -37,4 +49,10 @@
             <button type="submit" class="btn btn-outline-orange">Connexion</button>
         </div>
     </form>
-{% endblock %}
+    <!-- Content -->
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

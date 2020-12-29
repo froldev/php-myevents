@@ -63,7 +63,6 @@ html, body {
     justify-content: center;
     align-items: center;
 }
-
 #login-form .form-signin {
     width: 100%;
     max-width: 400px;
@@ -73,11 +72,19 @@ html, body {
     border-radius:5px;
     background-color:var(--white);
 }
-
 #login-form .error-connexion{
     display:block;
     font-weight:bold;
     margin: 40px;
+}
+#login-form input:focus {
+    border: 1px solid transparent;
+    border-top: 1px solid var(--orangeDark);
+    border-bottom: 1px solid var(--orangeDark);
+}
+#login-form .block-buttons {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* -------------------------------------------- */
